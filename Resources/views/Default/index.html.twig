@@ -1,1 +1,6 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{% block head %}
+    <script type="text/javascript" src="{{ asset('bundles/hatimeriaextjs/js/grid/preview.js') }}"> </script>
+    <script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/user/grid/UserGrid.js') }}"> </script>
+{% endblock %}
