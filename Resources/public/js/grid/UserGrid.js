@@ -1,11 +1,10 @@
-Ext.onReady(function() {
-    var usersGrid = Ext.create('Hatimeria.grid.Preview', 
-            {
+Ext.define('HatimeriaAdmin.grid.UserGrid', 
+        {
+            extend: 'HatimeriaCore.grid.Preview',
+            config: {
                 directFn: Actions.HatimeriaAdmin_User.list,
                 title: 'Users',
                 headers: {'id': '', 'username': 'Username', 'email': 'Email'}
             }
-        );
-            
-    usersGrid.init()
-});
+        }
+);
