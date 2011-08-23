@@ -16,4 +16,16 @@ class UserController extends Controller
     {
         return $this->get('hatimeria_extjs.pager')->fromEntity('Hatimeria\AdminBundle\Entity\User', $params);
     }
+    
+    /**
+     * Single exposed method.
+     *
+     * @remote
+     * @param  ParameterBag $params
+     * @return string
+     */
+    public function indexAction($params)
+    {
+        return 'Hello ' . $params['name'];
+    }    
 }
