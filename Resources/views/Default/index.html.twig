@@ -1,9 +1,5 @@
 {% extends '::base.html.twig' %}
 
-{% block body %}
-<script type="text/javascript">
-    Ext.onReady(function() {
-        Ext.create('HatimeriaAdmin.grid.UserGrid').init();
-    });        
-</script>
+{% block head %}
+<script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/pages/index.js') }}"></script>
 {% endblock %}

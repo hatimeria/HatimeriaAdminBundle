@@ -4,7 +4,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="HatimeriaAdminBundle_homepage" pattern="/">
+    <route id="homepage" pattern="/">
         <default key="_controller">HatimeriaAdminBundle:Default:index</default>
     </route>
+    
+    <route id="administration" pattern="/admin">
+        <default key="_controller">HatimeriaAdminBundle:Admin:index</default>
+    </route>
+    
 </routes>

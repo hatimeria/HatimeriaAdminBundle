@@ -27,5 +27,5 @@ class UserController extends Controller
     public function indexAction($params)
     {
         return 'Hello ' . $params['name'];
-    }    
+    }
 }
