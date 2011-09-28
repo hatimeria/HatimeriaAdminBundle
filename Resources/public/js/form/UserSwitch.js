@@ -1,6 +1,6 @@
 Ext.define('HatimeriaAdmin.form.UserSwitch', {
     extend: 'Ext.form.ComboBox',
-    fieldLabel: "Switch user",
+    fieldLabel: __("switch.action"),
     queryMode: 'remote',
     displayField: 'username',
     valueField: 'username',

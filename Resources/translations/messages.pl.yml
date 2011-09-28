@@ -1,0 +1,18 @@
+login: "Zaloguj się"
+logout: "Wyloguj"
+administration: "Administracja"
+
+status.signed-in-as: "Zalogowany jako"
+
+switch.back: "Wróć do administratora"
+switch.action: "Przełącz na"
+switch.active: "przełączony"
+
+welcome.title: "Witaj w panelu administracyjnym"
+welcome.text: "Przykładowa zawartość"
+
+users: "Użytkownicy"
+menu.users.all: "Wszyscy"
+menu.users: "Użytkownicy"
+menu.welcome: "Strona główna"
+user.username: "Login"

@@ -7,15 +7,15 @@ Ext.define('HatimeriaAdmin.store.MenuStore', {
         children: [
         {
             leaf: true,
-            text: "Start",
+            text: __("menu.welcome"),
             id: 'welcome'
         },
         {
-            text: "Users",
+            text: __("menu.users"),
             expanded: true,
             children:
             [{
-                text: 'All',
+                text: __('menu.users.all'),
                 id: 'users-all',
                 leaf: true
             }]

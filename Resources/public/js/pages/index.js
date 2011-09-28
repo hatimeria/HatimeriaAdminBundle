@@ -8,7 +8,7 @@ Ext.onReady(function() {
     var userStatus = Ext.create("HatimeriaAdmin.component." + (user.signedIn ? "User": "Guest") + "StatusComponent");
 
     Ext.create('Ext.Panel', {
-        width: 850,
+        width: 960,
         height: 600,
         margin: 10,
         border: 0,

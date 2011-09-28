@@ -44,9 +44,9 @@ Ext.onReady(function() {
     // Admin welcome message
     var welcome = Ext.create("Ext.panel.Panel", {
         layout: 'fit',
-        title: 'Welcome to Admin Section',
+        title: __('welcome.title'),
         id: 'welcome-panel',
-        html: 'App status info',
+        html: __('welcome.text'),
         bodyPadding: 10
     });        
     
@@ -58,7 +58,6 @@ Ext.onReady(function() {
                  align: 'stretch'
                 },
                 id: 'main-viewport',
-		title: 'Test',
 		items: [
                     Ext.create("HatimeriaAdmin.component." + (user.signedIn ? "User": "Guest") + "StatusComponent"),
                     body
