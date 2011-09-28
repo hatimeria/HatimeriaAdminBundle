@@ -3,7 +3,7 @@ Ext.require("HatimeriaAdmin.panel.AdminMenuPanel");
 
 Ext.onReady(function() {
     
-    // @todo nice interface to add another grid to admin menu
+    // @todo nice interface to add another grid to admin menu   
     
     // Admin menu
     var menu = Ext.create("HatimeriaAdmin.panel.AdminMenuPanel", {

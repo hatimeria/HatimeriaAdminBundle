@@ -2,27 +2,38 @@ Ext.ns("HatimeriaAdmin");
 
 Ext.define("HatimeriaAdmin.component.StatusComponent", {
     extend: "Ext.container.Container",
-    width: '100%',
     border  : 1,
-    padding: 5,
-    style: {borderColor:'silver', borderStyle:'solid', borderWidth:'1px', background: 'white'},    
+    width: "100%",
+    style: {
+        borderColor:'silver', 
+        borderStyle:'solid', 
+        borderWidth:'1px', 
+        background: 'white'
+    },    
+    defaults: {
+        margin: 3
+    },
     layout: {
         type: 'hbox',
-        align: 'middle'
+        padding: '10',
+        pack: 'center'
     },
     initComponent: function() {
-      this.callParent();
-      this.add({
-         html: this.statusText,
-         padding: 5,
-         border: 0
-      });
-    },
-    items: [
+        
+        this.items.unshift({
+            html: this.statusText,
+            padding: 5,
+            border: 0
+        });
+        
+        this.items.unshift(        
         {
             html: '<b>Hatimeria CMF</b>',
             padding: 5,
             border: 0
-        }        
-    ]
+        });        
+      
+        this.callParent();
+    },
+    items: []
 });
