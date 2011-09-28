@@ -1,10 +1,13 @@
 Ext.define('HatimeriaAdmin.grid.UserGrid', 
-        {
-            extend: 'HatimeriaCore.grid.Preview',
-            config: {
-                directFn: Actions.HatimeriaAdmin_User.list,
-                title: 'Users',
-                headers: {'id': '', 'username': 'Username', 'email': 'Email'}
-            }
+        {   
+            extend: 'Ext.grid.Panel',
+            requires: ["HatimeriaAdmin.store.UserStore"],
+            title: 'Users',
+            width: '100%',
+            columns: [
+                {header: 'Id', dataIndex: 'id'},
+                {header: 'User name', dataIndex: 'username'}, 
+                {header: 'Email', dataIndex: 'email'}
+            ]
         }
 );

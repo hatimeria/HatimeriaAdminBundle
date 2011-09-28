@@ -2,7 +2,7 @@ Ext.ns("HatimeriaAdmin");
 
 Ext.define("HatimeriaAdmin.component.StatusComponent", {
     extend: "Ext.container.Container",
-    width   : 800,
+    width: '100%',
     border  : 1,
     padding: 5,
     style: {borderColor:'silver', borderStyle:'solid', borderWidth:'1px', background: 'white'},    
