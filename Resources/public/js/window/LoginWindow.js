@@ -1,5 +1,3 @@
-Ext.ns("HatimeriaAdmin");
-
 Ext.define("HatimeriaAdmin.window.LoginWindow", {
     extend: "Ext.window.Window",
     title: "Login Window",

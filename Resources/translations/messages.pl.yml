@@ -1,18 +1,22 @@
-login: "Zaloguj się"
-logout: "Wyloguj"
-administration: "Administracja"
+login: Zaloguj się
+logout: Wyloguj
+administration: Administracja
 
-status.signed-in-as: "Zalogowany jako"
+status.signed-in-as: Zalogowany jako
 
-switch.back: "Wróć do administratora"
-switch.action: "Przełącz na"
-switch.active: "przełączony"
+switch.back: Wróć do administratora
+switch.action: Przełącz na
+switch.active: przełączony
 
-welcome.title: "Witaj w panelu administracyjnym"
-welcome.text: "Przykładowa zawartość"
+welcome.title: Witaj w panelu administracyjnym
+welcome:
+  text: Przykładowa zawartość
+form:
+  error:
+    title: Formularz zawiera błędy
 
-users: "Użytkownicy"
-menu.users.all: "Wszyscy"
-menu.users: "Użytkownicy"
-menu.welcome: "Strona główna"
-user.username: "Login"
+users: Użytkownicy
+menu.users.all: Wszyscy
+menu.users: Użytkownicy
+menu.welcome: Strona główna
+user.username: Login

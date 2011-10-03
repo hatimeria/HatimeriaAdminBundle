@@ -1,5 +1,3 @@
-Ext.ns("HatimeriaAdmin");
-
 Ext.define("HatimeriaAdmin.form.LoginForm", {
     extend: "Ext.form.Panel",
     layout: 'anchor',
