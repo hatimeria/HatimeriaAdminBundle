@@ -1,6 +1,6 @@
 Ext.define("HatimeriaAdmin.window.LoginWindow", {
     extend: "Ext.window.Window",
-    title: "Login Window",
+    title: this.__("window.login.title"),
     width: 300,
     height: 180,
     layout: {

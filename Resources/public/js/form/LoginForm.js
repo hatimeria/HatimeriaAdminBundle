@@ -1,39 +1,29 @@
 Ext.define("HatimeriaAdmin.form.LoginForm", {
-    extend: "Ext.form.Panel",
+    extend: "HatimeriaCore.form.BaseForm",
+    transNS: "form.login",
     layout: 'anchor',
     bodyPadding: 10,
     defaults: {
         anchor: '95%'
     },
     defaultType: 'textfield',
-    buttons: [
-        {
-            text: 'Submit',
-            formBind: true, //only enabled once the form is valid
-            disabled: true,
-            handler: function() {
-                var form = this.up('form').getForm();
-                if (form.isValid()) {
-                    form.submit({
-                        success: function(form, action) {
-                            window.location = Routing.generate('homepage');
-                        },
-                        failure: function(form, action) {
-                            Ext.Msg.alert('Login failed', action.result.msg);
-                        }
-                    });
-                }
-            }        
-        }
-    ],
-    items: [{
-        fieldLabel: 'Login',
-        name: '_username',
-        allowBlank: false
-    },{
-        fieldLabel: 'Password',
-        inputType: 'password',
-        name: '_password',
-        allowBlank: false
-    }]
+    initComponent: function(config) {
+        this.submitConfig = {
+            text: this.__('submit'),
+            success: function() { window.location = Routing.generate('homepage') }
+        };
+        
+        this.items = [{
+                fieldLabel: this.__('login'),
+                name: '_username',
+                allowBlank: false
+            },{
+                fieldLabel: this.__('password'),
+                inputType: 'password',
+                name: '_password',
+                allowBlank: false
+            }];
+
+        this.callParent([config]);
+    }
 })
