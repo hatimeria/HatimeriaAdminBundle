@@ -30,6 +30,7 @@ user:
 form:
   error:
     title: Formularz zawiera błędy
+    unknown: Wystąpił nieznany błąd
   login: 
     login: Login
     password: Hasło
