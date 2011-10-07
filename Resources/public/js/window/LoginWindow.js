@@ -9,6 +9,6 @@ Ext.define("HatimeriaAdmin.window.LoginWindow", {
     },  
     initComponent: function() {
         this.callParent();
-        this.add(Ext.create("HatimeriaAdmin.form.LoginForm", {url: Routing.generate('fos_user_security_check')}));
+        this.add(Ext.create("HatimeriaAdmin.form.LoginForm"));
     }
 })

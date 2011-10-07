@@ -7,7 +7,14 @@ Ext.define("HatimeriaAdmin.form.LoginForm", {
         anchor: '95%'
     },
     defaultType: 'textfield',
-    initComponent: function(config) {
+    constructor: function(cfg) {
+        
+        var config = cfg || {};
+        config.url = Routing.generate('fos_user_security_check');
+        
+        this.callParent([config]);
+    },
+    initComponent: function() {
         this.submitConfig = {
             text: this.__('submit'),
             success: function() { window.location = Routing.generate('homepage') }
@@ -24,6 +31,6 @@ Ext.define("HatimeriaAdmin.form.LoginForm", {
                 allowBlank: false
             }];
 
-        this.callParent([config]);
+        this.callParent();
     }
 })
