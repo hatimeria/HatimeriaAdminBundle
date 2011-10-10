@@ -4,9 +4,9 @@ Ext.define("HatimeriaAdmin.component.UserStatusComponent", {
     extend: "HatimeriaAdmin.component.StatusComponent",
     
     initComponent: function() {
-        this.statusText = __('status.signed-in-as') + '&nbsp<b>' + user.data.username + '</b>';
+        this.statusText = __('status.signed-in-as') + '&nbsp<b>' + _user.data.username + '</b>';
         
-        if(user.isSwitched) {
+        if(_user.isSwitched) {
             this.statusText += ' <i style="color: silver; font-size: 8pt">(' + __('switch.active') + ')</i>';
         }
         
@@ -16,7 +16,7 @@ Ext.define("HatimeriaAdmin.component.UserStatusComponent", {
             uri: 'fos_user_security_logout'
         });        
         
-        if(user.isSwitched) {
+        if(_user.isSwitched) {
             this.items.push(Ext.create('Ext.Button', {
                 text: __('switch.back'),
                 handler: function() {
@@ -25,7 +25,7 @@ Ext.define("HatimeriaAdmin.component.UserStatusComponent", {
             }));
         }
         
-        if(user.isAdmin) {
+        if(_user.isAdmin) {
             this.items.push({
                 xtype: 'h-button',
                 uri: 'administration'

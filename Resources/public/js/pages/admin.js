@@ -59,7 +59,7 @@ Ext.onReady(function() {
                 },
                 id: 'main-viewport',
 		items: [
-                    Ext.create("HatimeriaAdmin.component." + (user.signedIn ? "User": "Guest") + "StatusComponent"),
+                    Ext.create("HatimeriaAdmin.component." + (_user.signedIn ? "User": "Guest") + "StatusComponent"),
                     body
 		],
         renderTo: Ext.getBody()
