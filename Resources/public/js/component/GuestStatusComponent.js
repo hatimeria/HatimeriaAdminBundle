@@ -1,5 +1,3 @@
-Ext.ns("HatimeriaAdmin");
-
 Ext.define("HatimeriaAdmin.component.GuestStatusComponent", {
     extend: "HatimeriaAdmin.component.StatusComponent",
     

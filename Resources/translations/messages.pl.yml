@@ -1,18 +1,42 @@
-login: "Zaloguj się"
-logout: "Wyloguj"
-administration: "Administracja"
+login: Zaloguj się
+logout: Wyloguj
 
-status.signed-in-as: "Zalogowany jako"
+administration: Administracja
 
-switch.back: "Wróć do administratora"
-switch.action: "Przełącz na"
-switch.active: "przełączony"
+status:
+  signed-in-as: Zalogowany jako
 
-welcome.title: "Witaj w panelu administracyjnym"
-welcome.text: "Przykładowa zawartość"
+switch: 
+  back: Wróć do administratora
+  action: Przełącz na
+  active: przełączony
 
-users: "Użytkownicy"
-menu.users.all: "Wszyscy"
-menu.users: "Użytkownicy"
-menu.welcome: "Strona główna"
-user.username: "Login"
+welcome:
+  text: Przykładowa zawartość
+  title: Witaj w panelu administracyjnym
+form:
+  error:
+    title: Formularz zawiera błędy
+
+users: Użytkownicy
+menu:
+  users: 
+    title: Użytkownicy
+    all: Wszyscy
+  welcome: Strona główna
+user:
+  username: Login
+  
+form:
+  error:
+    title: Formularz zawiera błędy
+    unknown: Wystąpił nieznany błąd
+  login: 
+    login: Login
+    password: Hasło
+    failed: Logowanie nie powiodło się
+    submit: Zaloguj się
+  
+window:
+  login:
+    title: Logowanie
