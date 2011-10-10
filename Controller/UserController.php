@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function listAction($params)
     {
-        return $this->get('hatimeria_extjs.pager')->fromEntity('Hatimeria\AdminBundle\Entity\User', $params);
+        return $this->get('hatimeria_extjs.pager')->fromEntity($this->container->getParameter("fos_user.model.user.class"), $params);
     }
     
     /**
