@@ -5,7 +5,7 @@ Ext.onReady(function() {
         store: Ext.create("HatimeriaAdmin.store.UserStore").load()
     });    
     
-    var userStatus = Ext.create("HatimeriaAdmin.component." + (user.signedIn ? "User": "Guest") + "StatusComponent");
+    var userStatus = Ext.create("HatimeriaAdmin.component." + (_user.signedIn ? "User": "Guest") + "StatusComponent");
 
     Ext.create('Ext.Panel', {
         width: 960,

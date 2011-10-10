@@ -38,4 +38,4 @@ Ext.define("HatimeriaAdmin.component.UserStatusComponent", {
         
         this.callParent();
     }
-})
+});

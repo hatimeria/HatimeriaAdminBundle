@@ -8,7 +8,7 @@ Ext.define('HatimeriaAdmin.panel.AdminMenuPanel', {
     listeners: {
         select: {
             fn: function(model, record) {
-                if(record.data.leaf) {
+                if (record.data.leaf) {
                     this.switchActivePanel(record.data.id);
                 }
             }
