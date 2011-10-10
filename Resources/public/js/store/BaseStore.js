@@ -9,8 +9,6 @@ Ext.define('HatimeriaAdmin.store.BaseStore', {
     {
         var config = cfg || {};
         Ext.apply(config, {
-            autoLoad: false,
-            pageSize: 7,
             root: 'records',
             remoteSort: true,
             paramsAsHash: true,
