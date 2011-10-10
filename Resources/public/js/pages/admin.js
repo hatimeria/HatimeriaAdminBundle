@@ -51,7 +51,12 @@ Ext.onReady(function() {
     });        
     
     contentPanel.add(welcome);
-        
+    
+    var tree = Ext.create('HatimeriaAdmin.tree.CategoriesTree', {
+        id: 'categories-panel'
+    });
+    contentPanel.add(tree);
+    
     Ext.create("Ext.container.Viewport", {
 		layout: {
                  type: 'vbox',
@@ -64,4 +69,6 @@ Ext.onReady(function() {
 		],
         renderTo: Ext.getBody()
     });
+    
+    
 });
