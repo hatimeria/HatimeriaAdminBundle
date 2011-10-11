@@ -3,10 +3,10 @@
  */
 (function() {
     
-    Ext.define('HatimeriaAdmin.store.CategoriesStore', {
+    Ext.define('HatimeriaAdmin.store.CategoryTreeStore', {
         extend: 'Ext.data.TreeStore',
         
-        storeId: 'cateogories-store',
+        storeId: 'cateogoriey-tree-store',
         paramsAsHash: true,
         proxy: {
             type: 'direct',
@@ -21,8 +21,7 @@
         fields: ['id', 'text', 'leaf', 'children'],
         root: {
             expanded: true,
-            text: "Kategorie",
-            children: []
+            text: "Kategorie"
         }
     });
     

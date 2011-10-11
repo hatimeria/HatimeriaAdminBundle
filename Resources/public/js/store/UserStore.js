@@ -1,11 +1,20 @@
-Ext.require("HatimeriaAdmin.model.UserModel");
+(function() {
+    
+    Ext.require("HatimeriaAdmin.model.UserModel");
 
-Ext.define('HatimeriaAdmin.store.UserStore', 
+    Ext.define('HatimeriaAdmin.store.UserStore',  {
+        extend: 'HatimeriaAdmin.store.BaseStore',
+
+        constructor: function(cfg)
         {
-            extend: 'HatimeriaAdmin.store.BaseStore',
-            cfg: {
+            var config = {
                 directFn: Actions.HatimeriaAdmin_User.list,
                 model: 'HatimeriaAdmin.model.UserModel'
-            }
+            };
+            Ext.apply(config, cfg || {});
+            
+            this.callParent([config]);
         }
-);
+    });
+    
+})();
