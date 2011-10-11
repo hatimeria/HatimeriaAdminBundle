@@ -1,27 +1,28 @@
 Ext.define('HatimeriaAdmin.store.BaseStore', {
     extend: 'Ext.data.DirectStore',
+    
     /**
      * Constructor
      * 
      * @param {} cfg
      */
-    constructor: function(cfg)
-    {
+    constructor: function(cfg) {
         var config = cfg || {};
         Ext.apply(config, {
             root: 'records',
+            idProperty: 'id',
             remoteSort: true,
+            autoLoad: true,
             paramsAsHash: true,
-            clearOnPageLoad: false,
             sortInfo: {
                 field: 'name',
                 direction: 'desc'
             }
-        }, this.cfg);
+        });
         
         this.callParent([config]);
     },
-        
+    
     /**
      * Applies context-tag
      * 
