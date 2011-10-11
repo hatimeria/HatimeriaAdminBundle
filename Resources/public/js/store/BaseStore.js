@@ -6,9 +6,9 @@ Ext.define('HatimeriaAdmin.store.BaseStore', {
      * 
      * @param {} cfg
      */
-    constructor: function(cfg) {
-        var config = cfg || {};
-        Ext.apply(config, {
+    constructor: function(cfg)
+    {
+        var config = {
             root: 'records',
             idProperty: 'id',
             remoteSort: true,
@@ -18,8 +18,9 @@ Ext.define('HatimeriaAdmin.store.BaseStore', {
                 field: 'name',
                 direction: 'desc'
             }
-        });
-        
+        };
+        Ext.apply(config, cfg || {});
+
         this.callParent([config]);
     },
     
