@@ -28,6 +28,9 @@ user:
   username: Login
   
 form:
+  image:
+    browse: Przeglądaj
+    delete: Usuń
   error:
     title: Formularz zawiera błędy
     unknown: Wystąpił nieznany błąd

@@ -56,7 +56,7 @@
             
             selNode.expand();
             
-            Ext.Msg.prompt(Ext.String.format('Nowa kategoria w: {0}', selNode.get('text')), 'Poda nazwę kategorii', function(btn, value) {
+            Ext.Msg.prompt(Ext.String.format('Nowa kategoria w: {0}', selNode.get('text')), 'Podaj nazwę kategorii', function(btn, value) {
                 _this.addCategory(value, selNode);
             });
         },
