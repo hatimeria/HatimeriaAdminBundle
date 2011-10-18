@@ -2,7 +2,12 @@
  * Init application of admin panel
  */
 
-Ext.require("HatimeriaAdmin.core.InternalButton");
+Ext.require("HatimeriaAdmin.core.store.MenuStore");
+Ext.require("HatimeriaAdmin.core.tree.MenuTree");
+Ext.require("HatimeriaAdmin.core.component.ContainerComponent");
+Ext.require("HatimeriaAdmin.core.component.GuestStatusComponent");
+Ext.require("HatimeriaAdmin.core.component.UserStatusComponent");
+Ext.require("HatimeriaAdmin.core.form.UserSwitch");
 
 Ext.onReady(function() {
     
@@ -17,7 +22,7 @@ Ext.onReady(function() {
         items: [
             Ext.create("HatimeriaAdmin.core.component." + (_user.signedIn ? "User": "Guest") + "StatusComponent", {
                 region: 'north',
-                height: 80
+                height: 60
             }),
             Ext.create('HatimeriaAdmin.core.tree.MenuTree', {
                 id: 'app-menu-tree',

@@ -48,7 +48,7 @@
          * Creates new panel
          * 
          * @param string id
-         * @param string name
+         * @param string name optional
          * @param string params optional
          * @return Ext.panel.Panel
          */
