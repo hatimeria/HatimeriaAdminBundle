@@ -1,0 +1,158 @@
+(function() {
+    
+	/* 
+	 * Using TineMCE Ext 4 Adaption found on:
+	 * http://www.sencha.com/forum/showthread.php?143190-Ext.ux.TinyMCE-adaption-for-Ext4&p=635192
+	 */
+	
+	Ext.ux.TinyMCE.initTinyMCE();
+	
+    Ext.define('HatimeriaAdmin.cms.form.EditForm', {
+        extend: 'Ext.form.Panel',
+        
+        initComponent: function() {
+            
+            var config = {
+                api: {
+                   submit: Actions.SferaAdmin_Cms.edit
+                },                
+                border: false,
+                width: 700,
+                bodyPadding: 10,    
+                dockedItems: [{
+                    dock: 'bottom',
+                    xtype: 'toolbar',
+                    ui: 'footer',
+                    style: 'margin: 0 5px 5px 0;',
+                    items: ['->', {
+                        text: 'Zapisz',
+                        scope: this,
+                        handler: function(){
+                            var panel  = this;
+                            var form   = panel.getForm();
+                            var record = form.getRecord();
+                            var params = {};
+                            
+                            if(record) {
+                                params = {
+                                    id: record.get('id')
+                                };
+                            }
+                            
+                            form.submit({
+                                params: params,
+                                success: function() {
+                                    Ext.getStore('cms-store').load();
+                                    panel.findParentByType('window').destroy();
+                                }
+                            });
+                        }
+                    }, 
+                    {
+                        text: 'Usuń',
+                        scope: this,
+                        handler: function(){
+                            var panel  = this;
+                            var form   = panel.getForm();
+                            var record = form.getRecord();
+                            
+                            if(record) {
+                                Actions.SferaAdmin_Cms.remove({
+                                    id: record.get('id')
+                                }, function() {
+                                    Ext.getStore('cms-store').load();
+                                    panel.findParentByType('window').destroy();                                    
+                                });
+                            }
+                        }
+                    }                    
+                ]
+                }],
+                defaultType: 'textfield',
+                defaults: {
+                    anchor: '100%'
+                },
+                items: [{
+                    fieldLabel: 'Tytuł',
+                    name: 'title'
+                },
+                {
+                    fieldLabel: 'Uri',
+                    name: 'primary_path'
+                },
+                {
+                    fieldLabel: 'Autor',
+                    name: 'author'
+                },
+                {
+                    fieldLabel: 'Meta description',
+                    name: 'meta_description'
+                },
+                {
+                    fieldLabel: 'Meta keywords',
+                    name: 'meta_keywords'
+                },
+                {
+                    xtype: 'form',
+                    id: 'tiny-container',
+                    height: 350,
+                    border: 0,
+                    layout: 'auto',
+                    items: [
+                        {
+                            id: 'tinymce',
+                            xtype: 'tinymce',
+                            fieldLabel: 'Treść',
+                            width: 573,
+                            height: 240,
+                            name: 'body',
+                            tinymceSettings: {
+                                theme: 'advanced',
+                                plugins: 'pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template',
+                                theme_advanced_buttons1: 'bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect',
+                                theme_advanced_buttons2: 'bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor',
+                                theme_advanced_buttons3: 'tablecontrols,|,hr,sub,sup,|,charmap,media,advhr,|,print,|,ltr,rtl,|',
+                                theme_advanced_buttons4: 'insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak',
+                                theme_advanced_toolbar_location: 'top',
+                                theme_advanced_toolbar_align: 'left',
+                                theme_advanced_statusbar_location: 'bottom',
+                                theme_advanced_resizing: false,
+                                extended_valid_elements: 'a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]'
+                            }
+                        }
+                    ]
+                },
+                {
+                    fieldLabel: 'Od kiedy publikowac',
+                    name: 'publish_from',
+                    xtype: 'datefield'
+                },
+                {
+                    fieldLabel: 'Do kiedy publikowac',
+                    name: 'publish_to',
+                    xtype: 'datefield'
+                },
+                {
+                    fieldLabel: 'Opublikowany',
+                    name: 'is_published',
+                    xtype: 'checkboxfield'
+                }]
+            };
+            
+            Ext.apply(this, Ext.apply(config, this.initialConfig));
+            
+            this.callParent();
+        },
+        
+        /**
+         * Populating
+         */
+        populate: function(record)
+        {
+            var _this = this;
+            window.setTimeout(function() {
+                _this.getForm().loadRecord(record);
+            }, 100);
+        }
+    });
+})();

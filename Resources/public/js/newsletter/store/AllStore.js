@@ -23,8 +23,6 @@
             Ext.apply(config, cfg || {});
 
             this.callParent([config]);
-
-            this.sort('created_at', 'DESC');
         }
     });
 })();
