@@ -10,6 +10,6 @@ class DefaultController extends Controller
     
     public function indexAction()
     {
-        return $this->render('HatimeriaAdminBundle:Default:index.html.twig');
+        return $this->render('HatimeriaAdminBundle:Admin:unsigned.html.twig');
     }
 }
