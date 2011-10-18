@@ -1,7 +1,10 @@
-{% extends '::admin.html.twig' %}
+{% extends 'HatimeriaAdminBundle::layout.html.twig' %}
 
 {% block head %}
 <script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/core/init.js') }}"></script>
+{% endblock %}
+
+{% block javascripts %}
 <script type="text/javascript">
     var _menu = {{ menu|json_encode|raw }}
 </script>

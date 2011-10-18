@@ -9,7 +9,7 @@
             var config = {
                 id: 'newsletter-form-edit',
                 api: {
-                   submit: Actions.SferaAdmin_Newsletter.edit
+                   submit: Actions.HatimeriaAdmin_Newsletter.edit
                 },                
                 border: false,
                 bodyPadding: 10,    

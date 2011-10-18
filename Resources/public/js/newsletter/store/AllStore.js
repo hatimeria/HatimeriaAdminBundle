@@ -12,8 +12,8 @@
                 model: 'HatimeriaAdmin.newsletter.model.NewsletterModel',
                 pageSize: 10,
                 api: {
-                    read: Actions.SferaAdmin_Newsletter.list,
-                    update: Actions.SferaAdmin_Newsletter.edit
+                    read: Actions.HatimeriaAdmin_Newsletter.list,
+                    update: Actions.HatimeriaAdmin_Newsletter.edit
                 },
                 sorters: [
                     {property : 'created_at', direction: 'DESC'}

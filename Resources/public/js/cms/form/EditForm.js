@@ -14,7 +14,7 @@
             
             var config = {
                 api: {
-                   submit: Actions.SferaAdmin_Cms.edit
+                   submit: Actions.HatimeriaAdmin_Cms.edit
                 },                
                 border: false,
                 width: 700,
@@ -57,7 +57,7 @@
                             var record = form.getRecord();
                             
                             if(record) {
-                                Actions.SferaAdmin_Cms.remove({
+                                Actions.HatimeriaAdmin_Cms.remove({
                                     id: record.get('id')
                                 }, function() {
                                     Ext.getStore('cms-store').load();

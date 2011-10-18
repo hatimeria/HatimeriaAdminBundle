@@ -12,8 +12,8 @@
                 pageSize: 10,
                 model: 'HatimeriaAdmin.cms.model.CmsModel',
                 api: {
-                    read: Actions.SferaAdmin_Cms.list,
-                    update: Actions.SferaAdmin_Cms.add
+                    read: Actions.HatimeriaAdmin_Cms.list,
+                    update: Actions.HatimeriaAdmin_Cms.add
                 },
                 sorters: [
                     {field: 'created_at', direction: 'DESC'}
