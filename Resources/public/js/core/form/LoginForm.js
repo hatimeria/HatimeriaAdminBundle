@@ -1,5 +1,5 @@
-Ext.define("HatimeriaAdmin.form.LoginForm", {
-    extend: "HatimeriaCore.form.BaseForm",
+Ext.define("HatimeriaAdmin.core.form.LoginForm", {
+    extend: "HatimeriaCore.core.form.BaseForm",
     transNS: "form.login",
 
     /**

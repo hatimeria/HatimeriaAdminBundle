@@ -23,7 +23,9 @@ menu:
   users: 
     title: Użytkownicy
     all: Wszyscy
-  welcome: Strona główna
+  users: Użytkownicy
+  main: Strona główna
+  categories: Kategorie
 user:
   username: Login
   

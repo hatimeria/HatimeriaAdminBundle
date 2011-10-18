@@ -3,7 +3,7 @@
  */
 (function() {
     
-    Ext.define('HatimeriaAdmin.tree.CategoriesTree', {
+    Ext.define('HatimeriaAdmin.categories.CategoriesPanel', {
         extend: 'Ext.tree.Panel',
         
         /**
@@ -13,7 +13,7 @@
         {
             var config = {
                 title: 'Kategorie',
-                store: Ext.create('HatimeriaAdmin.store.CategoryTreeStore'),
+                store: Ext.create('HatimeriaAdmin.categories.store.CategoriesStore'),
                 rootVisible: true,
                 dockedItems: [
                     {
