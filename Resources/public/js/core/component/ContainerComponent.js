@@ -52,11 +52,16 @@
          * @param string params optional
          * @return Ext.panel.Panel
          */
-        createPanel: function(id, name, params)
+        createPanel: function(id, name, params, ns)
         {
             if (typeof name == 'undefined')
             {
                 name = id;
+            }
+            
+            if (typeof ns == 'undefined')
+            {
+                ns = "HatimeriaAdmin";
             }
             
             var configObj = {
@@ -66,7 +71,7 @@
             Ext.apply(configObj, this.defaultPanelConfig);
             Ext.apply(configObj, params || {});
             
-            return Ext.create(Ext.String.format('HatimeriaAdmin.{0}.{1}Panel', id, Ext.String.capitalize(name)), configObj);
+            return Ext.create(Ext.String.format('{2}.{0}.{1}Panel', id, Ext.String.capitalize(name), ns), configObj);
         },
         
         /**
@@ -82,7 +87,7 @@
             
             if (typeof panel == 'undefined')
             {
-                panel = this.createPanel(node.get('id'), panelName, node.get('params'));
+                panel = this.createPanel(node.get('id'), panelName, node.get('params'), node.get('ns'));
                 this.add(panel);
             }
             

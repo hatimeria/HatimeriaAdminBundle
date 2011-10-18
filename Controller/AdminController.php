@@ -10,6 +10,8 @@ class AdminController extends Controller
     
     public function indexAction()
     {
-        return $this->render('HatimeriaAdminBundle:Admin:index.html.twig');
+        return $this->render('HatimeriaAdminBundle:Admin:index.html.twig', array(
+            'menu' => $this->container->getParameter('admin')
+        ));
     }
 }

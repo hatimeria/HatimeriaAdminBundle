@@ -2,4 +2,7 @@
 
 {% block head %}
 <script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/core/init.js') }}"></script>
+<script type="text/javascript">
+    var _menu = {{ menu|json_encode|raw }}
+</script>
 {% endblock %}
