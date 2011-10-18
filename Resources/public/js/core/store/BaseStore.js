@@ -19,10 +19,9 @@
                 remoteSort: true,
                 autoLoad: true,
                 paramsAsHash: true,
-                sortInfo: {
-                    field: 'name',
-                    direction: 'desc'
-                }
+                sorters: [
+                    {property: 'name', direction: 'desc'}
+                ]
             };
             Ext.apply(config, cfg || {});
 
