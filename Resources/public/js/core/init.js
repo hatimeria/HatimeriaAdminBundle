@@ -4,10 +4,6 @@
 
 Ext.require("HatimeriaAdmin.core.InternalButton");
 
-function __(key) {
-    return ExposeTranslation.get(key);
-}
-
 Ext.onReady(function() {
     
     Ext.create('HatimeriaAdmin.core.store.MenuStore', {
