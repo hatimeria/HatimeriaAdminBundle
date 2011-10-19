@@ -43,6 +43,16 @@
                         text: nodes[id].text
                     };
                     
+                    if (typeof nodes[id].panel != 'undefined')
+                    {
+                        newNode.panel = nodes[id].panel
+                    }
+                    
+                    if (typeof nodes[id].panel != 'undefined')
+                    {
+                        newNode.ns = nodes[id].ns
+                    }
+                    
                     if (typeof nodes[id].children == 'object')
                     {
                         newNode.expanded = true;
