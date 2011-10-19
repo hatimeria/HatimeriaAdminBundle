@@ -18,10 +18,7 @@
                 idProperty: 'id',
                 remoteSort: true,
                 autoLoad: true,
-                paramsAsHash: true,
-                sorters: [
-                    {property: 'name', direction: 'desc'}
-                ]
+                paramsAsHash: true
             };
             Ext.apply(config, cfg || {});
 
