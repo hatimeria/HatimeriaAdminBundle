@@ -16,7 +16,7 @@ class CmsController extends Controller
     /**
      * Lista
      *
-     * @Secure(roles="ROLE_SUPERADMIN")
+     * @Secure(roles="ROLE_ADMIN")
      * @remote
      */
     public function listAction($params)
@@ -29,7 +29,7 @@ class CmsController extends Controller
     /**
      * Nowy lub edycja istniejącego
      * 
-     * @Secure(roles="ROLE_SUPERADMIN")
+     * @Secure(roles="ROLE_ADMIN")
      * @form
      * @remote
      * 
@@ -56,7 +56,7 @@ class CmsController extends Controller
      * Usuwanie
      *
      * @remote
-     * @Secure(roles="ROLE_SUPERADMIN")
+     * @Secure(roles="ROLE_ADMIN")
      * 
      * @param \Hatimeria\ExtJSBundle\Parameter\ParameterBag $params
      */
