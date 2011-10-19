@@ -8,12 +8,21 @@
     Ext.define('HatimeriaAdmin.cms.form.EditForm', {
         extend: 'Ext.form.Panel',
         
-        initComponent: function() {
-            
+        constructor: function(cfg)
+        {
             var config = {
                 api: {
                    submit: Actions.HatimeriaAdmin_Cms.edit
-                },                
+                }
+            };
+            Ext.apply(config, cfg || {});
+            
+            this.callParent([config]);
+        },
+        
+        initComponent: function() {
+            
+            var config = {
                 border: false,
                 width: 700,
                 bodyPadding: 10,    

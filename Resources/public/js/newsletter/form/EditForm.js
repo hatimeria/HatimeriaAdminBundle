@@ -4,6 +4,18 @@
         extend: 'Ext.form.Panel',
         id: 'newsletter-form-edit',
         
+        constructor: function(cfg)
+        {
+            var config = {
+                api: {
+                   submit: Actions.HatimeriaAdmin_Cms.edit
+                }
+            };
+            Ext.apply(config, cfg || {});
+            
+            this.callParent([config]);
+        },
+        
         initComponent: function() {
             
             var config = {
