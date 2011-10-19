@@ -7,5 +7,6 @@
 {% block javascripts %}
 <script type="text/javascript">
     var _menu = {{ menu|json_encode|raw }}
+    Ext.ux.TinyMCE.initTinyMCE();
 </script>
 {% endblock %}

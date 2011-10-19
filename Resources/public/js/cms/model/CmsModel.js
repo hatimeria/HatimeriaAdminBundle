@@ -5,7 +5,7 @@
     
     Ext.define('HatimeriaAdmin.cms.model.CmsModel', {
         extend: 'Ext.data.Model',
-        fiels: [
+        fields: [
             {name: 'id', type: 'int'},
             {name: 'primary_path', type: 'string'},
             {name: 'title', type: 'string'},

@@ -5,7 +5,7 @@
     
     Ext.define('HatimeriaAdmin.newsletter.model.NewsletterModel', {
         extend: 'Ext.data.Model',
-        fiels: [
+        fields: [
             {name: 'id', type: 'int'},
             {name: 'subject', type: 'string'},
             {name: 'body', type: 'string'},

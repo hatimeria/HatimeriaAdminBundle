@@ -5,8 +5,6 @@
 	 * http://www.sencha.com/forum/showthread.php?143190-Ext.ux.TinyMCE-adaption-for-Ext4&p=635192
 	 */
 	
-	Ext.ux.TinyMCE.initTinyMCE();
-	
     Ext.define('HatimeriaAdmin.cms.form.EditForm', {
         extend: 'Ext.form.Panel',
         
@@ -152,7 +150,7 @@
             var _this = this;
             window.setTimeout(function() {
                 _this.getForm().loadRecord(record);
-            }, 100);
+            }, 500);
         }
     });
 })();

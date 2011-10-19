@@ -1,4 +1,4 @@
-Ext.onReady(function(){
+(function() {
 
     Ext.require('HatimeriaAdmin.cms.store.AllStore');
     Ext.require('HatimeriaAdmin.cms.window.EditWindow');
@@ -9,29 +9,24 @@ Ext.onReady(function(){
         initComponent: function()
         {
             var store = Ext.create('HatimeriaAdmin.cms.store.AllStore');
-
             var config = {
-                id: 'cms-list-panel',
+                id: 'cms-panel',
                 title: 'Podstrony systemowe',
                 store: store,
                 hideContextRowMenuInterval : 3000,
                 columns: [
-                {
-                    header: "Id", 
-                    dataIndex: 'id'
-                },
-                {
-                    header: "Tytuł", 
-                    dataIndex: 'title'
-                },
-                {
-                    header: "Scieżka", 
-                    dataIndex: 'primary_path'
-                },
-                {
-                    header: "Data utworzenia", 
-                    dataIndex: 'created_at'
-                }
+                    {
+                        header: "Id", 
+                        dataIndex: 'id'
+                    },
+                    {
+                        header: "Tytuł", 
+                        dataIndex: 'title'
+                    },
+                    {
+                        header: "Data utworzenia", 
+                        dataIndex: 'created_at'
+                    }
                 ],
                 viewConfig: {
                     forceFit:true
@@ -68,4 +63,4 @@ Ext.onReady(function(){
             this.callParent();
         }
     });
-});
+})();

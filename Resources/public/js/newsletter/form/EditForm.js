@@ -12,13 +12,47 @@
                    submit: Actions.HatimeriaAdmin_Newsletter.edit
                 },                
                 border: false,
-                bodyPadding: 10,    
-                dockedItems: [{
-                    dock: 'bottom',
-                    xtype: 'toolbar',
-                    ui: 'footer',
-                    style: 'margin: 0 5px 5px 0;',
-                    items: ['->', {
+                frame: false,
+                bodyPadding: 10,
+                items: [
+                    {
+                        xtype: 'textfield',
+                        fieldLabel: 'Temat',
+                        name: 'subject',
+                        labelWidth: 50,
+                        width: 450
+                    },
+                    {
+                        xtype: 'form',
+                        id: 'tiny-container',
+                        height: 250,
+                        border: 0,
+                        layout: 'auto',
+                        items: [
+                            {
+                                id: 'tinymce',
+                                xtype: 'tinymce',
+                                fieldLabel: 'Treść',
+                                labelWidth: 50,
+                                width: 400,
+                                height: 200,
+                                name: 'body',
+                                tinymceSettings: {
+                                    theme: 'advanced',
+                                    theme_advanced_buttons1 : "fontselect,fontsizeselect,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo,link,unlink",
+                                    theme_advanced_buttons2 : "",
+                                    theme_advanced_buttons3 : "",
+                                    theme_advanced_toolbar_location : "top",
+                                    theme_advanced_toolbar_align : "left",
+                                    theme_advanced_statusbar_location : "bottom",
+                                    extended_valid_elements: 'a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]'
+                                }
+                            }
+                        ]
+                    }
+                ],
+                buttons: [
+                    {
                         text: 'Zapisz',
                         scope: this,
                         handler: function(){
@@ -26,13 +60,13 @@
                             var form   = panel.getForm();
                             var record = form.getRecord();
                             var params = {};
-                            
+
                             if(record) {
                                 params = {
                                     id: record.get('id')
                                 };
                             }
-                            
+
                             form.submit({
                                 params: params,
                                 success: function() {
@@ -43,23 +77,7 @@
                         }
                     }
                 ]
-                }],
-                defaultType: 'textfield',
-                defaults: {
-                    anchor: '100%'
-                },
-                items: [{
-                    fieldLabel: 'Treść',
-                    name: 'body',
-                    xtype: 'htmleditor'
-                },
-                {
-                    fieldLabel: 'Temat',
-                    name: 'subject',
-                    xtype: 'textfield'
-                }
-                ]
-            }
+            };
             
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             
