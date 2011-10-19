@@ -34,7 +34,7 @@ class NewsletterController extends Controller
      */
     public function editAction($params)
     {
-        $result = $this->get('sfera_admin.newsletter.form.handler')->process($params);
+        $result = $this->get('hatimeria_admin.newsletter.form.handler')->process($params);
 
         if ($result !== true) {
             return $result;

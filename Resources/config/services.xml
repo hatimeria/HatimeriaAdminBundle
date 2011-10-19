@@ -4,17 +4,17 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
-    <parameters>
-        <parameter key="hatimeria_admin.example.class">Hatimeria\AdminBundle\Example</parameter>
-    </parameters>
+    <service id="hatimeria_admin.edit.form.handler" class="Hatimeria\AdminBundle\Form\Handler\CmsPageEditFormHandler">
+        <argument type="service" id="form.factory" />
+        <argument type="service" id="doctrine.orm.entity_manager" />
+        <argument type="service" id="security.context" />
+        <argument>%admin_model_cms_class%</argument>
+        <argument>%admin_model_cms%</argument>
+    </service>
 
-    <services>
-        <service id="hatimeria_admin.example" class="%hatimeria_admin.example.class%">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
-        </service>
-    </services>
-    -->
+    <service id="hatimeria_admin.newsletter.form.handler" class="Hatimeria\AdminBundle\Form\Handler\NewsletterEditFormHandler">
+        <argument type="service" id="form.factory" />
+        <argument type="service" id="doctrine.orm.entity_manager" />
+        <argument type="service" id="security.context" />
+    </service>
 </container>

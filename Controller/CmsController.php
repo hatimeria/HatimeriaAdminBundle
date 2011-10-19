@@ -37,7 +37,7 @@ class CmsController extends Controller
      */
     public function editAction($params)
     {
-        $result = $this->get('sfera_admin.edit.form.handler')->process($params);
+        $result = $this->get('hatimeria_admin.edit.form.handler')->process($params);
 
         if ($result !== true) {
             return $result;
