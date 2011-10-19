@@ -15,7 +15,7 @@
                     {header: 'Id', dataIndex: 'id', width: 50},
                     {header: 'Nazwa', dataIndex: 'username', width: 150},
                     {header: 'Email', dataIndex: 'email', width: 200},
-                    {header: 'Włączony', dataIndex: 'enabled', width: 50, renderer: YesNoRenderer}
+                    {header: 'Włączony', dataIndex: 'enabled', width: 60, renderer: YesNoRenderer}
                 ]
             };
             

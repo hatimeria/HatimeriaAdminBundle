@@ -1,7 +1,7 @@
 (function() {
     
-    Ext.require('HatimeriaAdmin.newsletter.EditWindow');
-    Ext.require('HatimeriaAdmin.newsletter.AllStore');
+    Ext.require('HatimeriaAdmin.newsletter.window.EditWindow');
+    Ext.require('HatimeriaAdmin.newsletter.store.AllStore');
 
     Ext.define('HatimeriaAdmin.newsletter.NewsletterPanel', {
         extend: 'Ext.grid.Panel',

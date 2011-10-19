@@ -11,7 +11,7 @@ class NewsletterController extends Controller
     /**
      * @param $params
      * 
-     * @Secure(roles="ROLE_SUPERADMIN")
+     * @Secure(roles="ROLE_ADMIN")
      * @remote
      */
     public function listAction($params)
@@ -26,7 +26,7 @@ class NewsletterController extends Controller
     /**
      * Nowy lub edycja istniejącego
      *
-     * @Secure(roles="ROLE_SUPERADMIN")
+     * @Secure(roles="ROLE_ADMIN")
      * @form
      * @remote
      *
