@@ -3,6 +3,18 @@
     Ext.define('HatimeriaAdmin.core.store.MenuStore', {
         extend: 'Ext.data.TreeStore',
         
+        /**
+         * Map of nodes to preserve extra atrributes comes from YML
+         * 
+         * @var {}
+         */
+        nodeMap: {},
+        
+        /**
+         * Constructor
+         * 
+         * @param {} cfg
+         */
         constructor: function(cfg)
         {
             var config = {
@@ -25,6 +37,7 @@
         getMenuConfiguration: function()
         {
             var data = _menu;
+            var _this = this;
             
             if (typeof data == 'undefined')
             {
@@ -34,23 +47,24 @@
             var newData = [];
             
             var adjust = function(nodes, newNodes) {
-                var newNode;
+                var newNode, map;
                 
                 for (var id in nodes)
                 {
+                    map = {};
                     newNode = {
                         id: id,
                         text: nodes[id].text
                     };
                     
-                    if (typeof nodes[id].panel != 'undefined')
+                    if (typeof nodes[id].ns != 'undefined')
                     {
-                        newNode.panel = nodes[id].panel
+                        map.ns = nodes[id].ns
                     }
                     
-                    if (typeof nodes[id].panel != 'undefined')
+                    if (typeof nodes[id].params == 'object')
                     {
-                        newNode.ns = nodes[id].ns
+                        map.params = nodes[id].params
                     }
                     
                     if (typeof nodes[id].children == 'object')
@@ -66,12 +80,23 @@
                     }
                     
                     newNodes.push(newNode);
+                    _this.nodeMap[id] = map;
                 }
             };
-        
+            
             adjust(data, newData);
             
             return newData;
+        },
+
+        /**
+         * Retrieve nodes map
+         * 
+         * @return {}
+         */
+        getNodeMap: function()
+        {
+            return this.nodeMap;
         }
         
     });

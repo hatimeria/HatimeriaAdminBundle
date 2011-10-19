@@ -52,26 +52,21 @@
          * @param string params optional
          * @return Ext.panel.Panel
          */
-        createPanel: function(id, name, params, ns)
+        createPanel: function(id, params, ns)
         {
-            if (typeof name == 'undefined')
-            {
-                name = id;
-            }
-            
             if (typeof ns == 'undefined')
             {
                 ns = "HatimeriaAdmin";
             }
             
             var configObj = {
-                id: name
-            }
+                id: id
+            };
             
             Ext.apply(configObj, this.defaultPanelConfig);
             Ext.apply(configObj, params || {});
             
-            return Ext.create(Ext.String.format('{2}.{0}.{1}Panel', id, Ext.String.capitalize(name), ns), configObj);
+            return Ext.create(Ext.String.format('{2}.{0}.{1}Panel', id, Ext.String.capitalize(id), ns), configObj);
         },
         
         /**
@@ -81,13 +76,16 @@
          */
         switchPanel: function(node)
         {
+            var nodeMap = Ext.data.StoreManager.lookup('app-menu-store').getNodeMap();
+            var nodeParams = nodeMap[node.get('id')];
+            
             this.items.get(this.currentPanelName).hide();
-            var panelName = (node.get('panel')) ? node.get('panel') : node.get('id');
+            var panelName = node.get('id');
             var panel = this.items.get(panelName);
             
             if (typeof panel == 'undefined')
             {
-                panel = this.createPanel(node.get('id'), panelName, node.get('params'), node.get('ns'));
+                panel = this.createPanel(panelName, nodeParams.params, nodeParams.ns);
                 this.add(panel);
             }
             

@@ -5,16 +5,16 @@
         <title>{% block title %}Hatimeria CMF{% endblock %}</title>
         <link rel="stylesheet" href="{{ asset('bundles/hatimeriaextjs/js/vendor/ext-4.0.0/resources/css/ext-all.css') }}" type="text/css" media="all" />
         {% render "HatimeriaExtJSBundle:Default:headers" %}
+        <script type="text/javascript">
+            Ext.Loader.setPath('HatimeriaAdmin', '/bundles/hatimeriaadmin/js');
+        </script>
         {% block head %}{% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
-        <script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/init.js') }}"></script>
         <script type="text/javascript" src="{{ asset('bundles/fosjsrouting/js/routing.js') }}"></script>
         <script type="text/javascript" src="{{ path('fos_js_routing_js') }}"></script>
         <script type="text/javascript" src="{{ asset('bundles/bazingaexposetranslation/js/translation.js') }}"></script>
         <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js') }}"></script>
         <script type="text/javascript" src="{{ url('bazinga_exposetranslation_js', { 'domain_name': 'validators' }) }}"></script>
-        <script type="text/javascript" src="{{ asset('bundles/sferamegatotal/js/vendor/tinymce/jscripts/tiny_mce/tiny_mce.js') }}"> </script>
-        <script type="text/javascript" src="{{ asset('bundles/sferamegatotal/js/vendor/ext.ux.TinyMCE/Ext.ux.TinyMCE.js') }}"> </script>
     </head>
     <body>
         <div id="body"></div>

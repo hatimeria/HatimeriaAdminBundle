@@ -5,6 +5,9 @@
     
     Ext.define('HatimeriaAdmin.cms.CmsPanel', {
         extend: 'Ext.grid.Panel',
+        mixins: {
+            translationable: 'HatimeriaCore.mixins.Translationable'
+        },
 
         initComponent: function()
         {

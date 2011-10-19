@@ -1,5 +1,7 @@
 (function() {
     
+    var YesNoRenderer = function(value) { return value ? 'Tak': 'Nie' };
+    
     Ext.define('HatimeriaAdmin.users.UsersPanel', {   
         extend: 'Ext.grid.Panel',
         requires: ["HatimeriaAdmin.users.store.UserStore"],
@@ -10,13 +12,14 @@
                 title: __('users'),
                 store: Ext.create('HatimeriaAdmin.users.store.UserStore'),
                 columns: [
-                    {header: __('Id'), dataIndex: 'id'},
-                    {header: __('user.username'), dataIndex: 'username'}, 
-                    {header: __('Email'), dataIndex: 'email'}
+                    {header: 'Id', dataIndex: 'id', width: 50},
+                    {header: 'Nazwa', dataIndex: 'username', width: 150},
+                    {header: 'Email', dataIndex: 'email', width: 200},
+                    {header: 'Włączony', dataIndex: 'enabled', width: 50, renderer: YesNoRenderer}
                 ]
             };
-            Ext.apply(this, Ext.apply(config, this.initialConfig));
             
+            Ext.apply(this, Ext.apply(config, this.initialConfig));
             this.callParent();
         }
     });
