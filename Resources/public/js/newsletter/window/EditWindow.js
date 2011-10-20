@@ -17,6 +17,16 @@
 
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             this.callParent();
+        },
+        
+        /**
+         * Populates form with a record
+         * 
+         * @param Ext.data.Model record
+         */
+        populate: function(record)
+        {
+            this.getComponent('newsletter-form-edit').populate(record);
         }
     });
     

@@ -54,7 +54,7 @@
                 listeners: {
                     itemdblclick: function(view, record) {
                         var editWindow = Ext.create('HatimeriaAdmin.newsletter.window.EditWindow');
-                        editWindow.getComponent('newsletter-form-edit').loadRecord(record);
+                        editWindow.populate(record);
                         editWindow.show();
                     }
                 }
@@ -64,4 +64,5 @@
             this.callParent();
         }
     });
+    
 })();
