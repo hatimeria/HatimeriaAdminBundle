@@ -8,7 +8,7 @@
         {
             var config = {
                 api: {
-                   submit: Actions.HatimeriaAdmin_Cms.edit
+                   submit: Actions.HatimeriaAdmin_Newsletter.edit
                 }
             };
             Ext.apply(config, cfg || {});
@@ -20,9 +20,6 @@
             
             var config = {
                 id: 'newsletter-form-edit',
-                api: {
-                   submit: Actions.HatimeriaAdmin_Newsletter.edit
-                },                
                 border: false,
                 frame: false,
                 bodyPadding: 10,
