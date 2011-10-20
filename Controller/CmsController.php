@@ -44,6 +44,20 @@ class CmsController extends Controller
         }
     }
     
+    /**
+     * @remote
+     */
+    public function fetchByUriAction($params)
+    {
+        $node = $this->getDoctrine()->getRepository('ZenstruckCMSBundle:Node')->findOneByUri($uri);
+
+        if (!$node) {
+            throw $this->createNotFoundException('Node Not Found');
+        }
+        
+        return $node;
+    }
+    
     private function getRepository()
     {
         $model = $this->container->getParameter("admin_model_cms");
