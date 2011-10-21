@@ -102,8 +102,7 @@
                         text: 'Edytuj kategorię',
                         cls: 'ux-edit',
                         scope: this,
-                        handler: function()
-                        {
+                        handler: function() {
                             this.onEditClick(node, index);
                         }
                     },
