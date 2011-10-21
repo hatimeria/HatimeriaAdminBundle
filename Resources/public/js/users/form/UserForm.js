@@ -14,10 +14,10 @@
             var config = {
                 frame: false,
                 border: false,
-                padding: 10,
                 defaults: {
                     labelWidth: 150,
-                    width: 400
+                    width: 400,
+                    margin: 10
                 },
                 items: [
                     {
@@ -35,6 +35,13 @@
                         name: 'enabled',
                         fieldLabel: 'Włączony'
                     }
+                ],
+                buttons: [
+                    {
+                        text: 'Zapisz',
+                        scope: this,
+                        handler: this.onSave
+                    }
                 ]
             };
             
@@ -50,6 +57,19 @@
         populate: function(record)
         {
             this.getForm().loadRecord(record);
+        },
+        
+        /**
+         * Event: on save click
+         */
+        onSave: function()
+        {
+            Ext.apply(this.getForm().getRecord().data, this.getForm().getValues());
+            
+            if (typeof this.onClickSave == 'function')
+            {
+                this.onClickSave(this, this.getForm().getRecord(), this.getForm());
+            }
         }
         
     });

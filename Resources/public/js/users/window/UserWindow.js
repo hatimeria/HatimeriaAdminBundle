@@ -5,6 +5,25 @@
     
     Ext.define('HatimeriaAdmin.users.window.UserWindow', {
         extend: 'Ext.window.Window',
+        config: {
+            /**
+             * Save callback
+             */
+            onSave: Ext.emptyFn
+        },
+        
+        /**
+         * Constructor
+         * 
+         * @parent {} cfgas
+         */
+        constructor: function(cfg)
+        {
+            this.callParent([cfg]);
+            this.initConfig(cfg);
+            
+            return this;
+        },
         
         /**
          * Initializes window
@@ -16,7 +35,8 @@
                 padding: 10,
                 items: [
                     Ext.create('HatimeriaAdmin.users.form.UserForm', {
-                        id: 'admin-user-form'
+                        id: 'admin-user-form',
+                        onClickSave: this.getOnSave()
                     })
                 ]
             };

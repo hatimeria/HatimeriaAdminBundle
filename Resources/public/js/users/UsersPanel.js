@@ -21,6 +21,12 @@
                     itemcontextmenu: {
                         scope: this,
                         fn: this.onContextMenu
+                    },
+                    itemdblclick: {
+                        scope: this, 
+                        fn: function(grid, record, el, index) {
+                            this.onEditClick(record, index);
+                        }
                     }
                 }
             };
@@ -74,7 +80,13 @@
         onEditClick: function(record, index)
         {
             var userwindow = Ext.create('HatimeriaAdmin.users.window.UserWindow', {
-                title: Ext.String.format('Edycja użytkownika: "{0}"', record.get('email'))
+                title: Ext.String.format('Edycja użytkownika: "{0}"', record.get('email')),
+                onSave: function(record) {
+                    
+                    // @TODO ZAPIS UŻYTKOWNIKA POPRZEZ CRUD API DIRECT
+                    console.log(record);
+                    
+                }
             });
             userwindow.show();
             userwindow.populate(record);
