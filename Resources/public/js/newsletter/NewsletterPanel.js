@@ -4,7 +4,7 @@
     Ext.require('HatimeriaAdmin.newsletter.store.AllStore');
 
     Ext.define('HatimeriaAdmin.newsletter.NewsletterPanel', {
-        extend: 'Ext.grid.Panel',
+        extend: 'HatimeriaAdmin.core.grid.BaseGrid',
         dockedItems: [{
             xtype: 'toolbar',
             items: [{
@@ -28,19 +28,9 @@
                 store: store,
                 hideContextRowMenuInterval: 3000,
                 columns: [
-                    {
-                        header: "Id", 
-                        dataIndex: 'id'
-                    },
-                    {
-                        header: "Tytuł", 
-                        dataIndex: 'subject'
-                    },
-                    {
-                        header: "W kolejce", 
-                        dataIndex: 'sent', 
-                        renderer: YesNoRenderrer
-                    }
+                    {header: "Id", dataIndex: 'id'},
+                    {header: "Tytuł", dataIndex: 'subject'},
+                    {header: "W kolejce", dataIndex: 'sent', renderer: YesNoRenderrer}
                 ],
                 viewConfig: {
                     forceFit: true
@@ -50,18 +40,21 @@
                     displayInfo: true,
                     displayMsg: 'Rekordy {0} - {1} of {2}',
                     emptyMsg: "Brak rekordów"
-                }),
-                listeners: {
-                    itemdblclick: function(view, record) {
-                        var editWindow = Ext.create('HatimeriaAdmin.newsletter.window.EditWindow');
-                        editWindow.populate(record);
-                        editWindow.show();
-                    }
-                }
+                })
             };
 
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             this.callParent();
+        },
+        
+        /**
+         * Event: edit click
+         */
+        onEditClick: function()
+        {
+            var editWindow = Ext.create('HatimeriaAdmin.newsletter.window.EditWindow');
+            editWindow.populate(record);
+            editWindow.show();
         }
     });
     

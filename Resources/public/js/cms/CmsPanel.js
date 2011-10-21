@@ -4,7 +4,7 @@
     Ext.require('HatimeriaAdmin.cms.window.EditWindow');
     
     Ext.define('HatimeriaAdmin.cms.CmsPanel', {
-        extend: 'Ext.grid.Panel',
+        extend: 'HatimeriaAdmin.core.grid.BaseGrid',
         mixins: {
             translationable: 'HatimeriaCore.mixins.Translationable'
         },
@@ -50,20 +50,23 @@
                             Ext.create('HatimeriaAdmin.cms.window.EditWindow').show();
                         }
                     }]
-                }],
-                listeners: {
-                    itemdblclick: function(view, record) {
-
-                        var editWindow = Ext.create('HatimeriaAdmin.cms.window.EditWindow');
-                        editWindow.show();
-                        editWindow.populate(record);
-                    }
-                }
+                }]
             };
 
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             
             this.callParent();
+        },
+        
+        /**
+         * Event: edit click
+         */
+        onEditClick: function(record, index)
+        {
+            var editWindow = Ext.create('HatimeriaAdmin.cms.window.EditWindow');
+            editWindow.show();
+            editWindow.populate(record);
         }
     });
+    
 })();
