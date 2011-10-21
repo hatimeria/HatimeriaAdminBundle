@@ -8,6 +8,7 @@ use Symfony\Component\Security\Core\SecurityContext;
 
 use Doctrine\ORM\EntityManager;
 
+use Hatimeria\AdminBundle\Form\Type\CmsPageEditFormType;
 use Hatimeria\ExtJSBundle\Response\Form;
 
 class CmsPageEditFormHandler
