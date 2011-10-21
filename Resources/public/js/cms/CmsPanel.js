@@ -4,7 +4,7 @@
     Ext.require('HatimeriaAdmin.cms.window.EditWindow');
     
     Ext.define('HatimeriaAdmin.cms.CmsPanel', {
-        extend: 'Ext.grid.Panel',
+        extend: 'HatimeriaAdmin.core.grid.BaseGrid',
         mixins: {
             translationable: 'HatimeriaCore.mixins.Translationable'
         },
@@ -50,20 +50,43 @@
                             Ext.create('HatimeriaAdmin.cms.window.EditWindow').show();
                         }
                     }]
-                }],
-                listeners: {
-                    itemdblclick: function(view, record) {
-
-                        var editWindow = Ext.create('HatimeriaAdmin.cms.window.EditWindow');
-                        editWindow.show();
-                        editWindow.populate(record);
-                    }
-                }
+                }]
             };
 
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             
             this.callParent();
+        },
+        
+        /**
+         * Event: edit click
+         */
+        onEditClick: function(record)
+        {
+            var editWindow = Ext.create('HatimeriaAdmin.cms.window.EditWindow');
+            editWindow.show();
+            editWindow.populate(record);
+        },
+        
+        /**
+         * Event: remove click
+         */
+        onRemoveClick: function(record)
+        {
+            var store = this.store;
+            Ext.Msg.confirm('Uwaga', 'Nastąpi usunięcie rekordu z bazy danych.<br/>Czy kontynuować?', function(response) {
+                if (response == 'yes')
+                {
+                    Ext.create('HatimeriaCore.direct.ResponseHandler', {
+                        params: {id: record.get('id')},
+                        fn: Actions.HatimeriaAdmin_Cms.remove,
+                        success: function() {
+                            store.load();
+                        }
+                    });
+                }
+            });
         }
     });
+    
 })();

@@ -91,6 +91,19 @@
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             
             this.callParent();
+        },
+        
+        /**
+         * Populates form with a record
+         * 
+         * @param Ext.data.Model record
+         */
+        populate: function(record)
+        {
+            var _this = this;
+            window.setTimeout(function() {
+                _this.getForm().loadRecord(record);
+            }, 500);
         }
     });
 })();

@@ -32,48 +32,30 @@
                     ui: 'footer',
                     style: 'margin: 0 5px 5px 0;',
                     items: ['->', {
-                        text: 'Zapisz',
-                        scope: this,
-                        handler: function(){
-                            var panel  = this;
-                            var form   = panel.getForm();
-                            var record = form.getRecord();
-                            var params = {};
-                            
-                            if(record) {
-                                params = {
-                                    id: record.get('id')
-                                };
-                            }
-                            
-                            form.submit({
-                                params: params,
-                                success: function() {
-                                    Ext.getStore('cms-store').load();
-                                    panel.findParentByType('window').destroy();
+                            text: 'Zapisz',
+                            scope: this,
+                            handler: function(){
+                                var panel  = this;
+                                var form   = panel.getForm();
+                                var record = form.getRecord();
+                                var params = {};
+
+                                if(record) {
+                                    params = {
+                                        id: record.get('id')
+                                    };
                                 }
-                            });
-                        }
-                    }, 
-                    {
-                        text: 'Usuń',
-                        scope: this,
-                        handler: function(){
-                            var panel  = this;
-                            var form   = panel.getForm();
-                            var record = form.getRecord();
-                            
-                            if(record) {
-                                Actions.HatimeriaAdmin_Cms.remove({
-                                    id: record.get('id')
-                                }, function() {
-                                    Ext.getStore('cms-store').load();
-                                    panel.findParentByType('window').destroy();                                    
+
+                                form.submit({
+                                    params: params,
+                                    success: function() {
+                                        Ext.getStore('cms-store').load();
+                                        panel.findParentByType('window').destroy();
+                                    }
                                 });
                             }
                         }
-                    }                    
-                ]
+                    ]
                 }],
                 defaultType: 'textfield',
                 defaults: {
