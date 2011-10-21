@@ -49,10 +49,7 @@
          */
         populate: function(record)
         {
-            var _this = this;
-            window.setTimeout(function() {
-                _this.getForm().loadRecord(record);
-            }, 500)
+            this.getForm().loadRecord(record);
         }
         
     });
