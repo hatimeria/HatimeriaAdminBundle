@@ -542,7 +542,7 @@
                                 manager: this.manager,
                                 layout: "fit",
                                 items: [
-                                    new Ext.BoxComponent({
+                                    new Ext.container.Container({
                                         autoEl: {
                                             tag: 'iframe',
                                             src: s.url || s.file

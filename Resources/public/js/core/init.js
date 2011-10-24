@@ -1,7 +1,7 @@
 /** 
  * Init application of admin panel
  */
-
+Ext.require("HatimeriaAdmin.users.store.UserStore")
 Ext.require("HatimeriaAdmin.core.store.MenuStore");
 Ext.require("HatimeriaAdmin.core.tree.MenuTree");
 Ext.require("HatimeriaAdmin.core.component.ContainerComponent");
