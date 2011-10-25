@@ -2,11 +2,16 @@
 
     Ext.define('HatimeriaAdmin.core.form.UserSwitch', {
         extend: 'Ext.form.ComboBox',
+        mixins: {
+            translationable: 'HatimeriaCore.mixins.Translationable'
+        },
+        transDomain: 'HatimeriaAdminBundle',
+        transNS: 'switch',
 
         initComponent: function()
         {
             var config = {
-                fieldLabel: __("switch.action"),
+                fieldLabel: this.__("action"),
                 queryMode: 'remote',
                 displayField: 'username',
                 valueField: 'username',
