@@ -51,20 +51,15 @@
                 
                 for (var id in nodes)
                 {
-                    map = {};
                     newNode = {
                         id: id,
                         text: nodes[id].text
                     };
-                    
-                    if (typeof nodes[id].ns != 'undefined')
+                    map = Ext.clone(nodes[id]);
+                    map.id = id;
+                    if (map.children)
                     {
-                        map.ns = nodes[id].ns
-                    }
-                    
-                    if (typeof nodes[id].params == 'object')
-                    {
-                        map.params = nodes[id].params
+                        delete map.children;
                     }
                     
                     if (typeof nodes[id].children == 'object')
