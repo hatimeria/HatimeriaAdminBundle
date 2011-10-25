@@ -32,9 +32,8 @@
             var userwindow = Ext.create('HatimeriaAdmin.users.window.UserWindow', {
                 title: Ext.String.format('Edycja użytkownika: "{0}"', record.get('email')),
                 onSave: function(record) {
-                    
+                    alert("Funkcja niedostępna");
                     // @TODO ZAPIS UŻYTKOWNIKA POPRZEZ CRUD API DIRECT
-                    console.log(record);
                     
                 }
             });
@@ -50,7 +49,15 @@
          */
         onRemoveClick: function(record, index)
         {
-            // ???
+            var store = this.store;
+            
+            Ext.create('HatimeriaCore.direct.ResponseHandler', {
+                fn: Actions.HatimeriaAdmin_User.remove,
+                params: {id: record.get('id')},
+                success: function() {
+                    store.remove(record);
+                }
+            });               
         }
     });
     

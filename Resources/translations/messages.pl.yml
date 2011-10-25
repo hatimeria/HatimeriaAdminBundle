@@ -37,7 +37,7 @@ form:
     title: Formularz zawiera błędy
     unknown: Wystąpił nieznany błąd
   login: 
-    login: Login
+    login: Login (Email)
     password: Hasło
     failed: Logowanie nie powiodło się
     submit: Zaloguj się
