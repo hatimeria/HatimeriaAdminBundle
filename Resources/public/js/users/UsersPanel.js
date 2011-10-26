@@ -3,6 +3,9 @@
     Ext.define('HatimeriaAdmin.users.UsersPanel', {   
         extend: 'HatimeriaAdmin.core.grid.BaseGrid',
         requires: ["HatimeriaAdmin.users.store.UserStore"],
+        mixins: {
+            extrafeatures: 'HatimeriaAdmin.core.utils.ExtraFeatures'
+        },
 
         initComponent: function()
         {
@@ -21,35 +24,6 @@
             this.callParent();
             
             this.processExtraFeatures('initComponent');
-        },
-        
-        /**
-         * Process all extrafeatures miexd in to this object
-         * 
-         * @param string method
-         */
-        processExtraFeatures: function(method)
-        {
-            var 
-                retObj = {}, 
-                obj;
-            
-            if (typeof this.extraFeatures == 'undefined')
-            {
-                return false;
-            }
-            
-            for (var name in this.extraFeatures)
-            {
-                obj = Ext.create(this.extraFeatures[name]);
-                
-                if (typeof obj[method] === 'function')
-                {
-                    retObj[name] = obj[method](this);
-                }
-            }
-            
-            return retObj;
         },
         
         /**
