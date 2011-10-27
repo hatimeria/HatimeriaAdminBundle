@@ -39,7 +39,8 @@ form:
   login: 
     login: Login (Email)
     password: Hasło
-    failed: Logowanie nie powiodło się
+    failed: Nieprawidłowy login lub hasło
+    failureTitle: Logogowanie nieudane
     submit: Zaloguj się
   
 window:

@@ -5,18 +5,21 @@
     
     Ext.define('HatimeriaAdmin.main.MainPanel', {
         extend: 'Ext.panel.Panel',
-        
+        mixins: {
+            translationable: 'HatimeriaCore.mixins.Translationable'
+        },    
+        transDomain: 'HatimeriaAdminBundle',        
         initComponent: function()
         {
             var config = {
-                title: 'Strona główna',
+                title: this.__("welcome.title"),
                 frame: false,
                 bodyPadding: 100,
                 items: [
                     {
                         border: false,
                         style: {textAlign: 'center'},
-                        html: '<h2>Witaj w panelu administracyjnym</h2>'
+                        html: '<h2>'+this.__("welcome.text")+'</h2>'
                     }
                 ]
             };

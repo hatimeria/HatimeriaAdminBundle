@@ -1,6 +1,9 @@
 Ext.define("HatimeriaAdmin.core.window.LoginWindow", {
     extend: "Ext.window.Window",
-    title: this.__("window.login.title"),
+    mixins: {
+        translationable: 'HatimeriaCore.mixins.Translationable'
+    },    
+    transDomain: 'HatimeriaAdminBundle',
     width: 300,
     height: 180,
     layout: {
@@ -9,6 +12,7 @@ Ext.define("HatimeriaAdmin.core.window.LoginWindow", {
     },  
     initComponent: function() {
         this.callParent();
+        this.title = this.__("window.login.title");
         this.add(Ext.create("HatimeriaAdmin.core.form.LoginForm"));
     }
 })

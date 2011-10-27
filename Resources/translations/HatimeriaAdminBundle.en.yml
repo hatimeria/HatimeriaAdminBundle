@@ -12,8 +12,8 @@ switch:
   active: Switched
 
 welcome:
-  text: Przykładowa zawartość
-  title: Welcome in admin panel
+  text: Welcome
+  title: Welcome in Admininistration panel
 form:
   error:
     title: Form contains errors
@@ -24,7 +24,7 @@ menu:
     title: Użytkownicy
     all: Wszyscy
   users: Użytkownicy
-  main: Strona główna
+  main: Homepage
   categories: Kategorie
 user:
   username: Login
@@ -40,6 +40,7 @@ form:
     login: Login (Email)
     password: Password
     failed: Login or password is incorect
+    failureTitle: Login failed
     submit: Log in
   
 window:
