@@ -1,0 +1,47 @@
+login: Login
+logout: Logout
+
+administration: Administration
+
+status:
+  signed-in-as: Signed in as
+
+switch: 
+  back: Back to administration
+  action: Switch to
+  active: Switched
+
+welcome:
+  text: Przykładowa zawartość
+  title: Welcome in admin panel
+form:
+  error:
+    title: Form contains errors
+
+users: Users
+menu:
+  users: 
+    title: Użytkownicy
+    all: Wszyscy
+  users: Użytkownicy
+  main: Strona główna
+  categories: Kategorie
+user:
+  username: Login
+  
+form:
+  image:
+    browse: Browse
+    delete: Delete
+  error:
+    title: Form contains errors
+    unknown: Unknown error occured
+  login: 
+    login: Login (Email)
+    password: Password
+    failed: Login or password is incorect
+    submit: Log in
+  
+window:
+  login:
+    title: Log in
