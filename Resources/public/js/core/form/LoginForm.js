@@ -25,6 +25,7 @@
         {
             this.submitConfig = {
                 text: this.__('submit'),
+                failureWindowTitle: this.__("failureTitle"),
                 success: function() { window.location = Routing.generate('homepage') }
             };
 
