@@ -6,10 +6,7 @@
     Ext.define('HatimeriaAdmin.users.window.UserWindow', {
         extend: 'Ext.window.Window',
         config: {
-            /**
-             * Save callback
-             */
-            onSave: Ext.emptyFn
+            formConfig: {}
         },
         
         /**
@@ -25,19 +22,26 @@
             return this;
         },
         
+        afterSave: function()
+        {
+            Ext.getCmp("all-users-grid").load();
+            this.destroy();
+        },
+        
         /**
          * Initializes window
          */
         initComponent: function()
         {
+            var formConfig = this.formConfig;
+            formConfig.id = 'admin-user-form';
+            formConfig.submitConfig.success = Ext.Function.bind(this.afterSave, this);
+            
             var config = {
                 width: 450,
                 padding: 10,
                 items: [
-                    Ext.create('HatimeriaAdmin.users.form.UserForm', {
-                        id: 'admin-user-form',
-                        onClickSave: this.getOnSave()
-                    })
+                    Ext.create('HatimeriaAdmin.users.form.UserForm', formConfig)
                 ]
             };
             

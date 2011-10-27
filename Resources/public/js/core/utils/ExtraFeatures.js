@@ -7,14 +7,14 @@
         extend: 'Ext.Base',
         
         /**
-         * Process all extrafeatures miexd in to this object
+         * Process all extrafeatures mixed in to this object
          * 
          * @param string method
          */
         processExtraFeatures: function(method)
         {
             var 
-                retObj = {}, 
+                retObj = [], 
                 obj;
             
             if (typeof this.extraFeatures == 'undefined')
@@ -28,8 +28,12 @@
                 
                 if (typeof obj[method] === 'function')
                 {
-                    retObj[name] = obj[method](this);
+                    retObj.push(obj[method](this));
                 }
+            }
+            
+            if(retObj.length == 1) {
+                return retObj.pop();
             }
             
             return retObj;

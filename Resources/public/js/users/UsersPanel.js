@@ -11,6 +11,7 @@
         {
             var config = {
                 title: __('users'),
+                id: 'all-users-grid',
                 store: Ext.create('HatimeriaAdmin.users.store.UserStore'),
                 columns: [
                     {header: 'Id', dataIndex: 'id', width: 50},
@@ -34,18 +35,31 @@
          */
         onEditClick: function(record, index)
         {
+            var directFn = this.processExtraFeatures('getDirectUpdateFn');
+            if(!directFn) {
+                // @todo default directFn for user updating
+                directFn = function() {
+                    alert("Funkcja niedostępna");
+                }                
+            }
+            
+            var formConfig = {
+                api: {
+                    submit: directFn
+                },             
+                submitConfig: {
+                    text: "Zapisz"
+                }
+            };
+            
             var userwindow = Ext.create('HatimeriaAdmin.users.window.UserWindow', {
                 title: Ext.String.format('Edycja użytkownika: "{0}"', record.get('email')),
-                onSave: function(record) {
-                    alert("Funkcja niedostępna");
-                    // @TODO ZAPIS UŻYTKOWNIKA POPRZEZ CRUD API DIRECT
-                    
-                }
+                formConfig: formConfig
             });
             userwindow.show();
             userwindow.populate(record);
         },
-
+        
         /**
          * Event: edit click
          * 
