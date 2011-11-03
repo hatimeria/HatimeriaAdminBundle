@@ -160,6 +160,8 @@
                     return false;
                 }
                 
+                node.set('text', value);
+                
                 Ext.create('HatimeriaCore.direct.ResponseHandler', {
                     fn: Actions.CarbonOffer_Category.edit,
                     params: {
@@ -169,8 +171,11 @@
                     scope: _this,
                     success: function(result) {
                         node.set('text', result.record.text);
+                        node.commit();
                     }
                 });
+                
+                return true;
                 
             }, this, undefined, node.get('text'));
         }
