@@ -7,7 +7,7 @@
         extend: 'Ext.data.Model',
         fields: [
             {name: 'id', type: 'int'},
-            {name: 'primary_path', type: 'string'},
+            {name: 'primary_path', type: 'string', mapping: 'primary_path.uri'},
             {name: 'title', type: 'string'},
             {name: 'body', type: 'string'},
             {name: 'publish_from', type: 'string'},
