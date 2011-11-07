@@ -5,7 +5,7 @@
     Ext.define("HatimeriaAdmin.core.component.StatusComponent", {
         extend: "Ext.container.Container",
         mixins: {
-            translationable: 'HatimeriaCore.mixins.Translationable'
+            translationable: 'Hatimeria.core.mixins.Translationable'
         },
         transDomain: 'HatimeriaAdminBundle',
 

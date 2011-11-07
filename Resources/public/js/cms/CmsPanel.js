@@ -6,7 +6,7 @@
     Ext.define('HatimeriaAdmin.cms.CmsPanel', {
         extend: 'HatimeriaAdmin.core.grid.BaseGrid',
         mixins: {
-            translationable: 'HatimeriaCore.mixins.Translationable'
+            translationable: 'Hatimeria.core.mixins.Translationable'
         },
 
         initComponent: function()
@@ -77,7 +77,7 @@
             Ext.Msg.confirm('Uwaga', 'Nastąpi usunięcie rekordu z bazy danych.<br/>Czy kontynuować?', function(response) {
                 if (response == 'yes')
                 {
-                    Ext.create('HatimeriaCore.direct.ResponseHandler', {
+                    Ext.create('Hatimeria.core.response.DirectHandler', {
                         params: {id: record.get('id')},
                         fn: Actions.HatimeriaAdmin_Cms.remove,
                         success: function() {
