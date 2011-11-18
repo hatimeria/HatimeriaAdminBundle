@@ -3,7 +3,7 @@
     Ext.define('HatimeriaAdmin.core.form.UserSwitch', {
         extend: 'Ext.form.ComboBox',
         mixins: {
-            translationable: 'HatimeriaCore.mixins.Translationable'
+            translationable: 'Hatimeria.core.mixins.Translationable'
         },
         transDomain: 'HatimeriaAdminBundle',
         transNS: 'switch',
