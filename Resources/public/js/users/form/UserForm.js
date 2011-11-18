@@ -4,8 +4,10 @@
 (function() {
     
     Ext.define('HatimeriaAdmin.users.form.UserForm', {
-        extend: 'Ext.form.Panel',
-        
+        extend: 'HatimeriaCore.form.BaseForm',
+        mixins: {
+            extrafeatures: 'HatimeriaAdmin.core.utils.ExtraFeatures'
+        },        
         /**
          * Initializes form
          */
@@ -22,25 +24,23 @@
                 items: [
                     {
                         xtype: 'textfield',
-                        name: 'username',
-                        fieldLabel: 'Użytkownik'
-                    },
+                        hidden: true,
+                        name: 'id'
+                    },                    
                     {
                         xtype: 'textfield',
                         name: 'email',
-                        fieldLabel: 'Email'
+                        fieldLabel: 'Email (login)'
                     },
+                    {
+                        xtype: 'textfield',
+                        name: 'discount',
+                        fieldLabel: 'Rabat'
+                    },                    
                     {
                         xtype: 'checkbox',
                         name: 'enabled',
                         fieldLabel: 'Włączony'
-                    }
-                ],
-                buttons: [
-                    {
-                        text: 'Zapisz',
-                        scope: this,
-                        handler: this.onSave
                     }
                 ]
             };
@@ -57,21 +57,7 @@
         populate: function(record)
         {
             this.getForm().loadRecord(record);
-        },
-        
-        /**
-         * Event: on save click
-         */
-        onSave: function()
-        {
-            Ext.apply(this.getForm().getRecord().data, this.getForm().getValues());
-            
-            if (typeof this.onClickSave == 'function')
-            {
-                this.onClickSave(this, this.getForm().getRecord(), this.getForm());
-            }
         }
-        
     });
     
 })();
