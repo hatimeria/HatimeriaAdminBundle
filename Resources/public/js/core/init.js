@@ -1,13 +1,13 @@
 /** 
  * Init application of admin panel
  */
+Ext.require("Hatimeria.core.form.UserSwitch");
 Ext.require("HatimeriaAdmin.users.store.UserStore")
 Ext.require("HatimeriaAdmin.core.store.MenuStore");
 Ext.require("HatimeriaAdmin.core.tree.MenuTree");
 Ext.require("HatimeriaAdmin.core.component.ContainerComponent");
 Ext.require("HatimeriaAdmin.core.component.GuestStatusComponent");
 Ext.require("HatimeriaAdmin.core.component.UserStatusComponent");
-Ext.require("HatimeriaAdmin.core.form.UserSwitch");
 
 Ext.onReady(function() {
     

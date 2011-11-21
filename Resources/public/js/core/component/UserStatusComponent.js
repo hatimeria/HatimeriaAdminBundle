@@ -42,7 +42,7 @@
                         uri: this.__('administration')
                     }));
 
-                    this.add(Ext.create("HatimeriaAdmin.core.form.UserSwitch", {
+                    this.add(Ext.create("Hatimeria.core.form.UserSwitch", {
                         store: Ext.create("HatimeriaAdmin.users.store.UserStore")
                     }));
                 }
