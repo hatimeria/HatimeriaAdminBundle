@@ -6,7 +6,7 @@
     Ext.define('HatimeriaAdmin.main.MainPanel', {
         extend: 'Ext.panel.Panel',
         mixins: {
-            translationable: 'HatimeriaCore.mixins.Translationable'
+            translationable: 'Hatimeria.core.mixins.Translationable'
         },    
         transDomain: 'HatimeriaAdminBundle',        
         initComponent: function()

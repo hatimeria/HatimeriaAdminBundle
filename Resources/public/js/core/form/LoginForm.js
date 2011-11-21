@@ -1,7 +1,7 @@
 (function() {
 
     Ext.define("HatimeriaAdmin.core.form.LoginForm", {
-        extend: "HatimeriaCore.form.BaseForm",
+        extend: "Hatimeria.core.form.BaseForm",
         transNS: "form.login",
         transDomain: 'HatimeriaAdminBundle',
 
