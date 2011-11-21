@@ -4,7 +4,7 @@
 (function() {
     
     Ext.define('HatimeriaAdmin.users.form.UserForm', {
-        extend: 'HatimeriaCore.form.BaseForm',
+        extend: 'Hatimeria.core.form.BaseForm',
         mixins: {
             extrafeatures: 'HatimeriaAdmin.core.utils.ExtraFeatures'
         },        

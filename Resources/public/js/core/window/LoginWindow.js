@@ -1,7 +1,7 @@
 Ext.define("HatimeriaAdmin.core.window.LoginWindow", {
     extend: "Ext.window.Window",
     mixins: {
-        translationable: 'HatimeriaCore.mixins.Translationable'
+        translationable: 'Hatimeria.core.mixins.Translationable'
     },    
     transDomain: 'HatimeriaAdminBundle',
     width: 300,

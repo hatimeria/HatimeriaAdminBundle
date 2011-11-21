@@ -70,7 +70,7 @@
         {
             var store = this.store;
             
-            Ext.create('HatimeriaCore.direct.ResponseHandler', {
+            Ext.create('Hatimeria.core.response.DirectHandler', {
                 fn: Actions.HatimeriaAdmin_User.remove,
                 params: {id: record.get('id')},
                 success: function() {
