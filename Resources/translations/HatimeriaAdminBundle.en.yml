@@ -6,7 +6,7 @@ administration: Administration
 status:
   signed-in-as: Signed in as
 
-switch: 
+switch:
   back: Back to administration
   action: Switch to
   active: Switched
