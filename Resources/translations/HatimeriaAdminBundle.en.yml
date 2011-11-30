@@ -1,7 +1,7 @@
 login: Login
 logout: Logout
 
-administration: Administration
+hatimeria_admin: Administration
 
 status:
   signed-in-as: Signed in as
