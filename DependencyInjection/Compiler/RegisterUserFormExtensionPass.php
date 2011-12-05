@@ -17,7 +17,7 @@ class RegisterUserFormExtensionPass implements CompilerPassInterface
         $collector = $container->getDefinition('hatimeria_admin.user.form.extensions_collector');
         
         foreach ($container->findTaggedServiceIds('hatimeria_admin.user.form.extension') as $id => $attr) {
-            $collector->addMethodCall('addExtension', array($id, $attr[0]));
+            $collector->addMethodCall('addExtension', array(new Reference($id)));
         }
     }
     

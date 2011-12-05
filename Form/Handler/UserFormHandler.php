@@ -52,7 +52,7 @@ class UserFormHandler
         );
 
         $type = new UserFormType();
-        $type->setExtensions($this->extensionCollector->getExtensions());
+        $type->setExtend($this->extensionCollector->getExtensions());
 
         $form = $this->formFactory->create($type, $user, $options);
         $form->bind($params->all());
