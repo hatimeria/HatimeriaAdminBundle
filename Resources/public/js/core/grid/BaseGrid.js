@@ -5,6 +5,9 @@
     
     Ext.define('HatimeriaAdmin.core.grid.BaseGrid', {
         extend: 'Ext.grid.Panel',
+        mixins: {
+            configurable: 'Hatimeria.core.mixins.ConfigurableExternal'
+        },
         
         initComponent: function()
         {
@@ -22,6 +25,27 @@
                     }
                 }
             });
+        },
+        
+        /**
+         * Merges external config
+         * 
+         * @param {} config
+         * @return {}
+         */
+        applyExternal: function(cfg)
+        {
+            var config = this.getConnectedConfig();
+            
+            if (config && config.columns)
+            {
+                for (var i in config.columns)
+                {
+                    cfg.columns.push(config.columns[i]);
+                }
+            }
+            
+            return cfg;
         },
         
         /**
