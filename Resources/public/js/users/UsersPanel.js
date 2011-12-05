@@ -35,20 +35,10 @@
          * @param Ext.data.Model record
          * @param int index
          */
-        onEditClick: function(record, index)
+        onEditClick: function(record)
         {   
-            var formConfig = {
-                api: {
-                    submit: directFn
-                },             
-                submitConfig: {
-                    text: "Zapisz"
-                }
-            };
-            
             var userwindow = Ext.create('HatimeriaAdmin.users.window.UserWindow', {
-                title: Ext.String.format('Edycja użytkownika: "{0}"', record.get('email')),
-                formConfig: formConfig
+                title: Ext.String.format('Edycja użytkownika: "{0}"', record.get('email'))
             });
             userwindow.show();
             userwindow.populate(record);

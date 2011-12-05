@@ -8,6 +8,10 @@
         mixins: {
             configurable: 'Hatimeria.core.mixins.ConfigurableExternal'
         },
+        submitConfig: {
+            submit: Actions.HatimeriaAdmin_User.update,
+            text: 'Zapisz'
+        },
         
         /**
          * Initializes form

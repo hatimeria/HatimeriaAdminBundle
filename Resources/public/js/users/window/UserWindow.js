@@ -5,9 +5,6 @@
     
     Ext.define('HatimeriaAdmin.users.window.UserWindow', {
         extend: 'Ext.window.Window',
-        config: {
-            formConfig: {}
-        },
         
         /**
          * Constructor
@@ -22,6 +19,9 @@
             return this;
         },
         
+        /**
+         * Event: after save action
+         */
         afterSave: function()
         {
             Ext.getCmp("all-users-grid").load();
@@ -33,15 +33,13 @@
          */
         initComponent: function()
         {
-            var formConfig = this.formConfig;
-            formConfig.id = 'admin-user-form';
-            formConfig.submitConfig.success = Ext.Function.bind(this.afterSave, this);
-            
             var config = {
                 width: 450,
                 padding: 10,
                 items: [
-                    Ext.create('HatimeriaAdmin.users.form.UserForm', formConfig)
+                    Ext.create('HatimeriaAdmin.users.form.UserForm', {
+                        id: 'admin-user-form'
+                    })
                 ]
             };
             
