@@ -6,8 +6,9 @@
     Ext.define('HatimeriaAdmin.users.form.UserForm', {
         extend: 'Hatimeria.core.form.BaseForm',
         mixins: {
-            extrafeatures: 'HatimeriaAdmin.core.utils.ExtraFeatures'
-        },        
+            configurable: 'Hatimeria.core.mixins.ConfigurableExternal'
+        },
+        
         /**
          * Initializes form
          */
@@ -33,11 +34,6 @@
                         fieldLabel: 'Email (login)'
                     },
                     {
-                        xtype: 'textfield',
-                        name: 'discount',
-                        fieldLabel: 'Rabat'
-                    },                    
-                    {
                         xtype: 'checkbox',
                         name: 'enabled',
                         fieldLabel: 'Włączony'
@@ -45,7 +41,7 @@
                 ]
             };
             
-            Ext.apply(this, Ext.apply(config, this.initialConfig));
+            Ext.apply(this, this.applyExternals(Ext.apply(config, this.initialConfig)));
             this.callParent();
         },
         
@@ -57,6 +53,27 @@
         populate: function(record)
         {
             this.getForm().loadRecord(record);
+        },
+        
+        /**
+         * Merges external config
+         * 
+         * @param {} config
+         * @return {}
+         */
+        applyExternals: function(cfg)
+        {
+            var config = this.getConnectedConfig();
+            
+            if (config && config.items)
+            {
+                for (var i in config.items)
+                {
+                    cfg.items.push(config.items[i]);
+                }
+            }
+            
+            return cfg;
         }
     });
     

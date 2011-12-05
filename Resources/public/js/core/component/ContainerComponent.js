@@ -54,8 +54,9 @@
          */
         createPanel: function(id)
         {
-            var map = Ext.data.StoreManager.lookup('app-menu-store').getNodeMap();
+            var map = Ext.getStore('app-menu-store').getNodeMap();
             var config = {};
+            
             Ext.apply(config, {
                 ns: "HatimeriaAdmin",
                 params: {}
@@ -69,11 +70,6 @@
             
             Ext.apply(configObj, this.defaultPanelConfig);
             Ext.apply(configObj, config.params || {});
-            
-            if (config.mixins)
-            {
-                configObj.extraFeatures = config.mixins;
-            }
             
             return Ext.create(Ext.String.format('{2}.{0}.{1}Panel', id, Ext.String.capitalize(id), config.ns), configObj);
         },
