@@ -29,20 +29,15 @@
 
 
                 if (_user.isSwitched) {
-                    this.add(Ext.create('Ext.Button', {
-                        text: this.__('switch.back'),
-                        handler: function() {
-                            document.location = Routing.generate('homepage') + '?_switch_user=_exit';
-                        }
-                    }));
+                    this.add(Ext.create("HatimeriaAdmin.core.component.BackToAdminButton"));
                 }
 
                 if (_user.isAdmin) {
                     this.add(Ext.create('HatimeriaAdmin.core.InternalButton', {
-                        uri: this.__('administration')
+                        uri: this.__('hatimeria_admin')
                     }));
 
-                    this.add(Ext.create("HatimeriaAdmin.core.form.UserSwitch", {
+                    this.add(Ext.create("Hatimeria.core.form.UserSwitch", {
                         store: Ext.create("HatimeriaAdmin.users.store.UserStore")
                     }));
                 }

@@ -17,7 +17,14 @@ class UserController extends Controller
      */
     public function listAction($params)
     {
-        return $this->get('hatimeria_extjs.pager')->fromEntity($this->container->getParameter("fos_user.model.user.class"), $params);
+        $pager = $this->get('hatimeria_extjs.pager')->fromEntity($this->container->getParameter("fos_user.model.user.class"), $params);
+        if($params->has('query')) {
+            $qb  = $pager->getQueryBuilder();
+            $dql = $qb->expr()->like('e.username', "'%".$params->get("query")."%'");
+            $qb->andWhere($dql);
+        }
+        
+        return $pager;
     }
     
     /**

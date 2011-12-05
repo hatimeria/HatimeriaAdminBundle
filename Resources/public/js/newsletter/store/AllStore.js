@@ -3,7 +3,7 @@
     Ext.require('HatimeriaAdmin.newsletter.model.NewsletterModel');
 
     Ext.define('HatimeriaAdmin.newsletter.store.AllStore', {
-    	extend: 'HatimeriaAdmin.core.store.BaseStore',
+    	extend: 'Hatimeria.core.store.BaseStore',
 
         constructor: function(cfg)
         {

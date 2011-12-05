@@ -3,7 +3,7 @@
     Ext.require('HatimeriaAdmin.cms.model.CmsModel');
     
     Ext.define('HatimeriaAdmin.cms.store.AllStore', {
-    	extend: 'HatimeriaAdmin.core.store.BaseStore',
+    	extend: 'Hatimeria.core.store.BaseStore',
 
         constructor: function(cfg)
         {
