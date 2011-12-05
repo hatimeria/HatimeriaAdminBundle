@@ -2,9 +2,11 @@
 
 namespace Hatimeria\AdminBundle\Controller;
 
-use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use JMS\SecurityExtraBundle\Annotation\Secure;
+
+use Hatimeria\ExtJSBundle\Response\Failure;
 
 class UserController extends Controller
 {
@@ -47,8 +49,35 @@ class UserController extends Controller
      */
     public function removeAction($params)
     {
-        $um = $this->get("fos_user.user_manager");
+        /* @var \Carbon\UserBundle\Entity\Manager\UserManager $um */
+        $um   = $this->get("fos_user.user_manager");
         $user = $um->findUserBy(array("id" => $params->get("id")));
+
+        if (null === $user) {
+            return new Failure("Brak użytkownika o podanym id");
+        }
+
         $um->deleteUser($user);
     }
+
+    /**
+     * @form
+     * @remote
+     * @Secure("ROLE_ADMIN")
+     */
+    public function updateAction($params)
+    {
+        $user = $this->get("fos_user.user_manager")->findUserBy(array('id' => $params['id']));
+
+        if(!$user) {
+            return new Failure("Brak użytkownika o podanym id");
+        }
+
+        /* @var \Hatimeria\AdminBundle\Form\Handler\UserFormHandler $handler */
+        $handler = $this->get('hatimeria_admin.user.form.handler');
+        $result  = $handler->process($params, $user);
+
+        return $result;
+    }
+
 }
