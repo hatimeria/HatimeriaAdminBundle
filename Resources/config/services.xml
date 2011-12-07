@@ -17,5 +17,14 @@
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="security.context" />
         </service>
+
+        <service id="hatimeria_admin.user.form.handler" class="Hatimeria\AdminBundle\Form\Handler\UserFormHandler">
+            <argument type="service" id="form.factory" />
+            <argument type="service" id="hatimeria_admin.user.form.extensions_collector" />
+            <argument />
+            <argument />
+        </service>
+
+        <service id="hatimeria_admin.user.form.extensions_collector" class="Hatimeria\AdminBundle\Form\Extension\UserFormTypeExtensionCollector" />
     </services>
 </container>

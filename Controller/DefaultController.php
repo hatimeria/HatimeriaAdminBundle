@@ -12,4 +12,9 @@ class DefaultController extends Controller
     {
         return $this->render('HatimeriaAdminBundle:Admin:unsigned.html.twig');
     }
+    
+    public function headersAction()
+    {
+        return $this->render('HatimeriaAdminBundle:Default:headers.html.twig');
+    }
 }

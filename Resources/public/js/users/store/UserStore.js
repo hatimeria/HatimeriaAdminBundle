@@ -4,7 +4,12 @@
 
     Ext.define('HatimeriaAdmin.users.store.UserStore',  {
         extend: 'Hatimeria.core.store.BaseStore',
-
+        
+        /**
+         * Constructor
+         * 
+         * @param {} cfg
+         */
         constructor: function(cfg)
         {
             var config = {
