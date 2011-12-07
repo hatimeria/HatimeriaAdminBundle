@@ -21,10 +21,10 @@
                     emptyMsg: "Brak rekordów"
                 }),                
                 columns: [
-                    {header: 'Id', dataIndex: 'id', width: 50},
-                    {header: 'Nazwa', dataIndex: 'username', width: 150},
-                    {header: 'Email', dataIndex: 'email', width: 200},
-                    {header: 'Włączony', dataIndex: 'enabled', width: 60, renderer: this.rendererYesNo}
+                    {header: 'Id', dataIndex: 'id', width: 80},
+                    {header: 'Nazwa', dataIndex: 'username', width: 180},
+                    {header: 'Email', dataIndex: 'email', width: 220},
+                    {header: 'Włączony', dataIndex: 'enabled', width: 80, renderer: this.rendererYesNo}
                 ]
             };
             

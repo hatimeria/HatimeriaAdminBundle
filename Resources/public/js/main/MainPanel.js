@@ -14,13 +14,11 @@
             var config = {
                 title: this.__("welcome.title"),
                 frame: false,
-                bodyPadding: 100,
+                bodyPadding: 50,
                 items: [
-                    {
-                        border: false,
-                        style: {textAlign: 'center'},
-                        html: '<h2>'+this.__("welcome.text")+'</h2>'
-                    }
+                    Ext.create("HatimeriaAdmin.core.component." + (_user.signedIn ? "User": "Guest") + "StatusComponent", {
+                        height: 60
+                    })
                 ]
             };
             

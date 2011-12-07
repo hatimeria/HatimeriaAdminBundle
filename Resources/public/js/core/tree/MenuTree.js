@@ -26,7 +26,7 @@
 
             this.callParent();
         },
-
+        
         /**
          * Event: node click
          */

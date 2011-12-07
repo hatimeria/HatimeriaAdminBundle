@@ -27,6 +27,7 @@
                         dataIndex: 'title'
                     },
                     {
+                        width: 160,
                         header: "Data utworzenia", 
                         dataIndex: 'created_at'
                     }

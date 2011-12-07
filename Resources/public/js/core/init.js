@@ -20,16 +20,28 @@ Ext.onReady(function() {
         renderTo: Ext.getBody(),
         id: 'app-viewport',
         items: [
-            Ext.create("HatimeriaAdmin.core.component." + (_user.signedIn ? "User": "Guest") + "StatusComponent", {
-                region: 'north',
-                height: 60
-            }),
-            Ext.create('HatimeriaAdmin.core.tree.MenuTree', {
-                id: 'app-menu-tree',
-                xtype: 'panel',
+            {
+                cls: 'hatimeria-main-menu',
+                layout: 'vbox',
                 region: 'west',
-                width: 250
-            }),
+                border: 0,
+                items:[
+                    Ext.create('HatimeriaAdmin.core.tree.MenuTree', {
+                        id: 'app-menu-tree',
+                        xtype: 'panel',
+                        width: 250,
+                        border: 0,
+                        flex: 3
+                        }),
+                    {
+                        border: 0,
+                        id: 'logo',
+                        width: 250,
+                        html: '<img src="/bundles/hatimeriaadmin/images/hatimeria_v_220.png"/> <p>Powereb by Hatimeria</p> <a href="http://www.hatimeria.pl">www.hatimeria.pl</a>',
+                        flex: 1
+                    }
+                ]
+            },
             Ext.create('HatimeriaAdmin.core.component.ContainerComponent', {
                 id: 'app-content-panel',
                 xtype: 'panel',

@@ -24,6 +24,7 @@
                 
                 this.add(Ext.create('HatimeriaAdmin.core.InternalButton', {
                     text: this.__('logout'),
+                    margin: '3 10 0 10',
                     uri: 'fos_user_security_logout'
                 }));
 
@@ -39,10 +40,13 @@
 
                 if (_user.isAdmin) {
                     this.add(Ext.create('HatimeriaAdmin.core.InternalButton', {
+                        margin: '3 0 0 0',
                         uri: this.__('administration')
                     }));
 
                     this.add(Ext.create("Hatimeria.core.form.UserSwitch", {
+                        width: 300,
+                        margin: '3 10 0 10',
                         store: Ext.create("HatimeriaAdmin.users.store.UserStore")
                     }));
                 }

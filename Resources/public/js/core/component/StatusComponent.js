@@ -13,9 +13,9 @@
 
             var config = {
                 style: {
-                    borderColor:'silver', 
-                    borderStyle:'solid', 
-                    borderWidth:'1px', 
+                    //borderColor:'silver', 
+                    //borderStyle:'solid', 
+                    //borderWidth:'1px',
                     background: 'white'
                 },    
                 defaults: {
@@ -30,13 +30,14 @@
                     {
                         html: this.statusText,
                         padding: 5,
+                        width: 250,
                         border: 0
                     },
-                    {
+                    /*{
                         html: '<b>Hatimeria CMF</b>',
                         padding: 5,
                         border: 0
-                    }
+                    }*/
                 ]
             };
 
