@@ -16,7 +16,7 @@
                     update: Actions.HatimeriaAdmin_Cms.add
                 },
                 sorters: [
-                    {property: 'created_at', direction: 'DESC'}
+                    {property: 'id', direction: 'ASC'}
                 ]
             };
             

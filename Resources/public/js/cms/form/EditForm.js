@@ -67,7 +67,7 @@
                 },
                 {
                     fieldLabel: 'Uri',
-                    name: 'primary_path'
+                    name: 'path'
                 },
                 {
                     fieldLabel: 'Autor',
