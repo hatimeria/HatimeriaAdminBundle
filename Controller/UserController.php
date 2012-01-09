@@ -30,20 +30,6 @@ class UserController extends Controller
     }
     
     /**
-     * Single exposed method.
-     * 
-     * @Secure("ROLE_ADMIN")
-     *
-     * @remote
-     * @param  ParameterBag $params
-     * @return string
-     */
-    public function indexAction($params)
-    {
-        return 'Hello ' . $params['name'];
-    }
-    
-    /**
      * @remote
      * @Secure("ROLE_ADMIN")
      */
