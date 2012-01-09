@@ -7,7 +7,7 @@
     <route id="hatimeria_admin" pattern="/">
         <default key="_controller">HatimeriaAdminBundle:Admin:index</default>
     </route>
-    
+        
     <route id="hatimeria_admin_language_switch" pattern="/language/{_locale}">
         <default key="_controller">HatimeriaAdminBundle:Admin:language</default>
     </route>    

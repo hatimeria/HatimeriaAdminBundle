@@ -24,7 +24,7 @@ class CmsPageEditFormType extends AbstractType
 
     public function getParent(array $options)
     {
-        return 'zenstruck_cms_node_base';
+        return 'zenstruck_content_node_base';
     }
 
     function getName()

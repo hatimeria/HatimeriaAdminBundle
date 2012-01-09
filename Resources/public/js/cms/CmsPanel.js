@@ -27,9 +27,13 @@
                         dataIndex: 'title'
                     },
                     {
+                        header: "Adres",
+                        dataIndex: 'path'
+                    },
+                    {
                         width: 160,
-                        header: "Data utworzenia", 
-                        dataIndex: 'created_at'
+                        header: "Data aktualizacji",
+                        dataIndex: 'updated_at'
                     }
                 ],
                 viewConfig: {

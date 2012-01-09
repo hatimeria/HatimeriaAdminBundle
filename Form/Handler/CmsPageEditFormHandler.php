@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManager;
 
 use Hatimeria\AdminBundle\Form\Type\CmsPageEditFormType;
 use Hatimeria\ExtJSBundle\Response\Form;
+use Hatimeria\Bundle\CMFBundle\Entity\CmsPage;
 
 class CmsPageEditFormHandler
 {
