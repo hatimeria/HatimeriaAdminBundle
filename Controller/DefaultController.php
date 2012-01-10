@@ -15,6 +15,6 @@ class DefaultController extends Controller
     
     public function headersAction()
     {
-        return $this->render('HatimeriaAdminBundle:Default:headers.html.twig');
+        return $this->render('HatimeriaAdminBundle:Default:default_headers.html.twig');
     }
 }

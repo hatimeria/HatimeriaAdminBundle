@@ -13,19 +13,7 @@
             {name: 'username', type: 'string'},
             {name: 'email', type: 'string'},
             {name: 'enabled', type: 'boolean'}
-        ],
-        
-        constructor: function()
-        {
-            var config = this.getConnectedConfig();
-            
-            for (var i in config.fields)
-            {
-                this.fields.add(new Ext.data.Field(config.fields[i]));
-            }
-            
-            this.callParent(arguments);
-        }
+        ]
     });
     
 })();
