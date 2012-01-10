@@ -8,6 +8,8 @@
     Ext.define('HatimeriaAdmin.cms.form.EditForm', {
         extend: 'Ext.form.Panel',
         
+        tmpRecord: undefined,
+        
         constructor: function(cfg)
         {
             var config = {
@@ -20,8 +22,9 @@
             this.callParent([config]);
         },
         
-        initComponent: function() {
-            
+        initComponent: function()
+        {
+            var _this = this;
             var config = {
                 border: false,
                 width: 700,
@@ -89,7 +92,7 @@
                     layout: 'auto',
                     items: [
                         {
-                            id: 'tinymce',
+                            itemId: 'tinymce',
                             xtype: 'tinymce',
                             fieldLabel: 'Treść',
                             width: 573,
@@ -130,6 +133,13 @@
             };
             
             Ext.apply(this, Ext.apply(config, this.initialConfig));
+            this.on('render', function() {
+                this.getComponent('tiny-container').getComponent('tinymce').on('editorcreated', function() {
+                    Ext.defer(function() {
+                        _this.getForm().loadRecord(_this.tmpRecord);
+                    }, 300, this);
+                });
+            });
             
             this.callParent();
         },
@@ -139,10 +149,7 @@
          */
         populate: function(record)
         {
-            var _this = this;
-            window.setTimeout(function() {
-                _this.getForm().loadRecord(record);
-            }, 500);
+            this.tmpRecord = record;
         }
     });
 })();

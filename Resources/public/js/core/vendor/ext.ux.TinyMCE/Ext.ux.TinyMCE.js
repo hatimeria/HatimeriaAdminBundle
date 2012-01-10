@@ -176,7 +176,7 @@
             // Render the editor
             this.ed.render();
             tinyMCE.add(this.ed);
-            
+
             // Fix editor size when control will be visible
             // Ext4: Somehow the variable size does not contain the right value if this function is called
             // directly during rendering. Therefore delayed with Ext.defer
@@ -196,7 +196,7 @@
                     // Indicate that editor is created
                     this.fireEvent("editorcreated");
                 });
-            }), 50, this);
+            }), 50, this);            
             
         }, // end onRender
 
