@@ -110,7 +110,7 @@
                                 theme_advanced_statusbar_location: 'bottom',
                                 file_browser_callback: 'tinymce_upload',
                                 theme_advanced_resizing: false,
-                                extended_valid_elements: 'a[name|href|target|title|onclick],img[class|src|border|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]'
+                                convert_urls: false
                             }
                         }
                     ]

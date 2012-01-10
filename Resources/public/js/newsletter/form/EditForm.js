@@ -48,13 +48,15 @@
                                 name: 'body',
                                 tinymceSettings: {
                                     theme: 'advanced',
-                                    theme_advanced_buttons1 : "fontselect,fontsizeselect,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo,link,unlink",
+                                    plugins: 'advimage',
+                                    theme_advanced_buttons1 : "formatselect,fontsizeselect,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo,link,unlink,image",
                                     theme_advanced_buttons2 : "",
                                     theme_advanced_buttons3 : "",
                                     theme_advanced_toolbar_location : "top",
                                     theme_advanced_toolbar_align : "left",
                                     theme_advanced_statusbar_location : "bottom",
-                                    extended_valid_elements: 'a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]'
+                                    convert_urls: false,
+                                    file_browser_callback: 'tinymce_upload'
                                 }
                             }
                         ]

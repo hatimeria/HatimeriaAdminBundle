@@ -10,6 +10,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+
 /**
  * Komunikaty systemowe
  */
@@ -17,7 +19,6 @@ class MediaController extends Controller
 {
     /**
      * @Template()
-     * @Route(name="media_upload", pattern="media/upload")
      *
      * @param type $params 
      */
@@ -25,10 +26,20 @@ class MediaController extends Controller
     {
         $params = array('uploaded' => false);
         
-        if ($this->getRequest()->getMethod() == 'POST')
-        {
-            $params['uploaded'] = true;
-            $params['file'] = '/media/logo.png';
+        if ($this->getRequest()->getMethod() == 'POST') {
+            /* @var \Symfony\Component\HttpFoundation\File\UploadedFile $image */
+            $image = $this->get('request')->files->get('image');
+            $path  = '/media';
+
+            try {
+                $name = md5($image->getClientOriginalName() . time()) . '.' . pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);;
+                $image->move($this->container->getParameter('assetic.write_to') . $path, $name);
+
+                $params['uploaded'] = true;
+                $params['file'] = $path . '/' . $name;
+            } catch (FileException $e) {
+                $params['message'] = $e->getMessage();
+            }
         }
         
         return $params;

@@ -10,6 +10,10 @@
         
     <route id="hatimeria_admin_language_switch" pattern="/language/{_locale}">
         <default key="_controller">HatimeriaAdminBundle:Admin:language</default>
-    </route>    
+    </route>
+
+    <route id="hatimeria_admin_media_upload" pattern="/media/upload">
+        <default key="_controller">HatimeriaAdminBundle:Media:upload</default>
+    </route>
     
 </routes>
