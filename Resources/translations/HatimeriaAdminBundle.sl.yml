@@ -1,0 +1,48 @@
+login: Prijava
+logout: Odjava
+
+hatimeria_admin: Administracija
+
+status:
+  signed-in-as: Prijavljen kot
+
+switch:
+  back: Nazaj v administracijo
+  action: Preklopi
+  active: Preklopljen
+
+welcome:
+  text: Dobrodošli
+  title: Dobrodošli v administraciji
+form:
+  error:
+    title: Obrazec vsebuje napake
+
+users: Uporabniki
+menu:
+  users: 
+    title: Uporabniki
+    all: Vsi
+  users: Uporabniki
+  main: Prva stran
+  categories: Kategorije
+user:
+  username: Prijava
+  
+form:
+  image:
+    browse: Brskaj
+    delete: Izbriši
+  error:
+    title: Obrazec vsebuje napake
+    unknown: Prišlo je do neznane napake
+  login: 
+    login: Prijava (Email)
+    password: Geslo
+    failed: Prijava ali geslo je napačno
+    failureTitle: Prijava ni uspela
+    submit: Prijava
+  
+window:
+  login:
+    title: Prijava
