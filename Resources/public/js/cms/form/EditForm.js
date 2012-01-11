@@ -7,9 +7,10 @@
 	
     Ext.define('HatimeriaAdmin.cms.form.EditForm', {
         extend: 'Hatimeria.core.form.BaseForm',
+        requires: [
+            'HatimeriaAdmin.core.form.TinyMceForm'
+        ],
         
-        tmpRecord: undefined,
-
         submitConfig: {
             text: 'Zapisz',
             submit: Actions.HatimeriaAdmin_Cms.edit,
@@ -55,35 +56,13 @@
                     name: 'meta_keywords'
                 },
                 {
-                    xtype: 'form',
-                    id: 'tiny-container',
-                    height: 350,
-                    border: 0,
-                    layout: 'auto',
-                    items: [
-                        {
-                            itemId: 'tinymce',
-                            xtype: 'tinymce',
-                            fieldLabel: 'Treść',
-                            width: 573,
-                            height: 240,
-                            name: 'body',
-                            tinymceSettings: {
-                                theme: 'advanced',
-                                plugins: 'pagebreak,style,layer,table,advhr,advimage,advlink,emotions,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template',
-                                theme_advanced_buttons1: 'bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect',
-                                theme_advanced_buttons2: 'bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor',
-                                theme_advanced_buttons3: 'tablecontrols,|,hr,sub,sup,|,charmap,media,advhr,|,print,|,ltr,rtl,|',
-                                theme_advanced_buttons4: 'insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak',
-                                theme_advanced_toolbar_location: 'top',
-                                theme_advanced_toolbar_align: 'left',
-                                theme_advanced_statusbar_location: 'bottom',
-                                file_browser_callback: 'tinymce_upload',
-                                theme_advanced_resizing: false,
-                                convert_urls: false
-                            }
+                    xtype: 'hatimeria-tinymce',
+                    fieldName: 'body',
+                    listeners: {
+                        tinycreated: function() {
+                            _this.getForm().loadRecord(_this.tmpRecord);
                         }
-                    ]
+                    }
                 },
                 {
                     fieldLabel: 'Od kiedy publikowac',
@@ -103,15 +82,6 @@
             };
             
             Ext.apply(this, Ext.apply(config, this.initialConfig));
-            this.on('render', function() {
-                this.getComponent('tiny-container').getComponent('tinymce').on('editorcreated', function() {
-                    Ext.defer(function() {
-                        if (_this.tmpRecord) {
-                            _this.getForm().loadRecord(_this.tmpRecord);
-                        }   
-                    }, 300);
-                });
-            });
             
             this.callParent();
         },
