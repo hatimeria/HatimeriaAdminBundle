@@ -105,11 +105,11 @@
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             this.on('render', function() {
                 this.getComponent('tiny-container').getComponent('tinymce').on('editorcreated', function() {
-                    if (_this.tmpRecord) {
-                        Ext.defer(function() {
+                    Ext.defer(function() {
+                        if (_this.tmpRecord) {
                             _this.getForm().loadRecord(_this.tmpRecord);
-                        }, 300, this);
-                    }
+                        }   
+                    }, 300);
                 });
             });
             

@@ -9,6 +9,16 @@
             configurable: 'Hatimeria.core.mixins.ConfigurableExternal'
         },
         
+        /**
+         * Class name of edit window
+         * 
+         * @var string
+         */
+        windowEditClass: false,
+        
+        /**
+         * Initializes component
+         */
         initComponent: function()
         {
             this.callParent();
@@ -25,6 +35,16 @@
                     }
                 }
             });
+        },
+        
+        /**
+         * Edit window class
+         * 
+         * @return string
+         */
+        getWindowEditClass: function()
+        {
+            return this.windowEditClass;
         },
         
         /**
@@ -75,6 +95,14 @@
                     }
                 },
                 {
+                    text: 'Klonuj',
+                    cls: 'ux-clone',
+                    scope: this,
+                    handler: function() {
+                        this.onCloneClick(record, index);
+                    }
+                },
+                {
                     text: 'Usuń',
                     cls: 'ux-remove',
                     scope: this,
@@ -109,22 +137,47 @@
          * @param Ext.data.Model record
          * @param int index
          */
-        onEditClick: function(record, index)
+        onEditClick: function(record)
         {
-            // Abstract
+            var editWindow = Ext.create(this.getWindowEditClass());
+            editWindow.show();
+            editWindow.populate(record);
         },
-
+        
         /**
-         * Event: edit click
+         * Cloning record
          * 
          * @param Ext.data.Model record
          * @param int index
          */
-        onRemoveClick: function(record, index)
+        onCloneClick: function(record, index)
         {
-            // Abstract
+            var editWindow = Ext.create(this.getWindowEditClass());
+            editWindow.show();
+            var newRecord = record.copy();
+            newRecord.setId('');
+            editWindow.populate(newRecord);
+        },
+
+        /**
+         * Event: remove click
+         * 
+         * @param Ext.data.Model record
+         */
+        onRemoveClick: function(record)
+        {
+            var store = this.store;
+            Ext.Msg.confirm('Uwaga', 'Nastąpi usunięcie rekordu z bazy danych.<br/>Czy kontynuować?', function(response) {
+                if (response == 'yes')
+                {
+                    record.destroy({
+                        success: function() {
+                            store.load();
+                        }
+                    });
+                }
+            });
         }
-        
     });
     
 })();

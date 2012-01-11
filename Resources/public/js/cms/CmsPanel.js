@@ -8,6 +8,8 @@
         mixins: {
             translationable: 'Hatimeria.core.mixins.Translationable'
         },
+        
+        windowEditClass: 'HatimeriaAdmin.cms.window.EditWindow',
 
         initComponent: function()
         {
@@ -52,7 +54,7 @@
                         text: 'Dodaj',
                         scope: this,
                         handler: function() {
-                            Ext.create('HatimeriaAdmin.cms.window.EditWindow').show();
+                            Ext.create(this.getWindowEditClass()).show();
                         }
                     }]
                 }]
@@ -61,36 +63,6 @@
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             
             this.callParent();
-        },
-        
-        /**
-         * Event: edit click
-         */
-        onEditClick: function(record)
-        {
-            var editWindow = Ext.create('HatimeriaAdmin.cms.window.EditWindow');
-            editWindow.show();
-            editWindow.populate(record);
-        },
-        
-        /**
-         * Event: remove click
-         */
-        onRemoveClick: function(record)
-        {
-            var store = this.store;
-            Ext.Msg.confirm('Uwaga', 'Nastąpi usunięcie rekordu z bazy danych.<br/>Czy kontynuować?', function(response) {
-                if (response == 'yes')
-                {
-                    Ext.create('Hatimeria.core.response.DirectHandler', {
-                        params: {id: record.get('id')},
-                        fn: Actions.HatimeriaAdmin_Cms.remove,
-                        success: function() {
-                            store.load();
-                        }
-                    });
-                }
-            });
         }
     });
     

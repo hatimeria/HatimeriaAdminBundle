@@ -4,7 +4,12 @@
 (function() {
     
     Ext.define('HatimeriaAdmin.cms.model.CmsModel', {
-        extend: 'Ext.data.Model',
+        extend: 'Hatimeria.core.model.DirectModel',
+        
+        api: {
+            destroy: Actions.HatimeriaAdmin_Cms.remove
+        },
+        
         fields: [
             {name: 'id', type: 'int'},
             {name: 'path', type: 'string'},

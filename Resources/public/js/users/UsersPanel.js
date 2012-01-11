@@ -30,6 +30,33 @@
         },
         
         /**
+         * Items for context menu
+         * 
+         * @return []
+         */
+        getContextMenuItems: function(record, index)
+        {
+            return [
+                {
+                    text: 'Edytuj',
+                    cls: 'ux-edit',
+                    scope: this,
+                    handler: function() {
+                        this.onEditClick(record, index);
+                    }
+                },
+                {
+                    text: 'Usuń',
+                    cls: 'ux-remove',
+                    scope: this,
+                    handler: function() {
+                        this.onRemoveClick(record, index);
+                    }
+                }
+            ];
+        },
+        
+        /**
          * Event: edit click
          * 
          * @param Ext.data.Model record

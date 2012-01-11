@@ -16,6 +16,8 @@
                 }
             }]
         }],
+    
+        windowEditClass: 'HatimeriaAdmin.newsletter.window.EditWindow',
         
         initComponent: function()
         {
@@ -45,33 +47,6 @@
 
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             this.callParent();
-        },
-        
-        /**
-         * Event: edit click
-         */
-        onEditClick: function(record)
-        {
-            var editWindow = Ext.create('HatimeriaAdmin.newsletter.window.EditWindow');
-            editWindow.populate(record);
-            editWindow.show();
-        },
-
-        onRemoveClick: function(record)
-        {
-            var store = this.store;
-            Ext.Msg.confirm('Uwaga', 'Nastąpi usunięcie rekordu z bazy danych.<br/>Czy kontynuować?', function(response) {
-                if (response == 'yes')
-                {
-                    Ext.create('Hatimeria.core.response.DirectHandler', {
-                        params: {id: record.get('id')},
-                        fn: Actions.HatimeriaAdmin_Newsletter.remove,
-                        success: function() {
-                            store.load();
-                        }
-                    });
-                }
-            });
         }
     });
     

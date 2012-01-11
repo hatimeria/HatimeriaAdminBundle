@@ -38,7 +38,7 @@ Ext.onReady(function() {
                         border: 0,
                         id: 'logo',
                         width: 250,
-                        html: '<img src="/bundles/hatimeriaadmin/images/hatimeria_v_220.png"/> <p>Powereb by Hatimeria</p> <a href="http://www.hatimeria.pl">www.hatimeria.pl</a>',
+                        html: '<img src="/bundles/hatimeriaadmin/images/hatimeria_v_220.png"/> <p>Powered by Hatimeria</p> <a href="http://www.hatimeria.pl">www.hatimeria.pl</a>',
                         flex: 1
                     }
                 ]
