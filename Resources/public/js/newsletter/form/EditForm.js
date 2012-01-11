@@ -41,12 +41,15 @@
                         xtype: 'hatimeria-tinymce',
                         tinyConfigSet: 'basic',
                         fieldName: 'body',
+                        labelWidth: 50,
                         listeners: {
                             tinycreated: function() {
-                                _this.getForm().loadRecord(_this.tmpRecord);
+                                if (_this.tmpRecord) {
+                                    _this.getForm().loadRecord(_this.tmpRecord);
+                                }
                             }
                         }
-                    },
+                    }
 
                 ]
             };

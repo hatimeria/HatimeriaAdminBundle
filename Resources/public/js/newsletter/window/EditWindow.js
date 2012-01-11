@@ -8,7 +8,7 @@
         initComponent: function()
         {
             var config = {
-                width: 580,
+                width: 660,
                 title: 'Dodawanie/Edycja newslettera',
                 items: [ 
                     Ext.create('HatimeriaAdmin.newsletter.form.EditForm')
