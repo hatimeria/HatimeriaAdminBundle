@@ -1,19 +1,16 @@
 (function() {
     
     Ext.define('HatimeriaAdmin.newsletter.form.EditForm', {
-        extend: 'Ext.form.Panel',
+        extend: 'Hatimeria.core.form.BaseForm',
         id: 'newsletter-form-edit',
-        
-        constructor: function(cfg)
-        {
-            var config = {
-                api: {
-                   submit: Actions.HatimeriaAdmin_Newsletter.edit
-                }
-            };
-            Ext.apply(config, cfg || {});
-            
-            this.callParent([config]);
+
+        submitConfig: {
+            text: 'Zapisz',
+            submit: Actions.HatimeriaAdmin_Newsletter.edit,
+            success: function() {
+                Ext.getStore('newsletter-store').load();
+                this.formPanel.up('window').destroy();
+            }
         },
         
         initComponent: function() {
@@ -24,6 +21,10 @@
                 frame: false,
                 bodyPadding: 10,
                 items: [
+                    {
+                        xtype: 'hidden',
+                        name: 'id'
+                    },
                     {
                         xtype: 'textfield',
                         fieldLabel: 'Temat',
@@ -60,32 +61,6 @@
                                 }
                             }
                         ]
-                    }
-                ],
-                buttons: [
-                    {
-                        text: 'Zapisz',
-                        scope: this,
-                        handler: function(){
-                            var panel  = this;
-                            var form   = panel.getForm();
-                            var record = form.getRecord();
-                            var params = {};
-
-                            if(record) {
-                                params = {
-                                    id: record.get('id')
-                                };
-                            }
-
-                            form.submit({
-                                params: params,
-                                success: function() {
-                                    Ext.getStore('newsletter-store').load();
-                                    panel.findParentByType('window').destroy();
-                                }
-                            });
-                        }
                     }
                 ]
             };

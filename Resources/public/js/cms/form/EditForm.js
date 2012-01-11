@@ -6,20 +6,17 @@
 	 */
 	
     Ext.define('HatimeriaAdmin.cms.form.EditForm', {
-        extend: 'Ext.form.Panel',
+        extend: 'Hatimeria.core.form.BaseForm',
         
         tmpRecord: undefined,
-        
-        constructor: function(cfg)
-        {
-            var config = {
-                api: {
-                   submit: Actions.HatimeriaAdmin_Cms.edit
-                }
-            };
-            Ext.apply(config, cfg || {});
-            
-            this.callParent([config]);
+
+        submitConfig: {
+            text: 'Zapisz',
+            submit: Actions.HatimeriaAdmin_Cms.edit,
+            success: function() {
+                Ext.getStore('cms-store').load();
+                this.formPanel.up('window').destroy();
+            }
         },
         
         initComponent: function()
@@ -28,38 +25,7 @@
             var config = {
                 border: false,
                 width: 700,
-                bodyPadding: 10,    
-                dockedItems: [{
-                    dock: 'bottom',
-                    xtype: 'toolbar',
-                    ui: 'footer',
-                    style: 'margin: 0 5px 5px 0;',
-                    items: ['->', {
-                            text: 'Zapisz',
-                            scope: this,
-                            handler: function(){
-                                var panel  = this;
-                                var form   = panel.getForm();
-                                var record = form.getRecord();
-                                var params = {};
-
-                                if(record) {
-                                    params = {
-                                        id: record.get('id')
-                                    };
-                                }
-
-                                form.submit({
-                                    params: params,
-                                    success: function() {
-                                        Ext.getStore('cms-store').load();
-                                        panel.findParentByType('window').destroy();
-                                    }
-                                });
-                            }
-                        }
-                    ]
-                }],
+                bodyPadding: 10,
                 defaultType: 'textfield',
                 defaults: {
                     anchor: '100%'
@@ -67,6 +33,10 @@
                 items: [{
                     fieldLabel: 'Tytuł',
                     name: 'title'
+                },
+                {
+                    xtype: 'hidden',
+                    name: 'id'
                 },
                 {
                     fieldLabel: 'Uri',
@@ -135,9 +105,11 @@
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             this.on('render', function() {
                 this.getComponent('tiny-container').getComponent('tinymce').on('editorcreated', function() {
-                    Ext.defer(function() {
-                        _this.getForm().loadRecord(_this.tmpRecord);
-                    }, 300, this);
+                    if (_this.tmpRecord) {
+                        Ext.defer(function() {
+                            _this.getForm().loadRecord(_this.tmpRecord);
+                        }, 300, this);
+                    }
                 });
             });
             

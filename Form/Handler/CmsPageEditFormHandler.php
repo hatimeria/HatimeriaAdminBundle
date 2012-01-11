@@ -37,7 +37,7 @@ class CmsPageEditFormHandler
             'data_class' => $this->dataClass
         );
 
-        if ($params->has('id')) {
+        if ($params->get('id')) {
             $repository = $this->em->getRepository($this->repositoryClass);
             $object     = $repository->find(array((int)$params->get('id')));
             if (!is_object($object)) {

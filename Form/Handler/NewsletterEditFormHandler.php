@@ -37,7 +37,7 @@ class NewsletterEditFormHandler
         );
 
         /* @var \Hatimeria\NewsletterBundle\Entity\Mailing $object */
-        if ($params->has('id')) {
+        if ($params->get('id')) {
             $repository = $this->em->getRepository('HatimeriaNewsletterBundle:Mailing');
             $object     = $repository->find(array((int)$params->get('id')));
             if (!is_object($object)) {
