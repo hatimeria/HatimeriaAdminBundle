@@ -1,9 +1,10 @@
 (function() {
     
-    Ext.require('HatimeriaAdmin.cms.form.CmsForm');
-    
-    Ext.define('HatimeriaAdmin.cms.window.EditWindow', {
+    Ext.define('HatimeriaAdmin.cms.window.CmsWindow', {
         extend: 'Ext.window.Window',
+        requires: [
+            'HatimeriaAdmin.cms.form.CmsForm'
+        ],
         
         initComponent: function()
         {
