@@ -18,16 +18,22 @@ form:
   error:
     title: Formularz zawiera błędy
 
-users: Użytkownicy
 menu:
   users: 
     title: Użytkownicy
     all: Wszyscy
-  users: Użytkownicy
   main: Strona główna
   categories: Kategorie
 user:
   username: Login
+  
+users:   
+  title: Lista użytkowników
+  id: Id
+  name: Nazwa
+  username: Login
+  email: Email
+  enabled: Aktywny
   
 form:
   image:
