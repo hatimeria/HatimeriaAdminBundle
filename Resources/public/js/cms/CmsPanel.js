@@ -1,10 +1,11 @@
 (function() {
 
-    Ext.require('HatimeriaAdmin.cms.store.AllStore');
-    Ext.require('HatimeriaAdmin.cms.window.EditWindow');
-    
     Ext.define('HatimeriaAdmin.cms.CmsPanel', {
         extend: 'HatimeriaAdmin.core.grid.BaseGrid',
+        requires: [
+            'HatimeriaAdmin.cms.store.CmsStore',
+            'HatimeriaAdmin.cms.window.CmsWindow'
+        ],
         mixins: {
             translationable: 'Hatimeria.core.mixins.Translationable'
         },
