@@ -1,7 +1,7 @@
 (function() {
     
     Ext.define('HatimeriaAdmin.users.UsersPanel', {   
-        extend: 'HatimeriaAdmin.core.grid.BaseGrid',
+        extend: 'Hatimeria.core.grid.BaseGrid',
         requires: ["HatimeriaAdmin.users.store.UserStore"],
 
         initComponent: function()

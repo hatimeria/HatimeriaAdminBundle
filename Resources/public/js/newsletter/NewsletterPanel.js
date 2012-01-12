@@ -4,7 +4,7 @@
     Ext.require('HatimeriaAdmin.newsletter.store.AllStore');
 
     Ext.define('HatimeriaAdmin.newsletter.NewsletterPanel', {
-        extend: 'HatimeriaAdmin.core.grid.BaseGrid',
+        extend: 'Hatimeria.core.grid.BaseGrid',
         dockedItems: [{
             xtype: 'toolbar',
             items: [{

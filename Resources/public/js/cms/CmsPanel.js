@@ -4,7 +4,7 @@
     Ext.require('HatimeriaAdmin.cms.window.EditWindow');
     
     Ext.define('HatimeriaAdmin.cms.CmsPanel', {
-        extend: 'HatimeriaAdmin.core.grid.BaseGrid',
+        extend: 'Hatimeria.core.grid.BaseGrid',
         mixins: {
             translationable: 'Hatimeria.core.mixins.Translationable'
         },
@@ -16,6 +16,7 @@
             var store = Ext.create('HatimeriaAdmin.cms.store.AllStore');
             var config = {
                 id: 'cms-panel',
+                rowActions: {edit: 'Edycja', clone: 'Klonuj'},
                 title: 'Podstrony systemowe',
                 store: store,
                 hideContextRowMenuInterval : 3000,

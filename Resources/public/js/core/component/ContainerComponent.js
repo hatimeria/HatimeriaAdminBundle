@@ -9,14 +9,14 @@
         /**
          * Current loaded panel
          * 
-         * @var string
+         * @property {String}
          */
         currentPanelName: undefined,
         
         /**
          * Defaults config params passed to each panel
          * 
-         * @var {}
+         * @property {Object}
          */
         defaultPanelConfig: {
             height: "100%"
@@ -47,10 +47,10 @@
         /**
          * Creates new panel
          * 
-         * @param string id
-         * @param string name optional
-         * @param string params optional
-         * @return Ext.panel.Panel
+         * @param {String} id
+         * @param {String} name optional
+         * @param {String} params optional
+         * @return {Ext.panel.Panel}
          */
         createPanel: function(id)
         {
@@ -77,7 +77,7 @@
         /**
          * Switches to other panel
          * 
-         * @param Ext.data.NodeStore node
+         * @param {Ext.data.NodeStore} node
          */
         switchPanel: function(node)
         {
