@@ -11,17 +11,17 @@ use Hatimeria\ExtJSBundle\Response\Validation;
 
 class TestController extends Controller
 {
-       /**
-        * Single exposed method.
-        *
-        * @remote    // this annotation expose the method to API
-        * @param  ParameterBag $params
-        * @return string
-        */
-        public function indexAction($params)
-        {
-            return 'Hello '.$params['name'];
-        }
+   /**
+    * Single exposed method.
+    *
+    * @remote    // this annotation expose the method to API
+    * @param  ParameterBag $params
+    * @return string
+    */
+    public function indexAction($params)
+    {
+        return 'Hello '.$params['name'];
+    }
 
     /*
      * Single exposed method with no custom response
