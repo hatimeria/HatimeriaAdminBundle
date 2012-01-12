@@ -92,8 +92,10 @@
             {
                 var mask = new Ext.LoadMask(this, {msg: 'Czekaj, trwa ładowanie interfejsu'});
                 mask.show();
+                
                 panel = this.createPanel(panelName);
                 this.add(panel);
+                
                 mask.hide();
             }
             
