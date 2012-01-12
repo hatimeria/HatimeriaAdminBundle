@@ -27,6 +27,7 @@
 
             var config = {
                 id: 'newsletter-panel',
+                rowActions: ['edit', 'clone', 'remove'],
                 title: 'Newsletter',
                 store: store,
                 hideContextRowMenuInterval: 3000,
