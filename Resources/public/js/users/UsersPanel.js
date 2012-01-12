@@ -6,6 +6,8 @@
         transDomain: 'HatimeriaAdminBundle',
         transNS: 'users',
         
+        editWindowClass: 'HatimeriaAdmin.users.window.UserWindow', 
+        
         initComponent: function()
         {
             var store = Ext.create('HatimeriaAdmin.users.store.UserStore');
