@@ -6,17 +6,6 @@
             'HatimeriaAdmin.newsletter.window.NewsletterWindow',
             'HatimeriaAdmin.newsletter.store.NewsletterStore'
         ],
-        dockedItems: [{
-            xtype: 'toolbar',
-            items: [{
-                iconCls: 'icon-user-add',
-                text: 'Dodaj',
-                scope: this,
-                handler: function() {
-                    Ext.create('HatimeriaAdmin.newsletter.window.NewsletterWindow').show();
-                }
-            }]
-        }],
     
         windowEditClass: 'HatimeriaAdmin.newsletter.window.NewsletterWindow',
         
@@ -28,6 +17,7 @@
             var config = {
                 id: 'newsletter-panel',
                 rowActions: ['edit', 'clone', 'remove'],
+                dockedElements: ['paging', 'add'],
                 title: 'Newsletter',
                 store: store,
                 hideContextRowMenuInterval: 3000,
@@ -38,13 +28,7 @@
                 ],
                 viewConfig: {
                     forceFit: true
-                },
-                bbar: Ext.create('Ext.PagingToolbar', {
-                    store: store,
-                    displayInfo: true,
-                    displayMsg: 'Rekordy {0} - {1} of {2}',
-                    emptyMsg: "Brak rekordów"
-                })
+                }
             };
 
             Ext.apply(this, Ext.apply(config, this.initialConfig));

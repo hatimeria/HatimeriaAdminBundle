@@ -17,6 +17,7 @@
             var store = Ext.create('HatimeriaAdmin.cms.store.CmsStore');
             var config = {
                 id: 'cms-panel',
+                dockedElements: ['paging', 'add'],
                 rowActions: ['edit', 'clone', 'remove'],
                 title: 'Podstrony systemowe',
                 store: store,
@@ -42,24 +43,7 @@
                 ],
                 viewConfig: {
                     forceFit:true
-                },
-                bbar: Ext.create('Ext.PagingToolbar', {
-                    store: store,
-                    displayInfo: true,
-                    displayMsg: 'Rekordy {0} - {1} of {2}',
-                    emptyMsg: "Brak rekordów"
-                }),
-                dockedItems: [{
-                    xtype: 'toolbar',
-                    items: [{
-                        iconCls: 'icon-user-add',
-                        text: 'Dodaj',
-                        scope: this,
-                        handler: function() {
-                            Ext.create(this.getWindowEditClass()).show();
-                        }
-                    }]
-                }]
+                }
             };
 
             Ext.apply(this, Ext.apply(config, this.initialConfig));

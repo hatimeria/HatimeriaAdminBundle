@@ -11,12 +11,6 @@
                 title: __('users'),
                 id: 'all-users-grid',
                 store: store,
-               bbar: Ext.create('Ext.PagingToolbar', {
-                    store: store,
-                    displayInfo: true,
-                    displayMsg: 'Rekordy {0} - {1} of {2}',
-                    emptyMsg: "Brak rekordów"
-                }),                
                 columns: [
                     {header: 'Id', dataIndex: 'id', width: 80},
                     {header: 'Nazwa', dataIndex: 'username', width: 180},
