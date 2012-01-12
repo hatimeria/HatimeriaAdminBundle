@@ -1,6 +1,6 @@
 (function() {
     
-    Ext.define('HatimeriaAdmin.newsletter.form.EditForm', {
+    Ext.define('HatimeriaAdmin.newsletter.form.NewsletterForm', {
         extend: 'Hatimeria.core.form.BaseForm',
         requires: [
             'HatimeriaAdmin.core.form.TinyMceForm'

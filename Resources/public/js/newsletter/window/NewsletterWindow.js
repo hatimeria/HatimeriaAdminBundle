@@ -1,8 +1,8 @@
 (function() {
     
-    Ext.require('HatimeriaAdmin.newsletter.form.EditForm');
+    Ext.require('HatimeriaAdmin.newsletter.form.NewsletterForm');
     
-    Ext.define('HatimeriaAdmin.newsletter.window.EditWindow', {
+    Ext.define('HatimeriaAdmin.newsletter.window.NewsletterWindow', {
         extend: 'Ext.window.Window',
         
         initComponent: function()
@@ -11,7 +11,7 @@
                 width: 660,
                 title: 'Dodawanie/Edycja newslettera',
                 items: [ 
-                    Ext.create('HatimeriaAdmin.newsletter.form.EditForm')
+                    Ext.create('HatimeriaAdmin.newsletter.form.NewsletterForm')
                 ]
             };
 

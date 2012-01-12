@@ -74,7 +74,7 @@ class CmsController extends Controller
      * 
      * @param \Hatimeria\ExtJSBundle\Parameter\ParameterBag $params
      */
-    public function removeAction($params)
+    public function destroyAction($params)
     {
         if (!$params->has('id')) {
             throw new NotFoundHttpException('You cant invoke this action without id parameter');

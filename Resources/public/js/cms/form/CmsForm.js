@@ -1,11 +1,5 @@
 (function() {
-    
-	/* 
-	 * Using TineMCE Ext 4 Adaption found on:
-	 * http://www.sencha.com/forum/showthread.php?143190-Ext.ux.TinyMCE-adaption-for-Ext4&p=635192
-	 */
-	
-    Ext.define('HatimeriaAdmin.cms.form.EditForm', {
+    Ext.define('HatimeriaAdmin.cms.form.CmsForm', {
         extend: 'Hatimeria.core.form.BaseForm',
         requires: [
             'HatimeriaAdmin.core.form.TinyMceForm'
