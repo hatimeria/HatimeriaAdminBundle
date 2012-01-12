@@ -4,7 +4,7 @@
 (function() {
     
     Ext.define('HatimeriaAdmin.newsletter.model.NewsletterModel', {
-        extend: 'Ext.data.Model',
+        extend: 'Hatimeria.core.model.DirectModel',
         
         api: {
             destroy: Actions.HatimeriaAdmin_Newsletter.remove

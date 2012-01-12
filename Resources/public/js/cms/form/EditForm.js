@@ -60,7 +60,9 @@
                     fieldName: 'body',
                     listeners: {
                         tinycreated: function() {
-                            _this.getForm().loadRecord(_this.tmpRecord);
+                            if (_this.tmpRecord) {
+                                _this.getForm().loadRecord(_this.tmpRecord);
+                            }
                         }
                     }
                 },

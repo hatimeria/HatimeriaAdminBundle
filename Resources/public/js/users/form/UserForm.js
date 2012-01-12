@@ -10,7 +10,11 @@
         },
         submitConfig: {
             submit: Actions.HatimeriaAdmin_User.update,
-            text: 'Zapisz'
+            text: 'Zapisz',
+            success: function() {
+                Ext.getStore('users-store').load();
+                this.formPanel.up('window').destroy();
+            }
         },
         
         /**

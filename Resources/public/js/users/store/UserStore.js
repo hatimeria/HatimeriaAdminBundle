@@ -13,6 +13,7 @@
         constructor: function(cfg)
         {
             var config = {
+                id: 'users-store',
                 directFn: Actions.HatimeriaAdmin_User.list,
                 model: 'HatimeriaAdmin.users.model.UserModel'
             };

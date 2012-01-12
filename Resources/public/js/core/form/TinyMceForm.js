@@ -26,6 +26,11 @@
          * @cfg {String} fieldName
          */
         fieldName: 'description',
+
+        /**
+         * @cfg {Integer} labelWidth
+         */
+        labelWidth: 100,
         
         /**
          * Base config
@@ -78,6 +83,7 @@
                         itemId: 'tinymce',
                         xtype: 'tinymce',
                         fieldLabel: this.fieldLabel,
+                        labelWidth: this.labelWidth,
                         width: 573,
                         height: 240,
                         name: this.fieldName,
@@ -88,8 +94,6 @@
             
             
             this.addEvents('tinycreated');
-            
-            console.log(this.fieldName)
             
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             this.callParent();

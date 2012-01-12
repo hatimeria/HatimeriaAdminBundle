@@ -10,7 +10,6 @@ use Doctrine\ORM\EntityManager;
 
 use Hatimeria\AdminBundle\Form\Type\CmsPageEditFormType;
 use Hatimeria\ExtJSBundle\Response\Form;
-use Hatimeria\Bundle\CMFBundle\Entity\CmsPage;
 
 class CmsPageEditFormHandler
 {
@@ -44,7 +43,8 @@ class CmsPageEditFormHandler
                 throw new NotFoundHttpException('Object with given id not found');
             }
         } else {
-            $object = new CmsPage();
+            $name = $this->dataClass;
+            $object = new $name();
         }
 
         $form = $this->formFactory->create(new CmsPageEditFormType(), $object, $options);

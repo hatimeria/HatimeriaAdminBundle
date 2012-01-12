@@ -69,7 +69,7 @@
          */
         addCategory: function(value, selNode)
         {
-            Ext.create('Hatimeria.response.DirectHandler', {
+            Ext.create('Hatimeria.core.response.DirectHandler', {
                 fn: Actions.CarbonOffer_Category.create,
                 params: {text: value, id: selNode.get('id')},
                 scope: this,
@@ -134,7 +134,7 @@
                     return false;
                 }
                 
-                Ext.create('Hatimeria.response.DirectHandler', {
+                Ext.create('Hatimeria.core.response.DirectHandler', {
                     fn: Actions.CarbonOffer_Category.remove,
                     params: {id: node.get('id')},
                     scope: this,
