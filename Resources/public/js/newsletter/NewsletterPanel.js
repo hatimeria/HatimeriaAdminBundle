@@ -1,10 +1,11 @@
 (function() {
     
-    Ext.require('HatimeriaAdmin.newsletter.window.EditWindow');
-    Ext.require('HatimeriaAdmin.newsletter.store.AllStore');
-
     Ext.define('HatimeriaAdmin.newsletter.NewsletterPanel', {
         extend: 'HatimeriaAdmin.core.grid.BaseGrid',
+        requires: [
+            'HatimeriaAdmin.newsletter.window.NewsletterWindow',
+            'HatimeriaAdmin.newsletter.store.NewsletterStore'
+        ],
         dockedItems: [{
             xtype: 'toolbar',
             items: [{
@@ -12,16 +13,16 @@
                 text: 'Dodaj',
                 scope: this,
                 handler: function() {
-                    Ext.create('HatimeriaAdmin.newsletter.window.EditWindow').show();
+                    Ext.create('HatimeriaAdmin.newsletter.window.NewsletterWindow').show();
                 }
             }]
         }],
     
-        windowEditClass: 'HatimeriaAdmin.newsletter.window.EditWindow',
+        windowEditClass: 'HatimeriaAdmin.newsletter.window.NewsletterWindow',
         
         initComponent: function()
         {
-            var store = Ext.create('HatimeriaAdmin.newsletter.store.AllStore');
+            var store = Ext.create('HatimeriaAdmin.newsletter.store.NewsletterStore');
             var YesNoRenderrer = function(value) {return value ? 'Tak' : 'Nie'};
 
             var config = {

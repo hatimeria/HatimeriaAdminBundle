@@ -9,11 +9,11 @@
             translationable: 'Hatimeria.core.mixins.Translationable'
         },
         
-        windowEditClass: 'HatimeriaAdmin.cms.window.EditWindow',
+        windowEditClass: 'HatimeriaAdmin.cms.window.CmsWindow',
 
         initComponent: function()
         {
-            var store = Ext.create('HatimeriaAdmin.cms.store.AllStore');
+            var store = Ext.create('HatimeriaAdmin.cms.store.CmsStore');
             var config = {
                 id: 'cms-panel',
                 title: 'Podstrony systemowe',

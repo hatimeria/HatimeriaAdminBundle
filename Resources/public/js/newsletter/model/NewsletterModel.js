@@ -5,11 +5,7 @@
     
     Ext.define('HatimeriaAdmin.newsletter.model.NewsletterModel', {
         extend: 'Hatimeria.core.model.DirectModel',
-        
-        api: {
-            destroy: Actions.HatimeriaAdmin_Newsletter.remove
-        },
-        
+        api: 'HatimeriaAdmin_Newsletter',
         fields: [
             {name: 'id', type: 'int'},
             {name: 'subject', type: 'string'},

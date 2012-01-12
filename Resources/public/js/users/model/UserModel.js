@@ -5,6 +5,7 @@
     
     Ext.define('HatimeriaAdmin.users.model.UserModel', {
         extend: 'Hatimeria.core.model.DirectModel',
+        api: 'HatimeriaAdmin_User',
         fields: [
             {name: 'id', type: 'int'},
             {name: 'username', type: 'string'},

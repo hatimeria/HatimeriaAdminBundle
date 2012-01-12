@@ -1,6 +1,6 @@
 (function() {
     
-    Ext.require('HatimeriaAdmin.cms.form.EditForm');
+    Ext.require('HatimeriaAdmin.cms.form.CmsForm');
     
     Ext.define('HatimeriaAdmin.cms.window.EditWindow', {
         extend: 'Ext.window.Window',
@@ -10,7 +10,7 @@
             var config = {
                 title: 'Dodawanie/Edycja podstrony',
                 items: [ 
-                    Ext.create('HatimeriaAdmin.cms.form.EditForm', {
+                    Ext.create('HatimeriaAdmin.cms.form.CmsForm', {
                         id: 'cms-form-edit'
                     })
                 ]
