@@ -5,6 +5,9 @@
     
     Ext.define('HatimeriaAdmin.core.component.ContainerComponent', {
         extend: 'Ext.container.Container',
+        requires: [
+            'Ext.LoadMask'
+        ],
         
         /**
          * Current loaded panel
@@ -87,8 +90,11 @@
             
             if (typeof panel == 'undefined')
             {
+                var mask = new Ext.LoadMask(this, {msg: 'Czekaj, trwa ładowanie interfejsu'});
+                mask.show();
                 panel = this.createPanel(panelName);
                 this.add(panel);
+                mask.hide();
             }
             
             panel.show();
