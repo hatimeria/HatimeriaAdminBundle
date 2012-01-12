@@ -6,7 +6,7 @@
         transDomain: 'HatimeriaAdminBundle',
         transNS: 'users',
         
-        editWindowClass: 'HatimeriaAdmin.users.window.UserWindow', 
+        windowEditClass: 'HatimeriaAdmin.users.window.UserWindow', 
         
         initComponent: function()
         {
