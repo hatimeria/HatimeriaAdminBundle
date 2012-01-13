@@ -26,6 +26,16 @@
          * @cfg {String} fieldName
          */
         fieldName: 'description',
+        
+        /**
+         * @cfg {Number} tinyWidth
+         */
+        width: 500,
+        
+        /**
+         * @cfg {Number} tinyHeight
+         */
+        height: 300,
 
         /**
          * @cfg {Integer} labelWidth
@@ -64,7 +74,25 @@
                 plugins: 'advimage',
                 theme_advanced_buttons1 : "formatselect,fontsizeselect,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo,link,unlink,image",
                 theme_advanced_buttons2 : "",
-                theme_advanced_buttons3 : ""
+                theme_advanced_buttons3 : "",
+                theme_advanced_buttons4 : ""
+            }
+        },
+        
+        statics: {
+            testMe: function() {
+                var me = Ext.create(this.prototype.$className);
+                var w = Ext.create("Ext.window.Window", {
+                    items: [{
+                       xtype: 'form',
+                       items: [
+                           me, {xtype: 'textfield', fieldLabel: 'test'}
+                       ]
+                    }],
+                    renderTo: Ext.getBody()
+                });
+                
+                w.show();
             }
         },
         
@@ -75,17 +103,14 @@
         {
             var _this = this;
             var config = {
-                height: 350,
                 border: 0,
                 layout: 'auto',
                 items: [
                     {
                         itemId: 'tinymce',
                         xtype: 'tinymce',
-                        fieldLabel: this.fieldLabel,
-                        labelWidth: this.labelWidth,
-                        width: 573,
-                        height: 240,
+                        width: this.width,
+                        height: this.computeHeight(),
                         name: this.fieldName,
                         tinymceSettings: this.getTinyConfig()
                     }
@@ -105,6 +130,8 @@
                         _this.fireEvent('tinycreated', _this, tiny);
                     }, 300);
                 });
+                
+                
             });
         },
         
@@ -128,6 +155,26 @@
             Ext.apply(set, this.tinyBaseConfig);
             
             return set;
+        },
+        
+        /**
+         * Get dynamic height of tiny
+         */
+        computeHeight: function()
+        {
+            var toolHeight = 28;
+            var sumHeight = 0;
+            var settings = this.getTinyConfig();
+            
+            for (var i=1; i<=4; i++)
+            {
+                if (settings['theme_advanced_buttons' + i] != "")
+                {
+                    sumHeight =+ toolHeight;
+                }
+            }
+            
+            return this.height - sumHeight;
         }
     });
     
