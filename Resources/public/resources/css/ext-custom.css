@@ -15,23 +15,74 @@ root {
     display: block;
 }
 
+body.x-border-layout-ct {
+    background: url('/bundles/hatimeriaadmin/images/body.gif') fixed 230px top no-repeat;
+    background-color: #F0F0F0;
+}
+
+#app-content-panel .x-panel-header-text-default{
+    color: #333;
+    font-size: 18px;
+    text-shadow: none;
+}
+
+#app-content-panel .x-panel-header-default {
+    background: transparent;
+}
+
 .hatimeria-main-menu .x-grid-row .x-grid-cell-inner{
     height: 35px;
     font-size: 15px;
     font-weight: normal;
 }
 .hatimeria-main-menu .x-grid-row .x-grid-cell{
+    padding: 0px;
     padding-left: 15px;
-    border-radius: 10px; 
+    background: #78B233;
+    color: white;
+    margin: 0 20px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
+
+.hatimeria-main-menu .x-grid-row-selected {
+    background: transparent !important;
+}
+
+.hatimeria-main-menu .x-grid-row.x-grid-row-selected .x-grid-cell{
+    background: url(/bundles/hatimeriaadmin/images/menu-item-current.gif) no-repeat !important;
+    color: #333;
+}
+.hatimeria-main-menu .x-grid-row{
+    height: 45px;
+    background: url(/bundles/hatimeriaadmin/images/menu-item.gif) no-repeat;
+}
+
+.hatimeria-main-menu .x-grid-row .x-grid-cell {
+    background: transparent;
+}
+
+.hatimeria-main-menu{
+    background-image: url(/bundles/hatimeriaadmin/images/bg-sidebar.jpg)
+}
+
 .hatimeria-main-menu .x-grid-cell-inner {
     padding: 9px;
 }
 .x-grid-header-ct span{
     font-weight: bold;
 }
+
+.x-grid-row .x-grid-cell{
+    padding: 5px;
+}
+
+.x-column-header-inner {
+    color: #333;
+    padding: 5px;
+    font-size: 14px;
+}
 .hatimeria-main-menu #logo{
-    text-align: center;
     line-height: 20px;
 }
 .hatimeria-main-menu #logo a{

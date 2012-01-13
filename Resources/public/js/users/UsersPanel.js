@@ -11,7 +11,7 @@
             var store = Ext.create('HatimeriaAdmin.users.store.UserStore');
             var config = {
                 title: this.__('title'),
-                id: 'all-users-grid',
+                id: 'users-grid',
                 store: store,
                 columns: [
                     {dataIndex: 'id', width: 80},

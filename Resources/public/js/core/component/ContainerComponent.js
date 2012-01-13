@@ -34,6 +34,7 @@
                 layout: 'auto',
                 frame: false,
                 border: false,
+                style: 'padding: 25px',
                 items: [
                     this.createPanel(mainId)
                 ]
@@ -56,7 +57,6 @@
         {
             var map = Ext.getStore('app-menu-store').getNodeMap();
             var config = {};
-            
             Ext.apply(config, {
                 ns: "HatimeriaAdmin",
                 params: {}
@@ -65,12 +65,12 @@
             Ext.apply(config, map[id]);
             
             var configObj = {
-                id: id
+                id: id,
+                width: 800
             };
             
             Ext.apply(configObj, this.defaultPanelConfig);
             Ext.apply(configObj, config.params || {});
-            
             return Ext.create(Ext.String.format('{2}.{0}.{1}Panel', id, Ext.String.capitalize(id), config.ns), configObj);
         },
         

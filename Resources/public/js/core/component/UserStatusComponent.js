@@ -34,16 +34,14 @@
                 }
 
                 if (_user.isAdmin) {
-                    this.add(Ext.create('HatimeriaAdmin.core.InternalButton', {
-                        margin: '3 0 0 0',
-                        uri: this.__('hatimeria_admin')
-                    }));
-
-                    this.add(Ext.create("Hatimeria.core.form.UserSwitch", {
-                        width: 300,
-                        margin: '3 10 0 10',
-                        store: Ext.create("HatimeriaAdmin.users.store.UserStore")
-                    }));
+                    this.add(
+                            Ext.create("Hatimeria.core.form.UserSwitch", {
+                                width: 300,
+                                height: 50,
+                                margin: '3 10 0 10',
+                                store: Ext.create("HatimeriaAdmin.users.store.UserStore")
+                            })
+                            );
                 }
             });
         }

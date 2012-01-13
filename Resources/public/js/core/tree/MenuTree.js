@@ -7,7 +7,6 @@
         initComponent: function()
         {
             var config = {
-                title: 'Menu',
                 rootVisible: false,
                 lines: false,
                 singleExpand: true,

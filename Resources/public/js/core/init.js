@@ -25,27 +25,35 @@ Ext.onReady(function() {
                 cls: 'hatimeria-main-menu',
                 layout: 'vbox',
                 region: 'west',
+                bodyStyle: 'background: transparent; border: 0',
+                width: 230,
                 border: 0,
                 items:[
-                    Ext.create('HatimeriaAdmin.core.tree.MenuTree', {
-                        id: 'app-menu-tree',
-                        xtype: 'panel',
-                        width: 250,
-                        border: 0,
-                        flex: 3
-                        }),
                     {
                         border: 0,
                         id: 'logo',
-                        width: 250,
-                        html: '<img src="/bundles/hatimeriaadmin/images/hatimeria_v_220.png"/> <p>Powered by Hatimeria</p> <a href="http://www.hatimeria.pl">www.hatimeria.pl</a>',
+                        width: 230,
+                        bodyStyle: 'background: transparent; border: 0',
+                        html: '<a href="http://www.hatimeria.pl"><img src="/bundles/hatimeriaadmin/images/hatimeria.png" style="margin-top: 10px; margin-left: 24px"/></a></p>',
+                        height: 120
+                    },
+                    Ext.create('HatimeriaAdmin.core.tree.MenuTree', {
+                        id: 'app-menu-tree',
+                        background: 'transparent',
+                        margin: '0 0 0 15',
+                        bodyStyle: 'border: 0; background: transparent',
+                        xtype: 'container',
+                        width: 230,
+                        border: 0,
                         flex: 1
-                    }
+                        })
                 ]
             },
             Ext.create('HatimeriaAdmin.core.component.ContainerComponent', {
                 id: 'app-content-panel',
                 xtype: 'panel',
+                border: 0,
+                bodyStyle: 'border: 0',
                 region: 'center'
             })
         ]
