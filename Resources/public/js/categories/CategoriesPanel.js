@@ -22,6 +22,7 @@
                         items: [
                             {
                                 xtype: 'button',
+                                iconCls: 'icon-add',
                                 text: 'Dodaj kategorię',
                                 scope: this,
                                 handler: this.onAddClick

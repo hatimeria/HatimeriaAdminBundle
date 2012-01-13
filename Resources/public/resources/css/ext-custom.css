@@ -21,13 +21,57 @@ body.x-border-layout-ct {
 }
 
 #app-content-panel .x-panel-header-text-default{
-    color: #333;
-    font-size: 18px;
+    color: #666;
+    font-size: 25px;
     text-shadow: none;
 }
 
 #app-content-panel .x-panel-header-default {
     background: transparent;
+    line-height: 18px;
+}
+
+#app-content-panel .x-panel-header {
+    background: transparent;
+    padding: 5px 4px 10px 0px;
+}
+
+#app-content-panel .x-panel-header-default-top {
+    box-shadow: none;
+}
+
+#app-content-panel .x-toolbar-docked-top {
+    height: 60px;
+    background: transparent;
+    border: 0;
+}
+
+#app-content-panel .x-toolbar-docked-top .x-btn{
+    height: 45px;
+}
+
+#app-content-panel .x-toolbar-docked-top button{
+    height: 45px;
+}
+
+#app-content-panel .x-toolbar-docked-top .x-btn .icon-add {
+    background: url('/bundles/hatimeriaadmin/images/icon/add.png') center center no-repeat;
+}
+
+#app-content-panel .x-toolbar-docked-top .x-btn .x-btn-icon{
+    height: inherit;
+    width: 36px;
+}
+
+#app-content-panel .x-toolbar-docked-top .x-btn-inner {
+    height: inherit;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left: 40px;
+}
+
+#categories .x-grid-row .x-grid-cell {
+    padding: 0px;
 }
 
 .hatimeria-main-menu .x-grid-row .x-grid-cell-inner{
