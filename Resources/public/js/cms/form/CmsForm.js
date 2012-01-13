@@ -52,7 +52,8 @@
                 {
                     xtype: 'hatimeria-tinymce',
                     fieldName: 'body',
-                    width: 600,
+                    width: 680,
+                    fieldLabel: 'Treść',
                     height: 250,
                     listeners: {
                         tinycreated: function() {

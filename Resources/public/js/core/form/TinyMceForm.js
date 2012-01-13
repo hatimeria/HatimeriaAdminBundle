@@ -36,11 +36,44 @@
          * @cfg {Number} tinyHeight
          */
         height: 300,
+        
+        /**
+         * Margin corrects width of tinyMCE
+         * 
+         * @cfg {Number} marginOffset
+         */
+        marginOffset: 5,
 
         /**
          * @cfg {Integer} labelWidth
          */
         labelWidth: 100,
+        
+        /**
+         * Default height of one line of toolbar
+         * @cfg {Number} toolbarHeight
+         */
+        toolbarHeight: 28,
+        
+        /**
+         * Max text plain length
+         * @cfg {Number} maxLength
+         */
+        maxLength: false,
+        
+        /**
+         * Instance of embeded editor (appears after editor created)
+         * @property {TinyMCE.Editor} editor
+         * @private
+         */
+        editor: undefined,
+        
+        /**
+         * Length of plain content
+         * @property {Number} numChars
+         * @private
+         */
+        numChars: 0,
         
         /**
          * Base config
@@ -65,7 +98,7 @@
         tinyConfigSets: {
             extended: {
                 plugins: 'pagebreak,style,layer,table,advhr,advimage,advlink,emotions,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template',
-                theme_advanced_buttons1: 'bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect',
+                theme_advanced_buttons1: 'bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,fontsizeselect',
                 theme_advanced_buttons2: 'bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor',
                 theme_advanced_buttons3: 'tablecontrols,|,hr,sub,sup,|,charmap,media,advhr,|,print,|,ltr,rtl,|',
                 theme_advanced_buttons4: 'insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak'
@@ -76,23 +109,6 @@
                 theme_advanced_buttons2 : "",
                 theme_advanced_buttons3 : "",
                 theme_advanced_buttons4 : ""
-            }
-        },
-        
-        statics: {
-            testMe: function() {
-                var me = Ext.create(this.prototype.$className);
-                var w = Ext.create("Ext.window.Window", {
-                    items: [{
-                       xtype: 'form',
-                       items: [
-                           me, {xtype: 'textfield', fieldLabel: 'test'}
-                       ]
-                    }],
-                    renderTo: Ext.getBody()
-                });
-                
-                w.show();
             }
         },
         
@@ -109,16 +125,45 @@
                     {
                         itemId: 'tinymce',
                         xtype: 'tinymce',
-                        width: this.width,
+                        width: ((this.fieldLabel && this.fieldLabel != '') ? (this.width - this.labelWidth - this.marginOffset) : this.width),
+                        fieldLabel: this.fieldLabel,
+                        labelWidth: this.labelWidth,
                         height: this.computeHeight(),
                         name: this.fieldName,
-                        tinymceSettings: this.getTinyConfig()
+                        tinymceSettings: this.getTinyConfig(),
+                        listeners: {
+                            change: function() {
+                                _this.fireEvent('tinychange', _this, _this.getEditor())
+                            }
+                        },
+                        validator: function() {
+                            if (_this.getNumChars() > _this.maxLength)
+                            {
+                                return "Opis jest zbyt długi!";
+                            }
+                            
+                            return true;
+                        }
                     }
                 ]
             };
             
-            
-            this.addEvents('tinycreated');
+            this.addEvents(
+                /**
+                 * @event tinycreated
+                 */
+                'tinycreated', 
+                
+                /**
+                 * @event tinychange
+                 */
+                'tinychange', 
+                
+                /**
+                 * @event tinykeydown
+                 */
+                'tinykeydown'
+            );
             
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             this.callParent();
@@ -127,12 +172,29 @@
                 var tiny = this.getComponent('tinymce');
                 tiny.on('editorcreated', function() {
                     Ext.defer(function() {
+                        _this.initEditor()
                         _this.fireEvent('tinycreated', _this, tiny);
                     }, 300);
                 });
-                
-                
             });
+        },
+        
+        /**
+         * Initializes editor
+         * 
+         * @private
+         */
+        initEditor: function()
+        {
+            var editor = this.items.get(0).ed;
+            var _this = this;
+            
+            editor.onKeyDown.add(function(ed, e) {
+                _this.countChars();
+                _this.fireEvent('tinykeydown', _this, ed);
+            });
+            
+            this.editor = editor;
         },
         
         /**
@@ -162,19 +224,72 @@
          */
         computeHeight: function()
         {
-            var toolHeight = 28;
-            var sumHeight = 0;
+            var height = this.height;
             var settings = this.getTinyConfig();
+            var toolbar;
             
             for (var i=1; i<=4; i++)
             {
-                if (settings['theme_advanced_buttons' + i] != "")
+                toolbar = settings['theme_advanced_buttons' + i];
+                if (typeof toolbar != "undefined" && toolbar != "")
                 {
-                    sumHeight =+ toolHeight;
+                    height -= this.toolbarHeight;
                 }
             }
             
-            return this.height - sumHeight;
+            return height;
+        },
+        
+        /**
+         * Return embeded editor
+         * 
+         * @return TinyMCE.Editor
+         */
+        getEditor: function()
+        {
+            return this.editor;
+        },
+        
+        /**
+         * HTML content
+         * 
+         * @return {String}
+         */
+        getTinyContent: function()
+        {
+            return this.getEditor().getContent();
+        },
+        
+        /**
+         * Plaint text content
+         * 
+         * @return {String}
+         */
+        getTinyPlainContent: function()
+        {
+            var content = this.getTinyContent();
+            
+            return content.replace(/(<([^>]+)>)/ig, "").replace(/&[a-z0-9]+;/ig, " ");
+        },
+        
+        /**
+         * Counts chars
+         * 
+         * @private
+         */
+        countChars: function()
+        {
+            this.numChars = this.getTinyPlainContent().length;
+        },
+        
+        /**
+         * Number of chars
+         * 
+         * @return {Number}
+         */
+        getNumChars: function()
+        {
+            return this.numChars;
         }
     });
     
