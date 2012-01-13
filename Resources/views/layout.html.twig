@@ -4,9 +4,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}Hatimeria CMF{% endblock %}</title>
         {% render "HatimeriaExtJSBundle:Default:headers" %}
-        <script type="text/javascript">
-            Ext.Loader.setPath('HatimeriaAdmin', '/bundles/hatimeriaadmin/js');
-        </script>
         {% render "HatimeriaAdminBundle:Default:headers" %}
         {% block head %}{% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
