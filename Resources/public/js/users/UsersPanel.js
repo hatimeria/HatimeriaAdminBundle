@@ -18,8 +18,8 @@
                 store: store,
                 columns: [
                     {dataIndex: 'id', width: 80},
-                    {dataIndex: 'username', width: 180},
-                    {dataIndex: 'email', width: 220},
+                    {dataIndex: 'username', flex: 1},
+                    {dataIndex: 'email', flex: 1},
                     {dataIndex: 'enabled', width: 80, renderer: this.rendererYesNo}
                 ]
             };
