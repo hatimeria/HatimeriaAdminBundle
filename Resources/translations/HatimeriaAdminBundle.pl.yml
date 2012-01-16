@@ -34,6 +34,8 @@ users:
   username: Login
   email: Email
   enabled: Aktywny
+  edit:
+    title: Edycja użytkownika  
   
 form:
   image:

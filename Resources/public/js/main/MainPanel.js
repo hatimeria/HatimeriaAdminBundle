@@ -17,7 +17,7 @@
                 frame: false,
                 border: 0,
                 bodyStyle: 'background: transparent; border: 0',
-                bodyPadding: 50,
+                bodyPadding: 10,
                 items: [
                     Ext.create("HatimeriaAdmin.core.component." + (_user.signedIn ? "User": "Guest") + "StatusComponent", {
                         style: 'background: transparent'

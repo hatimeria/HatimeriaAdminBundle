@@ -13,31 +13,24 @@
 
             var config = {
                 style: {
-                    //borderColor:'silver', 
-                    //borderStyle:'solid', 
-                    //borderWidth:'1px',
-                    background: 'white'
+                    background: 'transparent'
                 },    
                 defaults: {
                     margin: 3
                 },
                 layout: {
                     type: 'hbox',
-                    padding: '10',
-                    pack: 'center'
+                    padding: '10'
                 },
                 items: [
                     {
+                        xtype: 'container',
                         html: this.statusText,
+                        style: 'background: transparent; text-align: right',
                         padding: 5,
-                        width: 250,
+                        flex: 1,
                         border: 0
-                    },
-                    /*{
-                        html: '<b>Hatimeria CMF</b>',
-                        padding: 5,
-                        border: 0
-                    }*/
+                    }
                 ]
             };
 

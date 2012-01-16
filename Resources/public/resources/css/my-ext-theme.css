@@ -2017,7 +2017,7 @@ input, textarea, select {
 
 /* line 615, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-default-small {
-  border-color: #316230; }
+  border-color: #4e920a; }
 
 /* line 58, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-btn-default-small {
@@ -2180,19 +2180,17 @@ input, textarea, select {
 
 /* line 747, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-default-small-over {
-  border-color: #dfdede;
   background-image: none;
   background-color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #482774), color-stop(100%, #482774));
-  background-image: -webkit-linear-gradient(top, #482774, #482774);
-  background-image: -moz-linear-gradient(top, #482774, #482774);
-  background-image: -o-linear-gradient(top, #482774, #482774);
-  background-image: -ms-linear-gradient(top, #482774, #482774);
-  background-image: linear-gradient(top, #482774, #482774); }
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8bbe33), color-stop(100%, #396e04));
+  background-image: -webkit-linear-gradient(top, #8bbe33, #396e04);
+  background-image: -moz-linear-gradient(top, #8bbe33, #396e04);
+  background-image: -o-linear-gradient(top, #8bbe33, #396e04);
+  background-image: -ms-linear-gradient(top, #8bbe33, #396e04);
+  background-image: linear-gradient(top, #8bbe33, #396e04); }
 
 /* line 771, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-default-small-focus {
-  border-color: #dfdede;
   background-image: none;
   background-color: white;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8cbe35), color-stop(100%, #86bb2f));
@@ -2329,7 +2327,7 @@ input, textarea, select {
 
 /* line 615, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-default-medium {
-  border-color: #316230; }
+  border-color: #4e920a; }
 
 /* line 58, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-btn-default-medium {
@@ -2492,19 +2490,17 @@ input, textarea, select {
 
 /* line 747, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-default-medium-over {
-  border-color: #dfdede;
   background-image: none;
   background-color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #482774), color-stop(100%, #482774));
-  background-image: -webkit-linear-gradient(top, #482774, #482774);
-  background-image: -moz-linear-gradient(top, #482774, #482774);
-  background-image: -o-linear-gradient(top, #482774, #482774);
-  background-image: -ms-linear-gradient(top, #482774, #482774);
-  background-image: linear-gradient(top, #482774, #482774); }
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8bbe33), color-stop(100%, #396e04));
+  background-image: -webkit-linear-gradient(top, #8bbe33, #396e04);
+  background-image: -moz-linear-gradient(top, #8bbe33, #396e04);
+  background-image: -o-linear-gradient(top, #8bbe33, #396e04);
+  background-image: -ms-linear-gradient(top, #8bbe33, #396e04);
+  background-image: linear-gradient(top, #8bbe33, #396e04); }
 
 /* line 771, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-default-medium-focus {
-  border-color: #dfdede;
   background-image: none;
   background-color: white;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8cbe35), color-stop(100%, #86bb2f));
@@ -2641,7 +2637,7 @@ input, textarea, select {
 
 /* line 615, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-default-large {
-  border-color: #316230; }
+  border-color: #4e920a; }
 
 /* line 58, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-btn-default-large {
@@ -2804,19 +2800,17 @@ input, textarea, select {
 
 /* line 747, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-default-large-over {
-  border-color: #dfdede;
   background-image: none;
   background-color: white;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #482774), color-stop(100%, #482774));
-  background-image: -webkit-linear-gradient(top, #482774, #482774);
-  background-image: -moz-linear-gradient(top, #482774, #482774);
-  background-image: -o-linear-gradient(top, #482774, #482774);
-  background-image: -ms-linear-gradient(top, #482774, #482774);
-  background-image: linear-gradient(top, #482774, #482774); }
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8bbe33), color-stop(100%, #396e04));
+  background-image: -webkit-linear-gradient(top, #8bbe33, #396e04);
+  background-image: -moz-linear-gradient(top, #8bbe33, #396e04);
+  background-image: -o-linear-gradient(top, #8bbe33, #396e04);
+  background-image: -ms-linear-gradient(top, #8bbe33, #396e04);
+  background-image: linear-gradient(top, #8bbe33, #396e04); }
 
 /* line 771, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_button.scss */
 .x-btn-default-large-focus {
-  border-color: #dfdede;
   background-image: none;
   background-color: white;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #8cbe35), color-stop(100%, #86bb2f));
@@ -7592,7 +7586,7 @@ textarea.x-form-invalid-field {
 
 /* line 113, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_window.scss */
 .x-window-default {
-  border-color: #24410d;
+  border-color: #479300;
   -moz-border-radius: 5px 5px;
   -webkit-border-radius: 5px 5px;
   -o-border-radius: 5px 5px;
@@ -7630,8 +7624,8 @@ textarea.x-form-invalid-field {
   -ms-border-bottom-left-radius: 5px;
   -khtml-border-bottom-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  padding: 4px 4px 4px 4px;
-  border-width: 1px;
+  padding: 5px 5px 5px 5px;
+  border-width: 0px;
   border-style: solid;
   background-color: #459302; }
 
@@ -7671,27 +7665,27 @@ textarea.x-form-invalid-field {
   background-repeat: repeat-y; }
 /* line 200, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-nbr .x-window-default-mc {
-  padding: 0 0 0 0; }
+  padding: 0px 0px 0px 0px; }
 
 /* line 132, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_window.scss */
 .x-window-body-default {
   border-color: #479300;
   border-width: 1px;
-  background: #4ebb01;
+  background: #f5f3e9;
   color: black; }
 
 /* line 142, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_window.scss */
 .x-window-header-default {
-  border-color: #24410d;
+  border-color: #479300;
   zoom: 1; }
 
 /* line 147, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_window.scss */
 .x-window-header-text-default {
   color: white;
-  font-weight: bold;
-  line-height: 19px;
+  font-weight: normal;
+  line-height: 20px;
   font-family: tahoma, arial, verdana, sans-serif;
-  font-size: 13px; }
+  font-size: 14px; }
 
 /* line 58, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/mixins/_frame.scss */
 .x-window-header-default-top {
@@ -7720,7 +7714,7 @@ textarea.x-form-invalid-field {
   -khtml-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
   padding: 5px 5px 0 5px;
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
   background-color: #459302; }
 
@@ -7789,7 +7783,7 @@ textarea.x-form-invalid-field {
   -khtml-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
   padding: 5px 5px 5px 0;
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
   background-color: #459302; }
 
@@ -7858,7 +7852,7 @@ textarea.x-form-invalid-field {
   -khtml-border-bottom-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 0 5px 5px 5px;
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
   background-color: #459302; }
 
@@ -7927,7 +7921,7 @@ textarea.x-form-invalid-field {
   -khtml-border-bottom-left-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 5px 0px 5px 5px;
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
   background-color: #459302; }
 

@@ -6,6 +6,7 @@ Ext.require("Hatimeria.core.form.UserSwitch");
 Ext.require("HatimeriaAdmin.users.store.UserStore");
 Ext.require("HatimeriaAdmin.core.store.MenuStore");
 Ext.require("HatimeriaAdmin.core.tree.MenuTree");
+Ext.require("HatimeriaAdmin.main.MainPanel");
 Ext.require("HatimeriaAdmin.core.component.ContainerComponent");
 Ext.require("HatimeriaAdmin.core.component.GuestStatusComponent");
 Ext.require("HatimeriaAdmin.core.component.UserStatusComponent");

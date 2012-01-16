@@ -4,7 +4,9 @@
 (function() {
     
     Ext.define('HatimeriaAdmin.users.window.UserWindow', {
-        extend: 'Ext.window.Window',
+        extend: 'Hatimeria.core.window.BaseWindow',
+        transDomain: 'HatimeriaAdminBundle',
+        transNS: 'users.edit',
         
         /**
          * Constructor
@@ -13,6 +15,7 @@
          */
         constructor: function(cfg)
         {
+            this.title = this.__('title');
             this.callParent([cfg]);
             this.initConfig(cfg);
             
@@ -35,7 +38,7 @@
         {
             var config = {
                 width: 450,
-                padding: 10,
+                bodyPadding: 10,
                 items: [
                     Ext.create('HatimeriaAdmin.users.form.UserForm', {
                         id: 'admin-user-form'

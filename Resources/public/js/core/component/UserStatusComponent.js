@@ -12,7 +12,7 @@
 
         initComponent: function()
         {
-            this.statusText = this.__('status.signed-in-as') + '&nbsp<b>' + _user.data.username + '</b>';
+            this.statusText = this.__('status.signed-in-as') + '&nbsp;<b>' + _user.data.username + '</b>';
 
             if (_user.isSwitched) {
                 this.statusText += ' <i style="color: silver; font-size: 8pt">(' + this.__('switch.active') + ')</i>';
@@ -24,7 +24,7 @@
                 
                 this.add(Ext.create('HatimeriaAdmin.core.InternalButton', {
                     text: this.__('logout'),
-                    margin: '3 10 0 10',
+                    margin: '3 5 0 5',
                     uri: 'fos_user_security_logout'
                 }));
 
@@ -36,7 +36,6 @@
                 if (_user.isAdmin) {
                     this.add(
                             Ext.create("Hatimeria.core.form.UserSwitch", {
-                                width: 300,
                                 height: 50,
                                 margin: '3 10 0 10',
                                 store: Ext.create("HatimeriaAdmin.users.store.UserStore")

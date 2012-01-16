@@ -12,7 +12,10 @@ $base-color-active: #759E2E;
 
 //buttons
 $button-small-font-weight: bold !default;
+
 $button-default-color: white;
+$button-default-color-over: white !default;
+$button-default-color-focus: white !default;
 
 $button-default-base-color: adjust-color(#409C34, $hue: 5deg, $saturation: -15.556%, $lightness: 5.745O%) !default;
 $button-default-base-color-over: adjust-color(white, $hue: -30deg, $saturation: 30.444%, $lightness: 6.588%) !default; //E4F3FF
@@ -20,14 +23,13 @@ $button-default-base-color-focus: $button-default-base-color-over !default;
 $button-default-base-color-pressed: adjust-color(#409C34, $hue: -0.725deg, $saturation: -9.556%, $lightness: -3.725%) !default; //B6CBE4
 
 $button-default-background-gradient: color-stops(#8BBE33, #4B9F01) !default;
-$button-default-background-gradient-over: color-stops(#482774, #482774) !default;
+$button-default-background-gradient-over: color-stops(#8BBE33, #396E04) !default;
 $button-default-background-gradient-focus: color-stops(#8CBE35, #86BB2F) !default;
 $button-default-background-gradient-pressed: color-stops(#8BBE33, #4B9F01) !default;
 $button-default-background-gradient-disabled: color-stops(#8BBE33, #4B9F01) !default;
 
-$button-default-color-over: white !default;
-$button-default-color-focus: #FFFFFF !default;
-
+$button-default-border-color: #4E920A;
+$button-default-border-color-over: #4E920A;
 
 //panel
 $panel-header-background-gradient: color-stops(#8EC038, #479E00);
@@ -61,12 +63,15 @@ $grid-header-over-background-gradient: color-stops(#FFFBCC, #F5F4EA) !default;
 
 
 //window
-$window-header-padding: 20px 20px 0 !default;
-$window-header-color: #FFFFFF !default;
+$window-base-color: #489500 !default;
+$window-border-color: #479300;
+$window-border-width: 0px !default;
 $window-background-color: adjust-color(#479300, $hue: 1.267deg, $saturation: -3.309%, $lightness: 0.569%) !default;
-$window-base-color: #459301 !default;
-$window-header-font-size: 13px;
+$window-body-background-color: #F5F3E9;
 $window-body-border-color: #479300;
+$window-header-font-size: 14px;
+$window-header-color: #FFFFFF !default;
+$window-header-font-weight: normal !default;
 
 
 @import 'ext4/default/all';

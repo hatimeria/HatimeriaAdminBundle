@@ -69,7 +69,7 @@
             
             var configObj = {
                 id: id,
-                width: 800
+                width: 750
             };
             
             Ext.apply(configObj, this.defaultPanelConfig);
