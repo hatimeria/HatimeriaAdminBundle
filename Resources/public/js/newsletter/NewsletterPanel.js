@@ -22,8 +22,8 @@
                 store: store,
                 hideContextRowMenuInterval: 3000,
                 columns: [
-                    {header: "Id", dataIndex: 'id'},
-                    {header: "Tytuł", dataIndex: 'subject'},
+                    {header: "Id", dataIndex: 'id', width: 50},
+                    {header: "Tytuł", dataIndex: 'subject', flex: 1},
                     {header: "W kolejce", dataIndex: 'sent', renderer: YesNoRenderrer}
                 ],
                 viewConfig: {

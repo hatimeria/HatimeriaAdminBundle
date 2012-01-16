@@ -25,15 +25,18 @@
                 columns: [
                     {
                         header: "Id", 
-                        dataIndex: 'id'
+                        dataIndex: 'id',
+                        width: 50
                     },
                     {
                         header: "Tytuł", 
-                        dataIndex: 'title'
+                        dataIndex: 'title',
+                        flex: 1
                     },
                     {
                         header: "Adres",
-                        dataIndex: 'path'
+                        dataIndex: 'path',
+                        flex: 1
                     },
                     {
                         width: 160,
