@@ -8,8 +8,8 @@ status:
 
 switch: 
   back: Wróć do administratora
-  action: Przełącz na
   active: przełączony
+  box_title: Przełącz na innego użytkownika
 
 welcome:
   text: Przykładowa zawartość

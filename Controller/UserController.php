@@ -20,10 +20,16 @@ class UserController extends Controller
     public function listAction($params)
     {
         $pager = $this->get('hatimeria_extjs.pager')->fromEntity($this->container->getParameter("fos_user.model.user.class"), $params);
+        $qb  = $pager->getQueryBuilder();
+        
         if($params->has('query')) {
-            $qb  = $pager->getQueryBuilder();
             $dql = $qb->expr()->like('e.username', "'%".$params->get("query")."%'");
             $qb->andWhere($dql);
+        }
+        
+        if($params->has('withoutMe')) {
+            $user = $this->get('security.context')->getToken()->getUser();
+            $qb->andWhere('e.id !=' . $user->getId());
         }
         
         return $pager;

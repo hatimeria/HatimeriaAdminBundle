@@ -30,17 +30,40 @@
 
 
                 if (_user.isSwitched) {
-                    this.add(Ext.create("HatimeriaAdmin.core.component.BackToAdminButton"));
+                    this.down('#users-status-text').add(Ext.create("HatimeriaAdmin.core.component.BackToAdminButton"));
                 }
 
                 if (_user.isAdmin) {
+                    var users = Ext.create("HatimeriaAdmin.users.store.UserStore", {
+                        autoLoad: false
+                    });
+                    
+                    users.applyExtraParams({
+                       withoutMe: true 
+                    });
+                    
                     this.add(
+                    {
+                        xtype: 'panel',
+                        title: this.__('switch.box_title'),
+                        height: 150,
+                        margin: 20,
+                        style: 'border-top: 1px;',
+                        bodyPadding: '5',
+                        items: [
+                            {
+                              html: 'Możesz zobaczyć jak serwis wygląd od strony danego użytkownika.',
+                              padding: 5,
+                              border: 0
+                            },
                             Ext.create("Hatimeria.core.form.UserSwitch", {
                                 height: 50,
-                                margin: '3 10 0 10',
-                                store: Ext.create("HatimeriaAdmin.users.store.UserStore")
+                                padding: 5,
+                                store: users
                             })
-                            );
+                        ]
+                    }
+                    );
                 }
             });
         }
