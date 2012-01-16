@@ -62,6 +62,13 @@
         maxLength: false,
         
         /**
+         * Allow field blank before submit
+         * 
+         * @cfg {Boolean} allowBlank
+         */
+        allowBlank: true,
+        
+        /**
          * Instance of embeded editor (appears after editor created)
          * @property {TinyMCE.Editor} editor
          * @private
@@ -127,17 +134,19 @@
                         xtype: 'tinymce',
                         width: ((this.fieldLabel && this.fieldLabel != '') ? (this.width - this.labelWidth - this.marginOffset) : this.width),
                         fieldLabel: this.fieldLabel,
+                        msgTarget: 'side',
                         labelWidth: this.labelWidth,
                         height: this.computeHeight(),
                         name: this.fieldName,
                         tinymceSettings: this.getTinyConfig(),
+                        allowBlank: this.allowBlank,
                         listeners: {
                             change: function() {
                                 _this.fireEvent('tinychange', _this, _this.getEditor())
                             }
                         },
                         validator: function() {
-                            if (_this.getNumChars() > _this.maxLength)
+                            if (_this.maxLength && _this.getNumChars() > _this.maxLength)
                             {
                                 return "Opis jest zbyt długi!";
                             }
