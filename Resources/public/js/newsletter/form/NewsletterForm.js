@@ -42,6 +42,16 @@
                         tinyConfigSet: 'basic',
                         fieldName: 'body',
                         labelWidth: 50,
+                        width: 600,
+                        tinyConfigSets: {
+                            basic: {
+                                plugins: 'advimage',
+                                theme_advanced_buttons1 : "formatselect,fontsizeselect,bold,italic,underline,separator,strikethrough,justifyleft,justifycenter,justifyright,justifyfull,bullist,numlist,undo,redo,link,unlink,image,code",
+                                theme_advanced_buttons2 : "",
+                                theme_advanced_buttons3 : "",
+                                theme_advanced_buttons4 : ""
+                            }
+                        },
                         listeners: {
                             tinycreated: function() {
                                 if (_this.tmpRecord) {
