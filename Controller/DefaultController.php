@@ -13,8 +13,13 @@ class DefaultController extends Controller
         return $this->render('HatimeriaAdminBundle:Admin:unsigned.html.twig');
     }
     
-    public function headersAction()
+    public function defaultHeadersAction()
     {
-        return $this->render('HatimeriaAdminBundle:Default:default_headers.html.twig');
+        if ($this->container->hasParameter('admin_loader'))
+        {
+            $namespaces = $this->container->getParameter('admin_loader');
+        }
+        
+        return $this->render('HatimeriaAdminBundle:Default:default_headers.html.twig', array('namespaces' => $namespaces));
     }
 }

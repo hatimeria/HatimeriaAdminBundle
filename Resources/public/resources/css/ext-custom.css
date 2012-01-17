@@ -182,3 +182,11 @@ body#hatimeria-admin-body {
 .ux-errors * {
     display: none;
 }
+
+.x-form-invalid-field, textarea.x-form-invalid-field {
+    background-image: none;
+}
+
+.x-form-invalid table.mceLayout {
+    border: 1px solid red !important;
+}

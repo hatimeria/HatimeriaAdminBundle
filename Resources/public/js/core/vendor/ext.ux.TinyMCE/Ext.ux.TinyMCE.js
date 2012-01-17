@@ -107,9 +107,8 @@
                 this.tinymceSettings.width = this.width;
             }
             if (Ext.type(this.height) == "number") {
-                this.tinymceSettings.height = this.height;
+                //this.tinymceSettings.height = this.height;
             }
-
             
             var divForTinyEl = this.inputEl.first(),
                 id = Ext.id(divForTinyEl);
@@ -189,10 +188,7 @@
                     return;
                 }
                 
-                var size = this.getSize();
                 this.withEd( function() {
-                    this._setEditorSize( size.width, size.height );
-                    
                     // Indicate that editor is created
                     this.fireEvent("editorcreated");
                 });
@@ -678,7 +674,7 @@
     
                     if (!tinymce.dom.Event.domLoaded)
                         tinymce.dom.Event._pageInit();
-    
+                    
                     tinyMCE.init(s);
                     tmceInitialized = true;
                 }

@@ -1,20 +1,11 @@
 {% extends 'HatimeriaAdminBundle::layout.html.twig' %}
 
 {% block head %}
-<script type="text/javascript">
-{% for ns,path in namespaces %}
-    Ext.Loader.setPath('{{ ns }}', '{{ path }}');
-{% endfor %}
-</script>
-<script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/core/vendor/tinymce/jscripts/tiny_mce/tiny_mce.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/core/vendor/ext.ux.TinyMCE/Ext.ux.TinyMCE.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/core/vendor/tinymce/jscripts/upload/upload.js') }}"></script>
-<script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/core/init.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/hatimeriaadmin/js/core/init.js') }}"></script>
 {% endblock %}
 
 {% block javascripts %}
 <script type="text/javascript">
     var _menu = {{ menu|json_encode|raw }}
-    Ext.ux.TinyMCE.initTinyMCE();
 </script>
 {% endblock %}

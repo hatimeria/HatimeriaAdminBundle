@@ -7,7 +7,7 @@
 (function() {
     
     Ext.define('HatimeriaAdmin.core.form.TinyMceForm', {
-        extend: 'Ext.form.Panel',
+        extend: 'Hatimeria.core.form.BaseForm',
         alias: 'widget.hatimeria-tinymce',
         
         /**
@@ -16,6 +16,13 @@
          * @cfg {String} tinyConfigSet
          */
         tinyConfigSet: 'extended',
+        
+        /**
+         * Initial value for field
+         * 
+         * @cfg {String} value
+         */
+        value: null,
         
         /**
          * @cfg {String} fieldLabel Treść
@@ -35,7 +42,7 @@
         /**
          * @cfg {Number} tinyHeight
          */
-        height: 300,
+        height: 350,
         
         /**
          * Margin corrects width of tinyMCE
@@ -48,12 +55,6 @@
          * @cfg {Integer} labelWidth
          */
         labelWidth: 100,
-        
-        /**
-         * Default height of one line of toolbar
-         * @cfg {Number} toolbarHeight
-         */
-        toolbarHeight: 28,
         
         /**
          * Max text plain length
@@ -126,12 +127,50 @@
             }
         },
         
+        statics: {
+            testMe: function() {
+                var panel = Ext.create("Hatimeria.core.form.BaseForm", {
+                    renderTo: Ext.getBody(),
+                    dockedItems: [{
+                       dock: 'bottom',
+                       xtype: 'toolbar',
+                       items: [
+                           {
+                                text: 'Submit',
+                                handler: function() {
+                                    console.log(panel.getForm().isValid());
+                                }
+                           }
+                       ]
+                    }],
+                    items: [
+                        Ext.create("HatimeriaAdmin.core.form.TinyMceForm", {
+                            maxLength: 2,
+                            tinyConfigSet: 'basic',
+                            value: 'ala123'
+                        }),
+                        {
+                            xtype: 'numberfield',
+                            fieldLabel: 'Numer',
+                            name: 'test',
+                            allowBlank: false
+                        }                        
+                    ],
+                    height: 1000,
+                    width: 800
+                });
+                
+                panel.getForm().isValid();
+            }
+        },
+        
         /**
          * Initialization
          */
         initComponent: function()
         {
             var _this = this;
+            this.tinyBaseConfig.height = this.computeHeight();
             var config = {
                 border: 0,
                 layout: 'auto',
@@ -140,24 +179,15 @@
                         itemId: 'tinymce',
                         xtype: 'tinymce',
                         width: ((this.fieldLabel && this.fieldLabel != '') ? (this.width - this.labelWidth - this.marginOffset) : this.width),
+                        height: _this.height,
                         fieldLabel: this.fieldLabel,
-                        msgTarget: _this.id + '-errors',
                         labelWidth: this.labelWidth,
-                        height: this.computeHeight(),
                         name: this.fieldName,
                         tinymceSettings: this.getTinyConfig(),
                         allowBlank: this.allowBlank,
                         listeners: {
                             change: function() {
                                 _this.fireEvent('tinychange', _this, _this.getEditor())
-                            },
-                            afterrender: function() {
-                                this.errorEl = this.labelEl.createChild({
-                                    tag: 'div',
-                                    cls: 'ux-errors x-form-error-msg',
-                                    id: _this.id + '-errors'
-                                });
-                                console.log(this.errorEl)
                             }
                         },
                         validator: function() {
@@ -201,6 +231,17 @@
                     }, 300);
                 });
             });
+            
+            // set initial value after tiny is rendered
+            if(this.value) {
+                this.on('tinycreated', function(panel, field) {
+                    field.setValue(_this.value);
+                });
+            }
+            
+            this.on('tinychange', function() {
+                _this.countChars();
+            })
         },
         
         /**
@@ -248,20 +289,7 @@
          */
         computeHeight: function()
         {
-            var height = this.height;
-            var settings = this.getTinyConfig();
-            var toolbar;
-            
-            for (var i=1; i<=4; i++)
-            {
-                toolbar = settings['theme_advanced_buttons' + i];
-                if (typeof toolbar != "undefined" && toolbar != "")
-                {
-                    height -= this.toolbarHeight;
-                }
-            }
-            
-            return height;
+            return this.height - 40;
         },
         
         /**

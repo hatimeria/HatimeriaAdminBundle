@@ -4,7 +4,9 @@
         requires: [
             'HatimeriaAdmin.core.form.TinyMceForm'
         ],
-        
+        defaults: {
+            anchor: '100%'
+        },
         submitConfig: {
             text: 'Zapisz',
             submit: Actions.HatimeriaAdmin_Cms.edit,
@@ -22,9 +24,6 @@
                 width: 700,
                 bodyPadding: 10,
                 defaultType: 'textfield',
-                defaults: {
-                    anchor: '100%'
-                },
                 items: [{
                     fieldLabel: 'Tytuł',
                     name: 'title'
