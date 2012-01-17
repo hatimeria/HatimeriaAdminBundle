@@ -15,7 +15,7 @@ root {
     display: block;
 }
 
-body.x-border-layout-ct {
+body#hatimeria-admin-body {
     background: url('/bundles/hatimeriaadmin/images/body.gif') fixed 230px top no-repeat;
     background-color: #F0F0F0;
 }

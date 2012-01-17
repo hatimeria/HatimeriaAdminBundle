@@ -19,7 +19,6 @@ Ext.onReady(function() {
     
     Ext.create("Ext.container.Viewport", {
         layout: 'border',
-        renderTo: Ext.getBody(),
         id: 'app-viewport',
         items: [
             {
