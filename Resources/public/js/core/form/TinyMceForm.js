@@ -83,6 +83,13 @@
         numChars: 0,
         
         /**
+         * Id of element
+         * @property {String}
+         * @private
+         */
+        elId: undefined,
+        
+        /**
          * Base config
          * 
          * @cfg {Object} tinyBaseConfig
@@ -134,7 +141,7 @@
                         xtype: 'tinymce',
                         width: ((this.fieldLabel && this.fieldLabel != '') ? (this.width - this.labelWidth - this.marginOffset) : this.width),
                         fieldLabel: this.fieldLabel,
-                        msgTarget: 'side',
+                        msgTarget: _this.id + '-errors',
                         labelWidth: this.labelWidth,
                         height: this.computeHeight(),
                         name: this.fieldName,
@@ -143,6 +150,14 @@
                         listeners: {
                             change: function() {
                                 _this.fireEvent('tinychange', _this, _this.getEditor())
+                            },
+                            afterrender: function() {
+                                this.errorEl = this.labelEl.createChild({
+                                    tag: 'div',
+                                    cls: 'ux-errors x-form-error-msg',
+                                    id: _this.id + '-errors'
+                                });
+                                console.log(this.errorEl)
                             }
                         },
                         validator: function() {
@@ -177,7 +192,7 @@
             Ext.apply(this, Ext.apply(config, this.initialConfig));
             this.callParent();
             
-            this.on('render', function() {
+            this.on('afterrender', function() {
                 var tiny = this.getComponent('tinymce');
                 tiny.on('editorcreated', function() {
                     Ext.defer(function() {
@@ -257,6 +272,16 @@
         getEditor: function()
         {
             return this.editor;
+        },
+        
+        /**
+         * Element of main id container
+         * 
+         * @return {String}
+         */
+        getElId: function()
+        {
+            return this.elId;
         },
         
         /**

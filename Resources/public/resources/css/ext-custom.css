@@ -167,3 +167,14 @@ body.x-border-layout-ct {
 .x-tree-panel .x-grid-row .x-grid-cell-inner img.x-tree-icon{
     display: none;
 }
+
+.ux-errors {
+    background: url("../images/form/exclamation.gif") no-repeat scroll 2px 3px transparent;
+    height: 18px;
+    width: 18px;
+    float: right;
+}
+
+.ux-errors * {
+    display: none;
+}
