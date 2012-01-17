@@ -15,18 +15,22 @@ root {
     display: block;
 }
 
-body.x-border-layout-ct {
+body#hatimeria-admin-body {
     background: url('/bundles/hatimeriaadmin/images/body.gif') fixed 230px top no-repeat;
     background-color: #F0F0F0;
 }
 
 #app-content-panel .x-panel-header-text-default{
     color: #666;
-    font-size: 25px;
+    font-size: 16px;
     text-shadow: none;
 }
 
-#app-content-panel .x-panel-header-default {
+#app-content-panel > .x-panel-default > .x-panel-header-default .x-panel-header-text-default {
+    font-size: 25px
+}
+
+#app-content-panel > .x-panel-default > .x-panel-header-default {
     background: transparent;
     line-height: 18px;
 }
@@ -36,7 +40,7 @@ body.x-border-layout-ct {
     padding: 5px 4px 10px 0px;
 }
 
-#app-content-panel .x-panel-header-default-top {
+#app-content-panel > .x-panel-default .x-panel-header-default-top {
     box-shadow: none;
 }
 

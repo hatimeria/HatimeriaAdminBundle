@@ -6,9 +6,9 @@
         {% render "HatimeriaExtJSBundle:Default:headers" %}
         {% render "HatimeriaAdminBundle:Default:headers" %}
         {% block head %}{% endblock %}
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="shortcut icon" href="{{ asset('/bundles/hatimeriaadmin/images/hatimeria.ico') }}" />
     </head>
-    <body>
+    <body id="hatimeria-admin-body">
         <div id="body"></div>
         {% block body %}{% endblock %}
         {% block fos_user_content %}{% endblock %}

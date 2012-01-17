@@ -15,20 +15,34 @@
                 style: {
                     background: 'transparent'
                 },    
-                defaults: {
+                defaults: {                         
                     margin: 3
                 },
+                width: '100%',
+                height: 600,
                 layout: {
-                    type: 'hbox',
+                    type: 'vbox',
                     padding: '10'
                 },
                 items: [
                     {
+                        layout: {
+                            type: 'hbox'
+                        },
+                        itemId: 'user-status-text',
                         xtype: 'container',
-                        html: this.statusText,
-                        style: 'background: transparent; text-align: right',
-                        padding: 5,
-                        flex: 1,
+                        items: [
+                            {
+                                xtype: 'container',
+                                style: {
+                                    background: 'transparent'
+                                },
+                                border: 0,
+                                html: this.statusText
+                            }
+                        ],
+                        style: 'background: transparent;',
+                        width: '100%',  
                         border: 0
                     }
                 ]
