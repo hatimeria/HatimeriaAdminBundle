@@ -57,6 +57,11 @@
         labelWidth: 100,
         
         /**
+         * @cfg {Integer} labelWidth
+         */
+        labelAlign: 'left',
+        
+        /**
          * Max text plain length
          * @cfg {Number} maxLength
          */
@@ -182,6 +187,7 @@
                         height: _this.height,
                         fieldLabel: this.fieldLabel,
                         labelWidth: this.labelWidth,
+                        labelAlign: this.labelAlign,
                         name: this.fieldName,
                         tinymceSettings: this.getTinyConfig(),
                         allowBlank: this.allowBlank,
