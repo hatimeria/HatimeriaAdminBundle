@@ -57,10 +57,22 @@
                 {
                     var node = nodes[i];
                     var id = node.code;
+                    var label;
+                    
+                    if(node.text) {
+                      label = node.text;  
+                    } else {
+                        if(node.ns)
+                        {
+                            label = __(node.ns + 'Bundle:' + id + ".title")
+                        } else {
+                            label = _this.__(id + '.title')
+                        }
+                    }
                     
                     newNode = {
                         id: id,
-                        text: _this.__(id + '.title')
+                        text: label
                     };
                     map = Ext.clone(node);
                     map.id = id;

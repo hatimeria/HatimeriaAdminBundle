@@ -190,3 +190,9 @@ body#hatimeria-admin-body {
 .x-form-invalid table.mceLayout {
     border: 1px solid red !important;
 }
+
+.actions-show-column {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #78B233;
+}
