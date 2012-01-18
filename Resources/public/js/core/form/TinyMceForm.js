@@ -234,6 +234,11 @@
                     Ext.defer(function() {
                         _this.initEditor()
                         _this.fireEvent('tinycreated', _this, tiny);
+                        
+                        _this.on('tinychange', function() {
+                            _this.countChars();
+                        });
+                        
                     }, 300);
                 });
             });
@@ -244,10 +249,6 @@
                     field.setValue(_this.value);
                 });
             }
-            
-            this.on('tinychange', function() {
-                _this.countChars();
-            })
         },
         
         /**
