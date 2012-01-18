@@ -65,12 +65,14 @@
                 {
                     fieldLabel: this.__('publish_from'),
                     name: 'publish_from',
-                    xtype: 'datefield'
+                    xtype: 'datefield',
+                    format: 'Y-m-d'
                 },
                 {
                     fieldLabel: this.__('publish_to'),
                     name: 'publish_to',
-                    xtype: 'datefield'
+                    xtype: 'datefield',
+                    format: 'Y-m-d'
                 },
                 {
                     fieldLabel: this.__('is_published'),
