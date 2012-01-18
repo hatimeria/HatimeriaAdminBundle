@@ -6,25 +6,25 @@
             'HatimeriaAdmin.newsletter.window.NewsletterWindow',
             'HatimeriaAdmin.newsletter.store.NewsletterStore'
         ],
+        transNS: 'newsletter',
+        translateAll: true,
     
         windowEditClass: 'HatimeriaAdmin.newsletter.window.NewsletterWindow',
         
         initComponent: function()
         {
             var store = Ext.create('HatimeriaAdmin.newsletter.store.NewsletterStore');
-            var YesNoRenderrer = function(value) {return value ? 'Tak' : 'Nie'};
 
             var config = {
                 id: 'newsletter-panel',
                 rowActions: ['edit', 'clone', 'remove'],
                 dockedElements: ['paging', 'add'],
-                title: 'Newsletter',
                 store: store,
                 hideContextRowMenuInterval: 3000,
                 columns: [
-                    {header: "Id", dataIndex: 'id', width: 50},
-                    {header: "Tytuł", dataIndex: 'subject', flex: 1},
-                    {header: "W kolejce", dataIndex: 'sent', renderer: YesNoRenderrer}
+                    {dataIndex: 'id', width: 50},
+                    {dataIndex: 'subject', flex: 1},
+                    {dataIndex: 'sent', renderer: this.rendererYesNo}
                 ],
                 viewConfig: {
                     forceFit: true

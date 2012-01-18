@@ -3,13 +3,13 @@
     Ext.require('HatimeriaAdmin.newsletter.form.NewsletterForm');
     
     Ext.define('HatimeriaAdmin.newsletter.window.NewsletterWindow', {
-        extend: 'Ext.window.Window',
+        extend: 'Hatimeria.core.window.BaseWindow',
         
         initComponent: function()
         {
             var config = {
                 width: 660,
-                title: 'Dodawanie/Edycja newslettera',
+                title: this.__('newsletter.edit.title'),
                 items: [ 
                     Ext.create('HatimeriaAdmin.newsletter.form.NewsletterForm')
                 ]

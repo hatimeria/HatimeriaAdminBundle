@@ -1,9 +1,11 @@
 (function() {
     
-    Ext.require('HatimeriaAdmin.core.component.StatusComponent');
-    Ext.require('HatimeriaAdmin.core.InternalButton');
-    
     Ext.define("HatimeriaAdmin.core.component.UserStatusComponent", {
+        requires: [
+            "HatimeriaAdmin.core.component.StatusComponent",
+            "HatimeriaAdmin.core.InternalButton",
+            "HatimeriaAdmin.core.component.DashboardBox"
+        ],
         extend: "HatimeriaAdmin.core.component.StatusComponent",
         mixins: {
             translationable: 'Hatimeria.core.mixins.Translationable'
@@ -44,26 +46,30 @@
                     
                     this.add(
                     {
-                        xtype: 'panel',
-                        title: this.__('switch.box_title'),
-                        height: 150,
-                        margin: 20,
-                        style: 'border-top: 1px;',
-                        bodyPadding: '5',
-                        items: [
-                            {
-                              html: 'Możesz zobaczyć jak serwis wygląd od strony danego użytkownika.',
-                              padding: 5,
-                              border: 0
-                            },
-                            Ext.create("Hatimeria.core.form.UserSwitch", {
-                                height: 50,
+                        xtype: 'h-dashboard-box',
+                        name: 'switch',
+                        content: Ext.create("Hatimeria.core.form.UserSwitch", {
                                 padding: 5,
                                 store: users
                             })
-                        ]
                     }
                     );
+                        
+                    this.add({
+                        xtype: 'h-dashboard-box',
+                        name: 'language',
+                        content: Ext.create("Ext.form.ComboBox", {
+                            fieldLabel: this.__('dashboard.language.field_label'),
+                            store: [['pl', 'Polski'],['en','English']],
+                            listeners: {
+                                change: function(field, value) {
+                                    window.location = Routing.generate('hatimeria_admin_language_switch', {
+                                        _locale: value
+                                    })
+                                }
+                            }
+                        })
+                    });
                 }
             });
         }

@@ -3,9 +3,8 @@
     Ext.define('HatimeriaAdmin.users.UsersPanel', {   
         extend: 'Hatimeria.core.grid.BaseGrid',
         requires: ["HatimeriaAdmin.users.store.UserStore"],
-        transDomain: 'HatimeriaAdminBundle',
         transNS: 'users',
-        
+        translateAll: true,
         windowEditClass: 'HatimeriaAdmin.users.window.UserWindow', 
         
         initComponent: function()
