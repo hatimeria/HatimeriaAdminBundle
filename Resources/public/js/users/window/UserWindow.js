@@ -38,7 +38,6 @@
         {
             var config = {
                 width: 450,
-                bodyPadding: 10,
                 items: [
                     Ext.create('HatimeriaAdmin.users.form.UserForm', {
                         id: 'admin-user-form'

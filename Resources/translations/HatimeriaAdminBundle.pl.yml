@@ -9,11 +9,19 @@ status:
 switch: 
   back: Wróć do administratora
   active: przełączony
-  box_title: Przełącz na innego użytkownika
+  
+dashboard:
+  language:
+    title: Zmień język
+    description: Zmień język interfejsu panelu administracyjnego
+    field_label: Język
+  switch:
+    description: Możesz zobaczyć jak serwis wygląd od strony danego użytkownika.
+    title: Przełącz na innego użytkownika
 
 welcome:
-  text: Przykładowa zawartość
   title: Witaj w panelu administracyjnym
+  
 form:
   error:
     title: Formularz zawiera błędy
@@ -21,21 +29,55 @@ form:
 menu:
   users: 
     title: Użytkownicy
-    all: Wszyscy
-  main: Strona główna
-  categories: Kategorie
+  cms:
+    title: Podstrony
+  newsletter:
+    title: Newsletter
+  main: 
+    title: Start
+  categories: 
+    title: Kategorie
 user:
   username: Login
   
 users:   
   title: Lista użytkowników
-  id: Id
-  name: Nazwa
-  username: Login
-  email: Email
-  enabled: Aktywny
+  headers:
+    id: Id
+    name: Nazwa
+    username: Login
+    email: Email
+    enabled: Aktywny
   edit:
-    title: Edycja użytkownika  
+    title: Edycja użytkownika
+    
+cms:   
+  title: Lista podstron
+  headers:
+    id: Id
+    title: Tytuł
+    path: Adres
+    updated_at: Data aktualizacji
+    body: Treść
+    publish_from: Publikuj od
+    author: Autor
+    publish_to: Publikuj do
+    meta_keywords: Słowa kluczowe
+    meta_description: Opis dla wyszukiwarek
+    is_published: Obuplikowany
+    uri: Url    
+  edit:
+    title: Edycja strony
+    
+newsletter:   
+  title: Lista newsletterów
+  headers:
+    id: Id
+    subject: Temat
+    sent: Wysłany
+    body: Treść
+  edit:
+    title: Edycja newslettera
   
 form:
   image:

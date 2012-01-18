@@ -1,48 +1,95 @@
-login: Login
-logout: Logout
+login: Sign in
+logout: Sign out
 
 hatimeria_admin: Administration
 
 status:
   signed-in-as: Signed in as
 
-switch:
-  back: Back to administration
-  action: Switch to
-  active: Switched
+switch: 
+  back: Back to administration account
+  active: switched
+  
+dashboard:
+  language:
+    title: Change language
+    description: Change the language of backend interface
+    field_label: Language
+  switch:
+    description: You can see website from another user perspective
+    title: Switch to other account
 
 welcome:
-  text: Welcome
-  title: Welcome in Admininistration panel
+  title: Welcome in administration backend
+  
 form:
   error:
     title: Form contains errors
 
-users: Users
 menu:
   users: 
-    title: Użytkownicy
-    all: Wszyscy
-  users: Użytkownicy
-  main: Homepage
-  categories: Kategorie
+    title: Users
+  cms:
+    title: Pages
+  newsletter:
+    title: Newsletter
+  main: 
+    title: Dashboard
+  categories: 
+    title: Categories
 user:
-  username: Login
+  username: Username
   
+users:   
+  title: User list
+  headers:
+    id: Id
+    name: Name
+    username: Username
+    email: Email
+    enabled: Active
+  edit:
+    title: Editing user
+cms:   
+  title: Pages
+  headers:
+    id: Id
+    title: Title
+    path: Url
+    updated_at: Last modification
+    body: Content
+    publish_from: Publish from
+    author: Author
+    publish_to: Publish to
+    meta_keywords: Meta keywords
+    meta_description: Meta description
+    is_published: Is published
+    uri: Url
+  edit:
+    title: Page edit
+newsletter:   
+  title: Newsletter list
+  headers:
+    id: Id
+    body: Content
+    subject: Subject
+    sent: Sent
+  edit:
+    title: Newsletter edit
 form:
   image:
-    browse: Browse
+    browse: Browser
     delete: Delete
   error:
     title: Form contains errors
     unknown: Unknown error occured
   login: 
-    login: Login (Email)
+    login: Username (Email)
     password: Password
-    failed: Login or password is incorect
-    failureTitle: Login failed
-    submit: Log in
+    failed: Uncorrect username or password
+    failureTitle: Sign in status
+    submit: Sign in
   
 window:
   login:
-    title: Log in
+    title: Sign in

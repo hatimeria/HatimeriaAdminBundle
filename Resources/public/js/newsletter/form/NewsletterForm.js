@@ -7,9 +7,9 @@
         ],
         
         id: 'newsletter-form-edit',
+        transNS: 'newsletter.headers',
         
         submitConfig: {
-            text: 'Zapisz',
             submit: Actions.HatimeriaAdmin_Newsletter.edit,
             success: function() {
                 Ext.getStore('newsletter-store').load();
@@ -32,7 +32,7 @@
                     },
                     {
                         xtype: 'textfield',
-                        fieldLabel: 'Temat',
+                        fieldLabel: this.__('subject'),
                         name: 'subject',
                         labelWidth: 50,
                         width: 450
@@ -40,6 +40,7 @@
                     {
                         xtype: 'hatimeria-tinymce',
                         tinyConfigSet: 'basic',
+                        fieldLabel: this.__('body'),
                         fieldName: 'body',
                         labelWidth: 50,
                         width: 600,

@@ -39,7 +39,7 @@ class UserController extends Controller
      * @remote
      * @Secure("ROLE_ADMIN")
      */
-    public function removeAction($params)
+    public function destroyAction($params)
     {
         /* @var \Carbon\UserBundle\Entity\Manager\UserManager $um */
         $um   = $this->get("fos_user.user_manager");

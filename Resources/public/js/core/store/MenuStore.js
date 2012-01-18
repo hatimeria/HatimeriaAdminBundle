@@ -2,7 +2,11 @@
     
     Ext.define('HatimeriaAdmin.core.store.MenuStore', {
         extend: 'Ext.data.TreeStore',
-        
+        mixins: {
+            translationable: 'Hatimeria.core.mixins.Translationable'
+        },
+        transDomain: 'HatimeriaAdminBundle',
+        transNS: 'menu',
         /**
          * Map of nodes to preserve extra atrributes comes from YML
          * 
@@ -49,25 +53,40 @@
             var adjust = function(nodes, newNodes) {
                 var newNode, map;
                 
-                for (var id in nodes)
+                for (var i in nodes)
                 {
+                    var node = nodes[i];
+                    var id = node.code;
+                    var label;
+                    
+                    if(node.text) {
+                      label = node.text;  
+                    } else {
+                        if(node.ns)
+                        {
+                            label = __(node.ns + 'Bundle:' + id + ".title")
+                        } else {
+                            label = _this.__(id + '.title')
+                        }
+                    }
+                    
                     newNode = {
                         id: id,
-                        text: nodes[id].text
+                        text: label
                     };
-                    map = Ext.clone(nodes[id]);
+                    map = Ext.clone(node);
                     map.id = id;
                     if (map.children)
                     {
                         delete map.children;
                     }
                     
-                    if (typeof nodes[id].children == 'object')
+                    if (typeof node.children == 'object')
                     {
                         newNode.expanded = true;
                         newNode.leaf = false;
                         newNode.children = [];
-                        adjust(nodes[id].children, newNode.children);
+                        adjust(node.children, newNode.children);
                     }
                     else
                     {

@@ -4,11 +4,11 @@
         requires: [
             'HatimeriaAdmin.core.form.TinyMceForm'
         ],
+        transNS: 'cms.headers',
         defaults: {
             anchor: '100%'
         },
         submitConfig: {
-            text: 'Zapisz',
             submit: Actions.HatimeriaAdmin_Cms.edit,
             success: function() {
                 Ext.getStore('cms-store').load();
@@ -25,7 +25,7 @@
                 bodyPadding: 10,
                 defaultType: 'textfield',
                 items: [{
-                    fieldLabel: 'Tytuł',
+                    fieldLabel: this.__('title'),
                     name: 'title'
                 },
                 {
@@ -33,26 +33,26 @@
                     name: 'id'
                 },
                 {
-                    fieldLabel: 'Uri',
+                    fieldLabel: this.__('uri'),
                     name: 'path'
                 },
                 {
-                    fieldLabel: 'Autor',
+                    fieldLabel: this.__('author'),
                     name: 'author'
                 },
                 {
-                    fieldLabel: 'Meta description',
+                    fieldLabel: this.__('meta_description'),
                     name: 'meta_description'
                 },
                 {
-                    fieldLabel: 'Meta keywords',
+                    fieldLabel: this.__('meta_keywords'),
                     name: 'meta_keywords'
                 },
                 {
                     xtype: 'hatimeria-tinymce',
+                    fieldLabel: this.__('body'),
                     fieldName: 'body',
                     width: 680,
-                    fieldLabel: 'Treść',
                     height: 250,
                     listeners: {
                         tinycreated: function() {
@@ -63,17 +63,19 @@
                     }
                 },
                 {
-                    fieldLabel: 'Od kiedy publikowac',
+                    fieldLabel: this.__('publish_from'),
                     name: 'publish_from',
-                    xtype: 'datefield'
+                    xtype: 'datefield',
+                    format: 'Y-m-d'
                 },
                 {
-                    fieldLabel: 'Do kiedy publikowac',
+                    fieldLabel: this.__('publish_to'),
                     name: 'publish_to',
-                    xtype: 'datefield'
+                    xtype: 'datefield',
+                    format: 'Y-m-d'
                 },
                 {
-                    fieldLabel: 'Opublikowany',
+                    fieldLabel: this.__('is_published'),
                     name: 'is_published',
                     xtype: 'checkboxfield'
                 }]

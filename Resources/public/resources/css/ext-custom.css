@@ -183,10 +183,24 @@ body#hatimeria-admin-body {
     display: none;
 }
 
+.x-toolbar-footer {
+    background: #F5F4EA;
+    margin-top: 0px;
+    padding-top: 3px;
+}
+
 .x-form-invalid-field, textarea.x-form-invalid-field {
     background-image: none;
 }
 
 .x-form-invalid table.mceLayout {
     border: 1px solid red !important;
+}
+
+.actions-show-column {
+    text-decoration: underline;
+    color: #78B233;
+}
+.actions-show-column div{
+    cursor: pointer;
 }

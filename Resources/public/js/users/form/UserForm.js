@@ -10,12 +10,13 @@
         },
         submitConfig: {
             submit: Actions.HatimeriaAdmin_User.update,
-            text: 'Zapisz',
             success: function() {
                 Ext.getStore('users-store').load();
                 this.formPanel.up('window').destroy();
             }
         },
+        
+        transNS: 'users.headers',
         
         /**
          * Initializes form
@@ -23,13 +24,13 @@
         initComponent: function()
         {
             var config = {
+                height: 300,
+                defaults: {
+                    anchor: '90%'
+                },
                 frame: false,
                 border: false,
-                defaults: {
-                    labelWidth: 150,
-                    width: 400,
-                    margin: 10
-                },
+                bodyPadding: 10,
                 items: [
                     {
                         xtype: 'textfield',
@@ -38,13 +39,14 @@
                     },                    
                     {
                         xtype: 'textfield',
+                        width: 400,
                         name: 'email',
-                        fieldLabel: 'Email (login)'
+                        fieldLabel: this.__('username')
                     },
                     {
                         xtype: 'checkbox',
                         name: 'enabled',
-                        fieldLabel: 'Włączony'
+                        fieldLabel: this.__('enabled')
                     }
                 ]
             };

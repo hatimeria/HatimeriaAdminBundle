@@ -1,2 +1,6 @@
+{% if layout == 'hatimeria' %}
 <link rel="stylesheet" href="{{ asset('bundles/hatimeriaadmin/resources/css/my-ext-theme.css') }}" type="text/css" media="all" />
 <link rel="stylesheet" href="{{ asset('bundles/hatimeriaadmin/resources/css/ext-custom.css') }}" type="text/css" media="all" />
+{% else %}
+<link rel="stylesheet" href="{{ asset('bundles/hatimeriaextjs/js/extjs/vendor/extjs-4.0.7/resources/css/ext-all-gray.css') }}" type="text/css" media="all" />
+{% endif %}
