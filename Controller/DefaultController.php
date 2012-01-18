@@ -20,6 +20,15 @@ class DefaultController extends Controller
             $namespaces = $this->container->getParameter('admin_loader');
         }
         
-        return $this->render('HatimeriaAdminBundle:Default:default_headers.html.twig', array('namespaces' => $namespaces));
+        if ($this->container->hasParameter('admin_title'))
+        {
+            $title = $this->container->getParameter('admin_title');
+        } else {
+            $title = 'Hatimeria Backend';
+        }
+        
+        return $this->render('HatimeriaAdminBundle:Default:default_headers.html.twig', array(
+            'namespaces' => $namespaces, 'title' => $title
+            ));
     }
 }
