@@ -17,11 +17,8 @@
         },
         
         transNS: 'users.headers',
-        
-        /**
-         * Initializes form
-         */
-        initComponent: function()
+
+        constructor: function(cfg)
         {
             var config = {
                 height: 300,
@@ -50,9 +47,10 @@
                     }
                 ]
             };
-            
-            Ext.apply(this, this.applyExternals(Ext.apply(config, this.initialConfig)));
-            this.callParent();
+
+            Ext.apply(config, cfg || {});
+
+            this.callParent([config]);
         },
         
         /**

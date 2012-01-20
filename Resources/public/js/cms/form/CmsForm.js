@@ -5,9 +5,6 @@
             'HatimeriaAdmin.core.form.TinyMceForm'
         ],
         transNS: 'cms.headers',
-        defaults: {
-            anchor: '100%'
-        },
         submitConfig: {
             submit: Actions.HatimeriaAdmin_Cms.edit,
             success: function() {
@@ -16,7 +13,7 @@
             }
         },
         
-        initComponent: function()
+        constructor: function(cfg)
         {
             var _this = this;
             var config = {
@@ -24,6 +21,9 @@
                 width: 700,
                 bodyPadding: 10,
                 defaultType: 'textfield',
+                defaults: {
+                    anchor: '100%'
+                },
                 items: [{
                     fieldLabel: this.__('title'),
                     name: 'title'
@@ -81,9 +81,9 @@
                 }]
             };
             
-            Ext.apply(this, Ext.apply(config, this.initialConfig));
+            Ext.apply(config, cfg || {});
             
-            this.callParent();
+            this.callParent([config]);
         },
         
         /**
