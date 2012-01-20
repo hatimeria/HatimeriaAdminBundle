@@ -15,11 +15,6 @@ class DefaultController extends Controller
     
     public function defaultHeadersAction()
     {
-        if ($this->container->hasParameter('admin_loader'))
-        {
-            $namespaces = $this->container->getParameter('admin_loader');
-        }
-        
         if ($this->container->hasParameter('admin_title'))
         {
             $title = $this->container->getParameter('admin_title');
@@ -28,7 +23,7 @@ class DefaultController extends Controller
         }
         
         return $this->render('HatimeriaAdminBundle:Default:default_headers.html.twig', array(
-            'namespaces' => $namespaces, 'title' => $title
+            'title' => $title
             ));
     }
 }

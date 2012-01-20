@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        {% render "HatimeriaExtJSBundle:Default:headers" %}
+        {% render "HatimeriaExtJSBundle:Javascript:headers" %}
         {% render "HatimeriaAdminBundle:Default:defaultHeaders" %}
         {% block head %}{% endblock %}
         <link rel="shortcut icon" href="{{ asset('/bundles/hatimeriaadmin/images/hatimeria.ico') }}" />
@@ -12,6 +12,6 @@
         {% block body %}{% endblock %}
         {% block fos_user_content %}{% endblock %}
         {% block javascripts %}{% endblock %}
-        {% render "HatimeriaExtJSBundle:Default:variables" %}
+        {% render "HatimeriaExtJSBundle:Javascript:variables" %}
     </body>
 </html>
