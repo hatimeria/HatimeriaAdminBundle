@@ -44,16 +44,14 @@
                        withoutMe: true 
                     });
                     
-                    this.add(
-                    {
+                    this.add({
                         xtype: 'h-dashboard-box',
                         name: 'switch',
                         content: Ext.create("Hatimeria.core.form.UserSwitch", {
-                                padding: 5,
-                                store: users
-                            })
-                    }
-                    );
+                            padding: '5 0',
+                            store: users
+                        })
+                    });
                         
                     this.add({
                         xtype: 'h-dashboard-box',

@@ -26,16 +26,12 @@
                 },
                 items: [
                     {
-                        layout: {
-                            type: 'hbox'
-                        },
+                        layout: 'auto',
                         itemId: 'user-status-text',
                         xtype: 'container',
                         items: [
                             {
                                 xtype: 'container',
-                                width: 200,
-                                bodyStyle: 'width: 200px',
                                 style: {
                                     background: 'transparent'
                                 },
