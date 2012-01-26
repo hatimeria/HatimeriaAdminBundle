@@ -34,7 +34,7 @@
             this.currentPanelName = mainId;
             
             var config = {
-                layout: 'auto',
+                layout: 'fit',
                 frame: false,
                 border: false,
                 style: 'padding: 25px',
@@ -69,7 +69,7 @@
             
             var configObj = {
                 id: id,
-                width: 750
+                maxWidth: 1024
             };
             
             Ext.apply(configObj, this.defaultPanelConfig);

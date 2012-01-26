@@ -204,3 +204,23 @@ body#hatimeria-admin-body {
 .actions-show-column div{
     cursor: pointer;
 }
+
+.grid-docked-title{
+    width: 130px;
+    height: 100%;
+    line-height: 50px;
+    margin-right: 5px;
+    text-shadow: 0 1px 0 #919191;
+    vertical-align: middle;
+    font-weight: bold;
+    padding-left: 10px;
+    background: #52A207;
+    color: white;
+    font-size: 13px;
+    font-family: tahoma, arial, verdana, sans-serif;
+}
+
+.grid-docked-toolbar{
+    height: 50px;
+    border-color: #8CBE35;
+}

@@ -34,6 +34,8 @@
                         items: [
                             {
                                 xtype: 'container',
+                                width: 200,
+                                bodyStyle: 'width: 200px',
                                 style: {
                                     background: 'transparent'
                                 },
