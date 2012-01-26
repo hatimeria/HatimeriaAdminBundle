@@ -129,7 +129,7 @@
          */
         onRemoveClick: function(node, index)
         {
-            Ext.Msg.confirm('Uwaga!', Ext.String.format('Nastąpi usunięcie kategorii: "{0}"</br>Czy kontynuować?', node.get('text')), function(msg) {
+            Ext.Msg.confirm('Uwaga!', Ext.String.format('Nastąpi usunięcie kategorii: "{0}" Kontynuować?', node.get('text')), function(msg) {
                 if (msg != 'yes')
                 {
                     return false;

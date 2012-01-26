@@ -107,7 +107,9 @@
             theme_advanced_statusbar_location: 'bottom',
             file_browser_callback: 'tinymce_upload',
             theme_advanced_resizing: false,
-            convert_urls: false
+            convert_urls: false,
+            theme_advanced_font_sizes: 'x-small=0.8em,small=0.9em,NORMAL=1em,large=1.1em,x-large=1.2em,xx-large=1.4em',
+            theme_advanced_blockformats: 'p,h2,h3,h4'
         },
         
         /**
@@ -117,11 +119,11 @@
          */
         tinyConfigSets: {
             extended: {
-                plugins: 'pagebreak,style,layer,table,advhr,advimage,advlink,emotions,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template',
+                plugins: 'style,layer,table,advhr,advimage,advlink,emotions,preview,searchreplace,print,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template',
                 theme_advanced_buttons1: 'bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,formatselect,fontsizeselect',
-                theme_advanced_buttons2: 'bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor',
-                theme_advanced_buttons3: 'tablecontrols,|,hr,sub,sup,|,charmap,media,advhr,|,print,|,ltr,rtl,|',
-                theme_advanced_buttons4: 'insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak'
+                theme_advanced_buttons2: 'bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,preview,|,forecolor,backcolor',
+                theme_advanced_buttons3: 'tablecontrols,|,hr,sub,sup,|,charmap,advhr,ltr,rtl',
+                theme_advanced_buttons4: ''
             },
             basic: {
                 plugins: 'advimage',

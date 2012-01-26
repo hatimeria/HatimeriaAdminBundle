@@ -17,7 +17,7 @@
             }
         },
         
-        initComponent: function() {
+        constructor: function(cfg) {
             
             var _this = this;
             var config = {
@@ -65,9 +65,9 @@
                 ]
             };
             
-            Ext.apply(this, Ext.apply(config, this.initialConfig));
+            Ext.apply(config, cfg || {});
             
-            this.callParent();
+            this.callParent([config]);
         },
         
         /**
