@@ -34,9 +34,10 @@
             this.currentPanelName = mainId;
             
             var config = {
-                layout: 'fit',
+                layout: 'auto',
                 frame: false,
                 border: false,
+                autoScroll: true,
                 style: 'padding: 25px',
                 items: [
                     this.createPanel(mainId)
