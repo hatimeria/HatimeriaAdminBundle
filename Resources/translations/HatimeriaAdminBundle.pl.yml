@@ -48,9 +48,13 @@ users:
     username: Login
     email: Email
     enabled: Aktywny
+    administrator: Administrator
+    updated_at: Data aktualizacji
+    created_at: Data utworzenia
+    password: Hasło
+    password-bis: Powtórz hasło
   edit:
     title: Edycja użytkownika
-    
 cms:   
   title: Lista podstron
   headers:
