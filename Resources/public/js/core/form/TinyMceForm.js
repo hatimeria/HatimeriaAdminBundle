@@ -102,6 +102,7 @@
          */
         tinyBaseConfig: {
             theme: 'advanced',
+            language: 'pl',
             theme_advanced_toolbar_location: 'top',
             theme_advanced_toolbar_align: 'left',
             theme_advanced_statusbar_location: 'bottom',

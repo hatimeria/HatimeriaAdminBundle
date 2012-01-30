@@ -23,7 +23,7 @@ class UserController extends Controller
         $qb  = $pager->getQueryBuilder();
         
         if($params->has('query')) {
-            $dql = $qb->expr()->like('e.username', "'%".$params->get("query")."%'");
+            $dql = $qb->expr()->like('e.username', $qb->expr()->literal("%".$params->get("query")."%"));
             $qb->andWhere($dql);
         }
         
