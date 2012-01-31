@@ -34,6 +34,18 @@ class UserController extends Controller
         
         return $pager;
     }
+    /**
+     * @remote
+     * @Secure("ROLE_ADMIN")
+     */
+    public function createAction($params)
+    {
+        $result = $this->get('hatimeria_admin.user.form.handler')->process($params);
+
+        if ($result !== true) {
+            return $result;
+        }
+    }
     
     /**
      * @remote
@@ -53,7 +65,6 @@ class UserController extends Controller
     }
 
     /**
-     * @form
      * @remote
      * @Secure("ROLE_ADMIN")
      */

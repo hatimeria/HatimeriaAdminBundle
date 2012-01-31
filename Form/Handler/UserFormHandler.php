@@ -44,11 +44,14 @@ class UserFormHandler
      */
     public function process($params, $user = null)
     {
+        $validationGroup = 'Profile';
         if (null === $user) {
-            $user = new $this->userClass;
+            $validationGroup = 'Registration';
+            $user = $this->um->createUser();
         }
         $options = array(
-            'data_class' => $this->userClass
+            'data_class' => $this->userClass,
+            'validation_groups' => array($validationGroup)
         );
 
         $type = new UserFormType();
@@ -61,6 +64,7 @@ class UserFormHandler
 
         if($result->isValid()) {
             $this->um->updateUser($user);
+            return $user;
         }
 
         return $result;

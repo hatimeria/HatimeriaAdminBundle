@@ -14,6 +14,7 @@ class UserFormType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add("email","email");
+        $builder->add('plainPassword', 'repeated', array('type' => 'password', 'invalid_message' => "Hasła nie są takie same"));
 
         foreach ($this->extend as $type) {
             /* @var \Symfony\Component\Form\AbstractType $type */
@@ -22,7 +23,7 @@ class UserFormType extends AbstractType
 
         $builder->addEventSubscriber(new RemoveExtraDataListener());
     }
-
+    
     public function setExtend(array $extend)
     {
         $this->extend = $extend;

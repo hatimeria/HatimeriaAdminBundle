@@ -48,6 +48,11 @@ users:
     username: Username
     email: Email
     enabled: Active
+    administrator: Administrator
+    updated_at: Last modification
+    created_at: Creation date
+    password: Password
+    password-bis: Repeat password
   edit:
     title: Editing user
 cms:   

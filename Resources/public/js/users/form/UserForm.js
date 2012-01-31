@@ -9,7 +9,6 @@
             configurable: 'Hatimeria.core.mixins.ConfigurableExternal'
         },
         submitConfig: {
-            submit: Actions.HatimeriaAdmin_User.update,
             success: function() {
                 Ext.getStore('users-store').load();
                 this.formPanel.up('window').destroy();
@@ -44,6 +43,23 @@
                         xtype: 'checkbox',
                         name: 'enabled',
                         fieldLabel: this.__('enabled')
+                    },
+                    {
+                        xtype: 'checkbox',
+                        name: 'administrator',
+                        fieldLabel: this.__('administrator')
+                    },
+                    {
+                        xtype: 'textfield',
+                        fieldLabel: this.__('password'),
+                        name: 'plainPassword[first]',
+                        inputType: 'password'
+                    },
+                    {
+                        xtype: 'textfield',
+                        fieldLabel: this.__('password-bis'),
+                        name: 'plainPassword[second]',
+                        inputType: 'password'
                     }
                 ]
             };
