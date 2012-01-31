@@ -62,6 +62,14 @@ body#hatimeria-admin-body {
     background: url('/bundles/hatimeriaadmin/images/icon/add.png') center center no-repeat;
 }
 
+#app-content-panel .x-toolbar-docked-top .x-btn .icon-pdf {
+    background: url('/bundles/hatimeriaadmin/images/icon/pdf.png') center center no-repeat;
+}
+
+#app-content-panel .x-toolbar-docked-top .x-btn .icon-save {
+    background: url('/bundles/hatimeriaadmin/images/icon/save.png') center center no-repeat;
+}
+
 #app-content-panel .x-toolbar-docked-top .x-btn .x-btn-icon{
     height: inherit;
     width: 36px;
