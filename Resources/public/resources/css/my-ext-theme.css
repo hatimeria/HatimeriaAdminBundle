@@ -4756,7 +4756,7 @@ table.x-datepicker-inner {
   overflow: hidden;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  padding: 3px 6px;
+  padding: 10px 10px;
   white-space: nowrap; }
 
 /* line 294, ../../../../../../../hatimeria/HatimeriaExtJS/src/vendor/extjs-4.0.7/resources/themes/stylesheets/ext4/default/widgets/_grid.scss */
