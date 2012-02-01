@@ -55,6 +55,11 @@ users:
     password-bis: Repeat password
   edit:
     title: Editing user
+  filter:
+    username: Login
+    enabled: Active
+    yes: Yes
+    no: No
 cms:   
   title: Pages
   headers:
