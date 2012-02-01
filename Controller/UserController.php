@@ -8,6 +8,10 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
 
 use Hatimeria\ExtJSBundle\Response\Failure;
 
+use Hatimeria\ExtJSBundle\Annotation\Remote;
+
+use Hatimeria\ExtJSBundle\Parameter\ParameterBag;
+
 class UserController extends Controller
 {
     /**
@@ -30,6 +34,16 @@ class UserController extends Controller
         if($params->has('withoutMe')) {
             $user = $this->get('security.context')->getToken()->getUser();
             $qb->andWhere('e.id !=' . $user->getId());
+        }
+        
+        if($params->has('username') && count($params->get('username'))) {
+            $dql = $qb->expr()->like('e.username', $qb->expr()->literal("%".$params->get("username")."%"));
+            $qb->andWhere($dql);
+        }
+        
+        if($params->has('enabled') && count($params->get('enabled'))) {
+            $dql = $qb->expr()->like('e.enabled', $qb->expr()->literal("%".$params->get("enabled")."%"));
+            $qb->andWhere($dql);
         }
         
         return $pager;

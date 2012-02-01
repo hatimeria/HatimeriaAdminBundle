@@ -55,6 +55,11 @@ users:
     password-bis: Powtórz hasło
   edit:
     title: Edycja użytkownika
+  filter:
+    username: Login
+    enabled: Aktywny
+    yes: Tak
+    no: Nie
 cms:   
   title: Lista podstron
   headers:

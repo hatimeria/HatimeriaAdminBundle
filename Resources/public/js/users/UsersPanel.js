@@ -8,7 +8,7 @@
         windowEditClass: 'HatimeriaAdmin.users.window.UserWindow', 
         recordClass: 'HatimeriaAdmin.users.model.UserModel',
         
-        initComponent: function()
+        constructor: function()
         {
             var store = Ext.create('HatimeriaAdmin.users.store.UserStore');
             var config = {
@@ -26,10 +26,26 @@
                     {dataIndex: 'created_at', width: 150},
                     {dataIndex: 'updated_at', width: 200}
                 ]
+                
             };
+            this.filters = {
+                items: [
+                {
+                    xtype: 'textfield',
+                    fieldLabel: this.__('filter.username'),
+                    name: 'username'
+                },
+                {
+                    xtype: 'h-combobox',
+                    fieldLabel: this.__('filter.enabled'),
+                    valueField: 'Active',
+                    value: this.__('filter.yes'),
+                    store: [['true', this.__('filter.yes')],['false',this.__('filter.no')]],
+                    name: 'enabled'
+                }]
+            }
             
-            Ext.apply(this, this.applyExternal(Ext.apply(config, this.initialConfig)));
-            this.callParent();
+            this.callParent([config]);
         }
     });
     
