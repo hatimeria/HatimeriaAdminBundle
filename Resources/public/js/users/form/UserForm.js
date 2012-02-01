@@ -65,6 +65,8 @@
             };
 
             Ext.apply(config, cfg || {});
+            
+            console.log(cfg, config);
 
             this.callParent([config]);
         },

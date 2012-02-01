@@ -5,8 +5,10 @@
         requires: ["HatimeriaAdmin.users.store.UserStore"],
         transNS: 'users',
         translateAll: true,
-        windowEditClass: 'HatimeriaAdmin.users.window.UserWindow', 
-        recordClass: 'HatimeriaAdmin.users.model.UserModel',
+        formConfig: {
+            useFormSubmit: true,
+            formClass: 'HatimeriaAdmin.users.form.UserForm'
+        },
         
         initComponent: function()
         {
