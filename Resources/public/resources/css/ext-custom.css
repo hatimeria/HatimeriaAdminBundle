@@ -45,9 +45,12 @@ body#hatimeria-admin-body {
 }
 
 #app-content-panel .x-toolbar-docked-top {
-    height: 60px;
     background: transparent;
     border: 0;
+}
+
+#app-content-panel .grid-docked-top-buttons {
+    margin-bottom: 5px;
 }
 
 #app-content-panel .x-toolbar-docked-top .x-btn{
@@ -60,6 +63,18 @@ body#hatimeria-admin-body {
 
 #app-content-panel .x-toolbar-docked-top .x-btn .icon-add {
     background: url('/bundles/hatimeriaadmin/images/icon/add.png') center center no-repeat;
+}
+
+#app-content-panel .x-toolbar-docked-top .x-btn .icon-pdf {
+    background: url('/bundles/hatimeriaadmin/images/icon/pdf.png') center center no-repeat;
+}
+
+#app-content-panel .x-toolbar-docked-top .x-btn .icon-save {
+    background: url('/bundles/hatimeriaadmin/images/icon/save.png') center center no-repeat;
+}
+
+#app-content-panel .x-toolbar-docked-top .x-btn .icon-refresh {
+    background: url('/bundles/hatimeriaadmin/images/icon/refresh.png') center center no-repeat;
 }
 
 #app-content-panel .x-toolbar-docked-top .x-btn .x-btn-icon{
@@ -119,10 +134,6 @@ body#hatimeria-admin-body {
 }
 .x-grid-header-ct span{
     font-weight: bold;
-}
-
-.x-grid-row .x-grid-cell{
-    padding: 5px;
 }
 
 .x-column-header-inner {
@@ -206,21 +217,33 @@ body#hatimeria-admin-body {
 }
 
 .grid-docked-title{
-    width: 130px;
-    height: 100%;
-    line-height: 50px;
+    width: 110px;
     margin-right: 5px;
-    text-shadow: 0 1px 0 #919191;
+    text-shadow: 0 1px 0 white;
     vertical-align: middle;
     font-weight: bold;
     padding-left: 10px;
-    background: #52A207;
-    color: white;
+    color: #666;
     font-size: 13px;
     font-family: tahoma, arial, verdana, sans-serif;
 }
 
 .grid-docked-toolbar{
-    height: 50px;
+    color: #666;
     border-color: #8CBE35;
+}
+
+.grid-docked-toolbar .x-box-inner .x-container, .grid-docked-title, .grid-docked-toolbar {
+    height: 35px;
+    line-height: 35px;
+}
+
+.grid-docked-toolbar .x-panel-body-default {
+    color: #666;
+}
+
+/* grid editor */
+
+.x-editor .x-form-item-body {
+    padding: 5px 0px;
 }

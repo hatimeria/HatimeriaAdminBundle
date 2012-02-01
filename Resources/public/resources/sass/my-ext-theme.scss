@@ -39,6 +39,9 @@ $panel-header-color: white;
 $panel-border-color: #BEC9D0;
 $panel-header-border-width: 0px !default;
 
+//boundlist
+
+$boundlist-item-over-background-color: #FFFBCC;
 
 //toolbar
 $toolbar-background-gradient: color-stops(#F5F3ED, #F5F3E5);
@@ -56,6 +59,7 @@ $grid-header-background-gradient: color-stops(#F5F3ED, #F5F3E5) !default;
 $grid-header-background-color: color-stops(#F5F3ED, #F5F3E5) !default;
 $grid-header-color: #479E00 !default;
 
+$grid-cell-inner-padding: 10px 10px !default;
 
 $grid-header-over-border-color: adjust-color(#C0D4ED, $hue: -0.175deg, $saturation: 25.296%, $lightness: -2.549%) !default;
 $grid-header-over-background-color: $grid-header-over-border-color !default;
