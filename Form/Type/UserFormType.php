@@ -14,6 +14,8 @@ class UserFormType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add("email","email");
+        $builder->add("administrator","checkbox");
+        $builder->add("enabled","checkbox");
         $builder->add('plainPassword', 'repeated', array('type' => 'password', 'invalid_message' => "Hasła nie są takie same"));
 
         foreach ($this->extend as $type) {

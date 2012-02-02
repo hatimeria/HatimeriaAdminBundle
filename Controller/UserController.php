@@ -49,6 +49,7 @@ class UserController extends Controller
         return $pager;
     }
     /**
+     * @form
      * @remote
      * @Secure("ROLE_ADMIN")
      */
@@ -79,6 +80,7 @@ class UserController extends Controller
     }
 
     /**
+     * @form
      * @remote
      * @Secure("ROLE_ADMIN")
      */

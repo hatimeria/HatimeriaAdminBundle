@@ -5,12 +5,8 @@
         requires: ["HatimeriaAdmin.users.store.UserStore"],
         transNS: 'users',
         translateAll: true,
-        formConfig: {
-            useFormSubmit: true,
-            formClass: 'HatimeriaAdmin.users.form.UserForm'
-        },
         
-        constructor: function()
+        constructor: function(cfg)
         {
             var store = Ext.create('HatimeriaAdmin.users.store.UserStore');
             var config = {
@@ -19,6 +15,11 @@
                 dockedElements: ['paging', 'add'],
                 rowActions: ['edit', 'remove'],
                 store: store,
+                formConfig: {
+                    useFormSubmit: true,
+                    useFormLoad: true,
+                    formClass: 'HatimeriaAdmin.users.form.UserForm'
+                },                
                 columns: [
                     {dataIndex: 'id', width: 80},
                     {dataIndex: 'username', flex: 1},
@@ -41,11 +42,12 @@
                     xtype: 'h-combobox',
                     fieldLabel: this.__('filter.enabled'),
                     valueField: 'Active',
-                    value: this.__('filter.yes'),
                     store: [['true', this.__('filter.yes')],['false',this.__('filter.no')]],
                     name: 'enabled'
                 }]
             }
+            
+            Ext.apply(config, cfg);
             
             this.callParent([config]);
         }

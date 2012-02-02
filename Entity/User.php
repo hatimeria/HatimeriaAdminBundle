@@ -25,6 +25,7 @@ class User extends BaseUser
     {
         $this->createdAt = new \DateTime();
         $this->updatedAt = new \DateTime();
+        
         parent::__construct();
     }
     
@@ -66,5 +67,13 @@ class User extends BaseUser
     {
         $this->updatedAt = new \DateTime();
     }
-
+    
+    public function setAdministrator($v)
+    {
+        if($v) {
+            $this->addRole("ROLE_ADMIN");
+        } else {
+            $this->removeRole("ROLE_ADMIN");
+        }
+    }
 }

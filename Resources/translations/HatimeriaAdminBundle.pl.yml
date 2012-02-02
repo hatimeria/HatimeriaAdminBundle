@@ -42,6 +42,8 @@ user:
   
 users:   
   title: Lista użytkowników
+  createTitle: Nowy użytkownik
+  editTitle: Edycja użytkownika {email}
   headers:
     id: Id
     name: Nazwa

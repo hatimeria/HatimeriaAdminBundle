@@ -63,12 +63,10 @@
                     }
                 ]
             };
-
-            Ext.apply(config, cfg || {});
             
-            console.log(cfg, config);
-
-            this.callParent([config]);
+            var c = Ext.apply(cfg || {}, config);
+            
+            this.callParent([c]);
         },
         
         /**
