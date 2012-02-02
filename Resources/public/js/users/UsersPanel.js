@@ -17,7 +17,7 @@
                 store: store,
                 formConfig: {
                     useFormSubmit: true,
-                    useFormLoad: true,
+                    useFormLoad: false,
                     formClass: 'HatimeriaAdmin.users.form.UserForm'
                 },                
                 columns: [
