@@ -5,9 +5,6 @@
     
     Ext.define('HatimeriaAdmin.users.form.UserForm', {
         extend: 'Hatimeria.core.form.BaseForm',
-        mixins: {
-            configurable: 'Hatimeria.core.mixins.ConfigurableExternal'
-        },
         submitConfig: {
             success: function() {
                 Ext.getStore('users-store').load();
@@ -77,27 +74,6 @@
         populate: function(record)
         {
             this.getForm().loadRecord(record);
-        },
-        
-        /**
-         * Merges external config
-         * 
-         * @param {} config
-         * @return {}
-         */
-        applyExternals: function(cfg)
-        {
-            var config = this.getConnectedConfig();
-            
-            if (config && config.items)
-            {
-                for (var i in config.items)
-                {
-                    cfg.items.push(config.items[i]);
-                }
-            }
-            
-            return cfg;
         }
     });
     
