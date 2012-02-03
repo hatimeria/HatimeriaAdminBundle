@@ -53,6 +53,7 @@ users:
     administrator: Administrator
     updated_at: Data aktualizacji
     created_at: Data utworzenia
+    last_login: Data logowania
     password: Hasło
     password-bis: Powtórz hasło
   edit:

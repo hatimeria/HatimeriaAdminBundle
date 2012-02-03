@@ -32,7 +32,7 @@
 
 
                 if (_user.isSwitched) {
-                    this.down('#users-status-text').add(Ext.create("HatimeriaAdmin.core.component.BackToAdminButton"));
+                    this.down('#user-status-text').add(Ext.create("HatimeriaAdmin.core.component.BackToAdminButton"));
                 }
 
                 if (_user.isAdmin) {

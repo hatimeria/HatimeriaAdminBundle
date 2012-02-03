@@ -51,6 +51,7 @@ users:
     administrator: Administrator
     updated_at: Last modification
     created_at: Creation date
+    last_login: Last login
     password: Password
     password-bis: Repeat password
   edit:

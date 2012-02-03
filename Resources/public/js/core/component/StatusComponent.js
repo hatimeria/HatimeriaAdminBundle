@@ -33,14 +33,16 @@
                             {
                                 xtype: 'container',
                                 style: {
-                                    background: 'transparent'
+                                    background: 'transparent',
+                                    width: '300px',
+                                    margin: '10px 0px'
                                 },
                                 border: 0,
                                 html: this.statusText
                             }
                         ],
-                        style: 'background: transparent;',
-                        width: '100%',  
+                        style: 'background: transparent; overflow: hidden; margin: 10px; margin-left: 8px;',
+                        width: '300px',  
                         border: 0
                     }
                 ]

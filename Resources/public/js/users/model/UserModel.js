@@ -13,7 +13,8 @@
             {name: 'enabled', type: 'boolean'},
             {name: 'administrator', type: 'boolean'},
             {name: 'created_at', type: 'string'},
-            {name: 'updated_at', type: 'string'}
+            {name: 'updated_at', type: 'string'},
+            {name: 'last_login', type: 'string'}
         ]
     });
     
