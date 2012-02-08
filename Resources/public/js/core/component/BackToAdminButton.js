@@ -4,6 +4,7 @@ Ext.define('HatimeriaAdmin.core.component.BackToAdminButton', {
         translationable: 'Hatimeria.core.mixins.Translationable'
     },
     transDomain: 'HatimeriaAdminBundle',
+    id: 'backtoadmin-button',
     
     initComponent: function() {
         this.text = this.__('switch.back');
