@@ -9,7 +9,11 @@
     Ext.define('HatimeriaAdmin.core.form.TinyMceForm', {
         extend: 'Hatimeria.core.form.BaseForm',
         alias: 'widget.hatimeria-tinymce',
-        
+
+        submitConfig: {
+            button: false
+        },
+
         /**
          * Config set
          * 
