@@ -33,7 +33,7 @@
      * #Validation#
      * Has the same validations as its parent class, {@link Ext.form.field.Text}.
     */
-    Ext.define('Ext.ux.TinyMCE', {
+    Ext.define('HatimeriaAdmin.core.vendor.ux.TinyMCE', {
         extend: 'Ext.form.field.Text',
         alias: 'widget.tinymce',
 
@@ -85,7 +85,7 @@
         initComponent: function() {
             this.callParent(); // Ext4: added
             this.tinymceSettings = this.tinymceSettings || {};
-            Ext.ux.TinyMCE.initTinyMCE({ language: this.tinymceSettings.language });
+            HatimeriaAdmin.core.vendor.ux.TinyMCE.initTinyMCE({ language: this.tinymceSettings.language });
         },
 
         /* ----------------------------------------------------------
@@ -667,7 +667,7 @@
                     // Init TinyMCE
                     var s = {
                         mode: "none",
-                        plugins: Ext.ux.TinyMCE.tinymcePlugins,
+                        plugins: HatimeriaAdmin.core.vendor.ux.TinyMCE.tinymcePlugins,
                         theme: "advanced"
                     };
                     Ext.apply(s, settings);

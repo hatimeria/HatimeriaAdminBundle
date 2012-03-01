@@ -1,5 +1,4 @@
-function tinymce_upload(type, prefix, image, scope)
-{
+window.tinymce_upload = function(type, prefix, image, scope) {
     with (scope) {
         url = tinyMCEPopup.params.plugin_url.replace(/(tiny_mce\/plugins.*)/, '');
         tinyMCEPopup.editor.windowManager.open({

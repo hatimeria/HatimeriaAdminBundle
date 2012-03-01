@@ -9,6 +9,9 @@
     Ext.define('HatimeriaAdmin.core.form.TinyMceForm', {
         extend: 'Hatimeria.core.form.BaseForm',
         alias: 'widget.hatimeria-tinymce',
+        requires: [
+            'HatimeriaAdmin.core.form.TinyMceLoader'
+        ],
 
         submitConfig: {
             button: false
@@ -107,6 +110,7 @@
         tinyBaseConfig: {
             theme: 'advanced',
             language: 'pl',
+            popup_css: '/bundles/hatimeriaadmin/js/core/vendor/tinymce/jscripts/tiny_mce/themes/advanced/skins/default/dialog.css',
             theme_advanced_toolbar_location: 'top',
             theme_advanced_toolbar_align: 'left',
             theme_advanced_statusbar_location: 'bottom',
