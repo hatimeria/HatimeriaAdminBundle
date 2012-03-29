@@ -18,11 +18,16 @@ class UserController extends Controller
      * 
      * Users list data
      * 
-     * @Secure("ROLE_ADMIN")
      * @remote
      */
     public function listAction($params)
     {
+        $sc = $this->get("security.context");
+        
+        if(!($sc->isGranted("ROLE_ADMIN") || $sc->isGranted("ROLE_PREVIOUS_ADMIN"))) {
+            throw new \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+        }
+        
         $pager = $this->get('hatimeria_extjs.pager')->fromEntity($this->container->getParameter("fos_user.model.user.class"), $params);
         $qb  = $pager->getQueryBuilder();
         
