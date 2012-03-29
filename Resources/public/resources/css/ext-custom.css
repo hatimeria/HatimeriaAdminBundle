@@ -77,6 +77,10 @@ body#hatimeria-admin-body {
     background: url('/bundles/hatimeriaadmin/images/icon/refresh.png') center center no-repeat;
 }
 
+#app-content-panel .x-toolbar-docked-top .x-btn .icon-clear {
+    background: url('/bundles/hatimeriaadmin/images/icon/clear.png') center center no-repeat;
+}
+
 #app-content-panel .x-toolbar-docked-top .x-btn .x-btn-icon{
     height: inherit;
     width: 36px;
